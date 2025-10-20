@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Savíns Puertas Martín - S-AL Research Group</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .font-serif { font-family: 'Merriweather', serif; }
+    .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .card-hover:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
+    .icon-bounce { transition: transform 0.3s ease; }
+    .icon-bounce:hover { transform: rotate(10deg) scale(1.1); }
+    .gradient-blue { background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%); }
+    .gradient-purple { background: linear-gradient(135deg, #6b21a8 0%, #1e1b4b 100%); }
+    .gradient-green { background: linear-gradient(135deg, #065f46 0%, #1f2937 100%); }
+    .gradient-orange { background: linear-gradient(135deg, #ea580c 0%, #7c2d12 100%); }
+    .bg-pattern { background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.1) 1px, transparent 0); background-size: 40px 40px; }
+    .counter { font-variant-numeric: tabular-nums; }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
+  </style>
+</head>
+<body class="bg-gray-900 text-white bg-pattern min-h-screen">
+  <!-- Grid Section -->
+  <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-1 sm:gap-2 p-2 sm:p-3 md:p-4 min-h-screen">
+
+    <!-- Name & Title -->
+    <div class="col-span-2 row-span-2 gradient-blue rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-2xl card-hover animate-fade-in-up">
+      <img src="assets/images/profile2.jpg" alt="Savíns Puertas Martín" class="w-12 h-12 sm:w-16 sm:h-16 rounded-full mb-1 shadow-lg object-cover ring-2 ring-white/20">
+      <h1 class="text-sm sm:text-lg font-bold text-center font-serif mb-1">Savíns Puertas Martín</h1>
+      <p class="text-xs sm:text-sm text-center text-blue-100 font-medium">PhD in Informatics</p>
+      <p class="text-xs text-center text-blue-200 mt-1">savinspm@ual.es</p>
+    </div>
+
+    <!-- CV on Overleaf -->
+    <a href="https://www.overleaf.com/read/ppywsqrzmhyk#2efc7d" target="_blank" rel="noopener noreferrer" class="gradient-green rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover cursor-pointer animate-fade-in-up">
+      <i class="fas fa-leaf text-lg sm:text-xl mb-1 text-green-300 icon-bounce"></i>
+      <p class="text-xs font-medium text-center">View CV</p>
+      <p class="text-xs text-green-200 text-center">Overleaf</p>
+    </a>
+
+    <!-- Research Papers -->
+    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
+      <i class="fas fa-file-alt text-lg sm:text-xl mb-1 text-blue-400 icon-bounce"></i>
+      <p class="text-base sm:text-lg font-bold counter" data-count="11">0</p>
+      <p class="text-xs text-gray-300 text-center">Papers</p>
+    </div>
+
+    <!-- Research Areas -->
+    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
+      <i class="fas fa-atom text-lg sm:text-xl mb-1 text-cyan-400 icon-bounce"></i>
+      <p class="text-xs font-medium text-center">HPC, Bioinfo</p>
+      <p class="text-xs text-gray-300 text-center">Optimization</p>
+    </div>
+
+    <!-- Conferences -->
+    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
+      <i class="fas fa-microphone text-lg sm:text-xl mb-1 text-yellow-400 icon-bounce"></i>
+      <p class="text-base sm:text-lg font-bold counter" data-count="23">0</p>
+      <p class="text-xs text-gray-300 text-center">Int'l Conferences</p>
+    </div>
+
+    <!-- Awards -->
+    <div class="gradient-orange rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up">
+      <i class="fas fa-trophy text-lg sm:text-xl mb-1 text-yellow-300 icon-bounce"></i>
+      <p class="text-base sm:text-lg font-bold counter" data-count="8">0</p>
+      <p class="text-xs text-orange-200 text-center">Awards (+5300€)</p>
+    </div>
+
+    <!-- Funding -->
+    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
+      <i class="fas fa-euro-sign text-lg sm:text-xl mb-1 text-green-400 icon-bounce"></i>
+      <p class="text-xs font-medium text-center">Funding</p>
+      <p class="text-xs text-gray-300 text-center">FPU Grant</p>
+    </div>
+
+    <!-- Research Stays -->
+    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
+      <i class="fas fa-plane text-lg sm:text-xl mb-1 text-blue-400 icon-bounce"></i>
+      <p class="text-xs font-medium text-center">2.3 years</p>
+      <p class="text-xs text-gray-300 text-center">Research Stays</p>
+    </div>
+
+    <!-- Professional Networks Grid -->
+    <div class="rounded-xl p-1 sm:p-2 shadow-xl card-hover col-span-1 row-span-1 grid grid-cols-2 grid-rows-2 gap-1 animate-fade-in-up">
+      <a href="https://linkedin.com/in/savinspm" target="_blank" rel="noopener noreferrer" class="bg-gray-700/80 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-blue-600 transition-all duration-300 h-full border border-gray-600/50">
+        <i class="fab fa-linkedin text-base sm:text-lg text-blue-400 icon-bounce"></i>
+      </a>
+      <a href="https://orcid.org/0000-0000-0000-0000" target="_blank" rel="noopener noreferrer" class="bg-gray-700/80 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-green-600 transition-all duration-300 h-full border border-gray-600/50">
+        <i class="fab fa-orcid text-base sm:text-lg text-green-400 icon-bounce"></i>
+      </a>
+      <a href="https://researchgate.net/profile/Savins-Puertas-Martin" target="_blank" rel="noopener noreferrer" class="bg-gray-700/80 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-cyan-600 transition-all duration-300 h-full border border-gray-600/50">
+        <i class="fab fa-researchgate text-base sm:text-lg text-cyan-400 icon-bounce"></i>
+      </a>
+      <a href="https://scholar.google.com/citations?user=USERID" target="_blank" rel="noopener noreferrer" class="bg-gray-700/80 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-yellow-600 transition-all duration-300 h-full border border-gray-600/50">
+        <i class="fab fa-google text-base sm:text-lg text-yellow-400 icon-bounce"></i>
+      </a>
+    </div>
+
+    <!-- PhD Thesis -->
+    <div class="col-span-2 gradient-purple rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-2xl card-hover animate-fade-in-up">
+      <i class="fas fa-book-open text-lg sm:text-xl mb-1 text-purple-300 icon-bounce"></i>
+      <p class="text-sm sm:text-base font-bold text-center font-serif mb-1">PhD Thesis</p>
+      <p class="text-xs text-center text-purple-200 mb-1">"HPC for Optimization in Bioinformatics"</p>
+      <p class="text-xs text-center text-purple-300">Cum Laude, International Mention</p>
+    </div>
+
+    <!-- Master Education -->
+    <div class="col-span-2 bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
+      <i class="fas fa-graduation-cap text-lg sm:text-xl mb-1 text-blue-400 icon-bounce"></i>
+      <p class="text-sm sm:text-base font-bold text-center font-serif mb-1">Master in Informatics</p>
+      <p class="text-xs text-center text-gray-300">University of Almería • 2015-2017</p>
+      <p class="text-xs text-center text-blue-300 mt-1">Score: 9.79/10</p>
+    </div>
+
+    <!-- Degree Education -->
+    <div class="col-span-2 bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
+      <i class="fas fa-university text-lg sm:text-xl mb-1 text-purple-400 icon-bounce"></i>
+      <p class="text-sm sm:text-base font-bold text-center font-serif mb-1">Degree in Informatics</p>
+      <p class="text-xs text-center text-gray-300">University of Almería • 2011-2015</p>
+      <p class="text-xs text-center text-purple-300 mt-1">Score: 9.55/10</p>
+    </div>
+
+    <!-- PhD Supervisor -->
+    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
+      <i class="fas fa-user-graduate text-lg sm:text-xl mb-1 text-purple-400 icon-bounce"></i>
+      <p class="text-xs font-medium text-center">PhD</p>
+      <p class="text-xs text-gray-300 text-center">Supervising</p>
+    </div>
+
+    <!-- TFG/TFM Supervisor -->
+    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
+      <i class="fas fa-user-tie text-lg sm:text-xl mb-1 text-blue-400 icon-bounce"></i>
+      <p class="text-xs font-medium text-center">TFG/TFM</p>
+      <p class="text-xs text-gray-300 text-center">Supervising</p>
+    </div>
+
+    <!-- Teaching -->
+    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
+      <i class="fas fa-chalkboard-teacher text-lg sm:text-xl mb-1 text-green-400 icon-bounce"></i>
+      <p class="text-xs font-medium text-center">Teaching</p>
+    </div>
+
+    <!-- Patent -->
+    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
+      <i class="fas fa-medal text-lg sm:text-xl mb-1 text-yellow-400 icon-bounce"></i>
+      <p class="text-base sm:text-lg font-bold counter" data-count="1">0</p>
+      <p class="text-xs text-gray-300 text-center">Patent</p>
+    </div>
+
+    <!-- Educational Conferences -->
+    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
+      <i class="fas fa-bullseye text-lg sm:text-xl mb-1 text-green-400 icon-bounce"></i>
+      <p class="text-base sm:text-lg font-bold counter" data-count="6">0</p>
+      <p class="text-xs text-gray-300 text-center">Educational Conf</p>
+    </div>
+
+    <!-- Projects -->
+    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
+      <i class="fas fa-clipboard-list text-lg sm:text-xl mb-1 text-gray-400 icon-bounce"></i>
+      <p class="text-xs font-medium text-center">Projects</p>
+    </div>
+
+    <!-- Software/Tools -->
+    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
+      <i class="fas fa-tools text-lg sm:text-xl mb-1 text-amber-400 icon-bounce"></i>
+      <p class="text-xs font-medium text-center">Software</p>
+      <p class="text-xs text-gray-300 text-center">Tools dev</p>
+    </div>
+
+    <!-- Teaching Innovation Projects -->
+    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
+      <i class="fas fa-lightbulb text-lg sm:text-xl mb-1 text-yellow-400 icon-bounce"></i>
+      <p class="text-xs font-medium text-center">Teaching Innovation</p>
+      <p class="text-xs text-gray-300 text-center">Projects</p>
+    </div>
+
+    <!-- Skills -->
+    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
+      <i class="fas fa-cogs text-lg sm:text-xl mb-1 text-gray-400 icon-bounce"></i>
+      <p class="text-xs font-medium text-center">Skills</p>
+    </div>
+
+    <!-- GitHub -->
+    <a href="https://github.com/savinspm" target="_blank" rel="noopener noreferrer" class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover cursor-pointer border border-gray-700/50 animate-fade-in-up">
+      <i class="fab fa-github text-lg sm:text-xl mb-1 text-white icon-bounce"></i>
+      <p class="text-xs font-medium text-center">GitHub</p>
+      <p class="text-xs text-gray-300 text-center">@savinspm</p>
+    </a>
+
+    <!-- Contact -->
+    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
+      <i class="fas fa-map-marker-alt text-lg sm:text-xl mb-1 text-red-400 icon-bounce"></i>
+      <p class="text-xs font-medium text-center">Almería</p>
+    </div>
+
+    <!-- Spain -->
+    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
+      <i class="fas fa-flag text-lg sm:text-xl mb-1 text-red-400 icon-bounce"></i>
+      <p class="text-xs font-medium text-center">Spain</p>
+      <p class="text-xs text-center">🇪🇸</p>
+    </div>
+
+    <!-- Chess -->
+    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
+      <i class="fas fa-chess text-lg sm:text-xl mb-1 text-yellow-300 icon-bounce"></i>
+      <p class="text-base sm:text-lg font-bold counter" data-count="200">0</p>
+      <p class="text-xs text-gray-300 text-center">Chess Awards</p>
+    </div>
+
+    <!-- Social Media Grid -->
+    <div class="rounded-xl p-1 sm:p-2 shadow-xl card-hover col-span-1 row-span-1 grid grid-cols-2 grid-rows-2 gap-1 animate-fade-in-up">
+      <a href="https://twitter.com/savinspm" target="_blank" rel="noopener noreferrer" class="bg-gray-700/80 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-blue-500 transition-all duration-300 h-full border border-gray-600/50">
+        <i class="fab fa-twitter text-base sm:text-lg text-blue-400 icon-bounce"></i>
+      </a>
+      <a href="https://instagram.com/savinspm" target="_blank" rel="noopener noreferrer" class="bg-gray-700/80 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-pink-500 transition-all duration-300 h-full border border-gray-600/50">
+        <i class="fab fa-instagram text-base sm:text-lg text-pink-400 icon-bounce"></i>
+      </a>
+      <a href="https://facebook.com/savinspm" target="_blank" rel="noopener noreferrer" class="bg-gray-700/80 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-blue-600 transition-all duration-300 h-full border border-gray-600/50">
+        <i class="fab fa-facebook text-base sm:text-lg text-blue-500 icon-bounce"></i>
+      </a>
+      <a href="mailto:savinspm@ual.es" class="bg-gray-700/80 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-red-500 transition-all duration-300 h-full border border-gray-600/50">
+        <i class="fas fa-envelope text-base sm:text-lg text-red-400 icon-bounce"></i>
+      </a>
+    </div>
+
+  </div> <!-- cierre del grid principal -->
+
+  <!-- Detailed Profile Section -->
+  <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 mt-4 sm:mt-6 md:mt-8">
+    <section class="bg-gray-900/50 rounded-2xl p-3 sm:p-4 border border-gray-800/60">
+      <h2 class="text-base sm:text-lg font-semibold font-serif flex items-center gap-2 mb-3">
+        <i class="fas fa-id-card text-blue-300"></i>
+        Detailed Academic Profile
+      </h2>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-4">
+        
+        <!-- Sidebar -->
+        <aside class="space-y-3">
+          <!-- Profile Card -->
+          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3">
+            <div class="flex items-center gap-3 mb-3">
+              <img src="assets/images/profile.jpg" alt="Profile" class="w-16 h-16 rounded-full object-cover ring-2 ring-white/10">
+              <div>
+                <p class="font-semibold font-serif">Savíns Puertas Martín</p>
+                <p class="text-xs text-gray-300">PhD in Informatics</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact -->
+          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3">
+            <h4 class="text-sm font-semibold mb-2 text-blue-300"><i class="fas fa-phone mr-2"></i>Contact</h4>
+            <div class="space-y-2 text-xs text-gray-300">
+              <p><i class="fas fa-envelope text-red-300 mr-2"></i>savinspm@ual.es</p>
+              <p><i class="fas fa-phone text-green-300 mr-2"></i>+34 950214394</p>
+              <p><i class="fas fa-map-marker-alt text-red-300 mr-2"></i>Building CITE III. Room 1.13.<br>Carr. Sacramento, s/n,<br>04120 La Cañada, Almería</p>
+              <a href="https://savins.es/en/" class="text-blue-300 hover:underline inline-flex items-center">
+                <i class="fas fa-globe-americas mr-2"></i>Personal website
+              </a>
+            </div>
+          </div>
+
+          <!-- Social Networks -->
+          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3">
+            <h4 class="text-sm font-semibold mb-2 text-blue-300">Social Networks</h4>
+            <ul class="text-xs space-y-1">
+              <li><a class="text-blue-300 hover:underline" href="https://orcid.org/0000-0001-8956-1733"><i class="far fa-hand-point-right mr-2"></i>ORCID</a></li>
+              <li><a class="text-blue-300 hover:underline" href="https://www.researchgate.net/profile/Savins-Puertas-Martin"><i class="far fa-hand-point-right mr-2"></i>ResearchGate</a></li>
+              <li><a class="text-blue-300 hover:underline" href="https://github.com/savinspm"><i class="far fa-hand-point-right mr-2"></i>GitHub</a></li>
+              <li><a class="text-blue-300 hover:underline" href="https://www.facebook.com/savinspuertasmartin/"><i class="far fa-hand-point-right mr-2"></i>Facebook</a></li>
+              <li><a class="text-blue-300 hover:underline" href="https://twitter.com/savinspm"><i class="far fa-hand-point-right mr-2"></i>Twitter</a></li>
+              <li><a class="text-blue-300 hover:underline" href="https://www.linkedin.com/in/sav%C3%ADns-puertas-mart%C3%ADn-6a8158174/"><i class="far fa-hand-point-right mr-2"></i>LinkedIn</a></li>
+            </ul>
+          </div>
+
+          <!-- Hobbies -->
+          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3">
+            <h4 class="text-sm font-semibold mb-2 text-blue-300">Hobbies</h4>
+            <div class="space-y-2 text-xs">
+              <div class="flex items-center gap-2">
+                <i class="fas fa-camera text-purple-300"></i>
+                <a href="https://www.instagram.com/pics_vins/" class="text-blue-300 hover:underline">Photography (2.8k followers)</a>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="fas fa-chess text-yellow-300 mt-0.5"></i>
+                <a href="https://ratings.fide.com/profile/2242338" class="text-blue-300 hover:underline">Chess (Candidate Master Title)<br>More than 200 trophies</a>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Content (Accordions) -->
+        <main class="lg:col-span-2 space-y-3">
+          
+          <!-- Profile -->
+          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3" data-accordion="card">
+            <button class="w-full flex items-center justify-between text-left" data-accordion="button">
+              <span class="font-medium flex items-center gap-2"><i class="far fa-user text-purple-300"></i> Profile</span>
+              <i class="fas fa-chevron-down text-gray-400 transition-transform" data-accordion="chevron"></i>
+            </button>
+            <div class="mt-3 text-xs text-gray-300 hidden" data-accordion="panel">
+              <p class="leading-relaxed mb-3">Savíns Puertas Martín is currently on a two-year research stay (2022-2024) in the Chemoinformatics group at the University of Sheffield, United Kingdom. He finished his degree in Computer Engineering at the University of Almeria in June 2015, receiving the prizes for the best record of the promotion and the best final project. In September of the same year, he started the Master's degree in Computer Engineering at the same university and obtained a Collaboration Scholarship in which he began working in the area of drug development. During his second year of Master, he started a PhD in Computer Science funded by a 4-year FPU grant from the Spanish Ministry, also in Almeria. In June 2017, he finished the Master's degree, obtaining the best record and the best Master's thesis. He finished his PhD in October 2020 with the highest qualification, cum laude, and international mention. His research has focused on the design and development of different drug development techniques. Specifically, a technique called Virtual Screening, which is normally used as one of the first stages in the drug development process, reducing the number of compounds to be analysed later, saving time and money. Among its developments is the OptiPharm software, for which he has registered its intellectual property (RTA-94-18). OptiPharm software has been used by several universities and companies in different countries. It is currently being used for two projects: one related to COVID-19 with international commercial interests and another with a European company in which effects have been found that could be relevant for the treatment of certain medical conditions and which is still in the experimental phase. In addition to following this line, Savins worked for a year on a radiotherapy project and, more specifically, on the improvement and automation of the planning of intensity-modulated radiotherapy (IMRT). He is currently in Sheffield (UK) on a two-year research stay on virtual screening and molecular flexibility. His teaching activity has been related to Computer Architecture and Technology, High-Performance Computing and Computer Networks.</p>
+              <div class="flex flex-wrap gap-2">
+                <a href="https://msng.link/o/?savinspm=tg" class="px-3 py-1 rounded bg-gray-700/70 text-blue-200 text-xs hover:bg-gray-600 transition-colors"><i class="fas fa-paper-plane mr-1"></i>Telegram Me</a>
+                <a href="documents/EN.pdf" class="px-3 py-1 rounded bg-gray-700/70 text-blue-200 text-xs hover:bg-gray-600 transition-colors"><i class="fas fa-cloud-download-alt mr-1"></i>Download CV English</a>
+                <a href="documents/CVN-ES.pdf" class="px-3 py-1 rounded bg-gray-700/70 text-blue-200 text-xs hover:bg-gray-600 transition-colors"><i class="fas fa-cloud-download-alt mr-1"></i>Download CVN Spanish</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Work Experience -->
+          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3" data-accordion="card">
+            <button class="w-full flex items-center justify-between text-left" data-accordion="button">
+              <span class="font-medium flex items-center gap-2"><i class="fas fa-briefcase text-amber-300"></i> Work Experience</span>
+              <i class="fas fa-chevron-down text-gray-400 transition-transform" data-accordion="chevron"></i>
+            </button>
+            <div class="mt-3 text-xs text-gray-300 space-y-4 hidden" data-accordion="panel">
+              <div>
+                <h6 class="font-semibold">Post-doctoral Researcher <span class="text-gray-400 font-normal">01.02.2022-now</span></h6>
+                <i class="text-gray-400">Chemoinformatics research group. Information School. University of Sheffield, United Kingdom</i>
+                <ul class="mt-1 ml-4">
+                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>working on Virtual Screening problems and molecular flexibility.</li>
+                </ul>
+              </div>
+              <div>
+                <h6 class="font-semibold">Post-doctoral Researcher <span class="text-gray-400 font-normal">01.02.2021-31.01.2022</span></h6>
+                <i class="text-gray-400">Supercomputing-Algorithm Research Group. Dept. of Informatics, University of Almería</i>
+                <ul class="mt-1 ml-4">
+                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>working on the project High Performance Computing for Optimizing Intensity Modulated Radiation Therapy Schedules</li>
+                </ul>
+              </div>
+              <div>
+                <h6 class="font-semibold">Pre-doctoral Researcher. National Competitive Scholarship FPU (Formación de Profesorado Universitario (University Teacher Training)). <span class="text-gray-400 font-normal">01.10.2016-30.09.2020</span></h6>
+                <i class="text-gray-400">Supercomputing-Algorithm Research Group. Dept. of Informatics, University of Almería</i>
+              </div>
+              <div>
+                <h6 class="font-semibold">Research Labor Staff <span class="text-gray-400 font-normal">01.06.2016-30.09.2016</span></h6>
+                <i class="text-gray-400">Supercomputing-Algorithm Research Group. Dept. of Informatics, University of Almería</i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Awards and Achievements -->
+          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3" data-accordion="card">
+            <button class="w-full flex items-center justify-between text-left" data-accordion="button">
+              <span class="font-medium flex items-center gap-2"><i class="fas fa-trophy text-yellow-300"></i> Awards & Achievements</span>
+              <i class="fas fa-chevron-down text-gray-400 transition-transform" data-accordion="chevron"></i>
+            </button>
+            <div class="mt-3 text-xs text-gray-300 space-y-3 hidden" data-accordion="panel">
+              <div>
+                <h6 class="font-semibold">VII Research Awards Scientific Computer Society of Spain (SCIE) - BBVA Foundation 2022. <span class="text-gray-400 font-normal">2022</span></h6>
+                <i class="text-gray-400">22th November</i>
+                <ul class="mt-1 ml-4">
+                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Prize: 5.000 €</li>
+                </ul>
+              </div>
+              <div>
+                <h6 class="font-semibold">Third prize in Your PhD Thesis in Three Minutes competition. <span class="text-gray-400 font-normal">2021</span></h6>
+                <i class="text-gray-400">Jornadas Sarteco 22-24 September</i>
+                <ul class="mt-1 ml-4">
+                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i><a href="https://www.youtube.com/watch?v=ue9mnW8DX4k" class="text-blue-300 hover:underline">https://www.youtube.com/watch?v=ue9mnW8DX4k</a></li>
+                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Prize: 300 €</li>
+                </ul>
+              </div>
+              <div>
+                <h6 class="font-semibold">Official Accreditation. <span class="text-gray-400 font-normal">2021</span></h6>
+                <i class="text-gray-400">National Agency for Quality Assessment and Accreditation</i>
+                <ul class="mt-1 ml-4">
+                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Assistant Doctor Professor</li>
+                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Private University Professor</li>
+                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Hired Doctor Professor</li>
+                </ul>
+              </div>
+              <div>
+                <h6 class="font-semibold">FPU Scholarship <span class="text-gray-400 font-normal">2016-2020</span></h6>
+                <i class="text-gray-400">Spanish Ministry of Education, Culture and Sport</i>
+                <ul class="mt-1 ml-4">
+                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>The FPU scholarship provides financial support for awardees to complete an official PhD program and to carry out research and teaching activities, in any discipline, by signing a predoctoral contract.</li>
+                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Code: FPU15/02912.</li>
+                </ul>
+              </div>
+              <div>
+                <h6 class="font-semibold">Best Final project award in Informatics Master <span class="text-gray-400 font-normal">2018</span></h6>
+                <i class="text-gray-400">EPS-FCCEE - University of Almería</i>
+              </div>
+              <div>
+                <h6 class="font-semibold">Best academic record award in Informatics Master <span class="text-gray-400 font-normal">2018</span></h6>
+                <i class="text-gray-400">University of Almeria. Informatics Master.</i>
+              </div>
+              <div>
+                <h6 class="font-semibold">Collaboration grant with the Department of Informatics of the University of Almeria <span class="text-gray-400 font-normal">2016</span></h6>
+                <i class="text-gray-400">Spanish Ministry of Education, Culture and Sport</i>
+              </div>
+              <div>
+                <h6 class="font-semibold">Best final project award in Informatics Degree <span class="text-gray-400 font-normal">2015</span></h6>
+                <i class="text-gray-400">EPS-FCCEE - University of Almería</i>
+              </div>
+              <div>
+                <h6 class="font-semibold">Best academic record award in Informatics Degree <span class="text-gray-400 font-normal">2015</span></h6>
+                <i class="text-gray-400">University of Almeria. Informatics Degree.</i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3" data-accordion="card">
+            <button class="w-full flex items-center justify-between text-left" data-accordion="button">
+              <span class="font-medium flex items-center gap-2"><i class="fas fa-graduation-cap text-blue-300"></i> Education</span>
+              <i class="fas fa-chevron-down text-gray-400 transition-transform" data-accordion="chevron"></i>
+            </button>
+            <div class="mt-3 text-xs text-gray-300 space-y-3 hidden" data-accordion="panel">
+              <div>
+                <h6 class="font-semibold">PhD in Informatics <span class="text-gray-400 font-normal">2016-2020</span></h6>
+                <i class="text-gray-400">University of Almería</i>
+                <ul class="mt-1 ml-4">
+                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Score: Cum laude (maximum score). International Mention.</li>
+                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Thesis title: High Performance Computing for Optimization Problem Solving in Bioinformatics.</li>
+                </ul>
+              </div>
+              <div>
+                <h6 class="font-semibold">Master in Informatics <span class="text-gray-400 font-normal">2015-2017</span></h6>
+                <i class="text-gray-400">University of Almería</i>
+                <ul class="mt-1 ml-4">
+                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Average score: 9.79 out 10.</li>
+                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Final master project title: Solving optimization problems in the pharmaceutical industry through evolutionary algorithms.</li>
+                </ul>
+              </div>
+              <div>
+                <h6 class="font-semibold">Degree in Informatics <span class="text-gray-400 font-normal">2011-2015</span></h6>
+                <i class="text-gray-400">University of Almería</i>
+                <ul class="mt-1 ml-4">
+                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Average score: 9.55 out 10.</li>
+                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Final degree project title: a voice interaction system for handling mashup interfaces.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Research Publications -->
+          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3" data-accordion="card">
+            <button class="w-full flex items-center justify-between text-left" data-accordion="button">
+              <span class="font-medium flex items-center gap-2"><i class="fas fa-file-alt text-cyan-300"></i> Research Publications</span>
+              <i class="fas fa-chevron-down text-gray-400 transition-transform" data-accordion="chevron"></i>
+            </button>
+            <div class="mt-3 text-xs text-gray-300 space-y-4 hidden" data-accordion="panel">
+              <div>
+                <h6 class="font-semibold mb-2">Journal Articles</h6>
+                <ol class="list-decimal list-inside space-y-2 ml-2">
+                  <li>M. R. Ferrández, <span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, H. Pérez-Sánchez, and P. M. Ortigosa, "A two-layer mono-objective algorithm based on guided optimization to reduce the computational cost in virtual screening," Scientific Reports, vol. 12, no. 1, p. 12 769, Dec. 2022, issn: 2045-2322. doi: 10.1038/s41598-022-16913-w. [Online]. Available: <a href="https://doi.org/10.1038/s41598-022-16913-w" class="text-blue-300 hover:underline">https://doi.org/10.1038/s41598-022-16913-w</a></li>
+                  <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, M. R. Ferrández, H. Pérez-Sánchez, and P. M. Ortigosa, "MultiPharm-DT: A Multi-Objective Decision Tool for Ligand-Based Virtual Screening Problems," Informatica, pp. 1–26, Dec. 2021, issn: 0868-4952. doi: 10.15388/21-INFOR469. [Online]. Available: <a href="https://doi.org/10.15388/21-INFOR469" class="text-blue-300 hover:underline">https://doi.org/10.15388/21-INFOR469</a></li>
+                  <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, H. Pérez-Sánchez, and P. M. Ortigosa, "Optimizing Electrostatic Similarity for Virtual Screening: A New Methodology," Informatica, pp. 1–19, Jul. 2020, issn: 0868-4952. doi: 10.15388/20-INFOR424. [Online]. Available: <a href="https://doi.org/10.15388/20-INFOR424" class="text-blue-300 hover:underline">https://informatica.vu.lt/doi/10.15388/20INFOR424</a></li>
+                  <li><span class="font-semibold text-white">S. Puertas-Martín</span>, A. J. Banegas-Luna, M. Paredes-Ramos, J. L. Redondo, P. M. Ortigosa, O. O. Brovarets', and H. Pérez-Sánchez, "Is high performance computing a requirement for novel drug discovery and how will this impact academic efforts?" Expert Opinion on Drug Discovery, vol. 15, no. 9, pp. 981–986, 2020, issn: 1746045X. doi: 10.1080/17460441.2020.1758664.</li>
+                  <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, P. M. Ortigosa, and H. Pérez-Sánchez, "OptiPharm: An evolutionary algorithm to compare shape similarity," Scientific Reports, vol. 9, no. 1, p. 1398, Dec. 2019, issn: 2045-2322. doi: 10.1038/s41598-018-37908-6. [Online]. Available: <a href="http://www.nature.com/articles/s41598-018-37908-6" class="text-blue-300 hover:underline">http://www.nature.com/articles/s41598-018-37908-6</a></li>
+                  <li>A. J. Banegas-Luna, J. P. Cerón-Carrasco, <span class="font-semibold text-white">S. Puertas-Martín</span>, and H. Pérez-Sánchez, "BRUSELAS: HPC Generic and Customizable Software Architecture for 3D Ligand-Based Virtual Screening of Large Molecular Databases," Journal of Chemical Information and Modeling, vol. 59, no. 6, pp. 2805–2817, Jun. 2019, issn: 1549-9596. doi: 10.1021/acs.jcim.9b00279.</li>
+                  <li>M. R. Ferrández, <span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, B. Ivorra, A. M. Ramos, and P. M. Ortigosa, "High-performance computing for the optimization of high-pressure thermal treatments in food industry," The Journal of Supercomputing, vol. 75, no. 3, pp. 1187–1202, Mar. 2019, issn: 0920-8542. doi: 10.1007/s11227018-2351-4.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- International Conferences -->
+          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3" data-accordion="card">
+            <button class="w-full flex items-center justify-between text-left" data-accordion="button">
+              <span class="font-medium flex items-center gap-2"><i class="fas fa-microphone text-yellow-300"></i> International Conferences</span>
+              <i class="fas fa-chevron-down text-gray-400 transition-transform" data-accordion="chevron"></i>
+            </button>
+            <div class="mt-3 text-xs text-gray-300 hidden" data-accordion="panel">
+              <p class="mb-2 text-gray-400">Complete list of 23 international conferences:</p>
+              <ol class="list-decimal list-inside space-y-2 ml-2">
+                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, H. Pérez-Sánchez, V. J. Gillet, and P. M. Ortigosa, "Optimization based on atom-pair properties in flexible ligands by optipharm," in XV. Workshop on Global Optimization, University of Szeged, Szeged, Hungary, Sep. 2022.</li>
+                <li>J. J. Moreno, <span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, L. G. Casado, P. M. Ortigosa, and E. M. Garzón, "A new hybrid optimization algorithm to combine physical and biological criteria to compute imrt planning," in 19th Workshop on Advances in Continuous Optimization, University Nova de Lisboa, Lisbon, Portugal, Jul. 2022.</li>
+                <li>J. J. Moreno, <span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, P. M. Ortigosa, and E. M. Garzón, "Acceleration of the tuning of eud model for imrt planning on multigpu clusters," in 22th International Conference Computational and Mathematical Methods in Science and Engineering, University of Cadiz, Rota, Spain, Jul. 2022.</li>
+                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, A. J. Banegas-Luna, E. M. Garzón, H. Pérez-Sánchez, V. J. Gillet, and P. M. Ortigosa, "Virtual screening based on electrostatic similarity and flexible ligands," in The 22nd International Conference on Computational Science and Its Applications, University of Malaga, Malaga, Spain, Jul. 2022.</li>
+                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, V. J. Gillet, H. Pérez-Sánchez, and P. M. Ortigosa, "Optimization method for maximizing the similarity in flexible molecules," in 19th Workshop on Advances in Continuous Optimization, University Nova de Lisboa, Lisbon, Portugal, Jul. 2022.</li>
+                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. J. Moreno, J. L. Redondo, P. M. Ortigosa, A. Zawadzka, J. Miroforidis, I. Kaliszewski, and E. M. Garzón, "New multiobjective strategies to optimize constrained eud radiotherapy models," in 26th International Conference on Multiple Criteria Decision Making, University of Portsmouth, Portsmouth, United Kingdom, Jun. 2022.</li>
+                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, E. M. Garzón, H. Pérez-Sánchez, and P. M. Ortigosa, "Increasing the accuracy of optipharm's virtual screening predictions by implementing molecular flexibility," 9th International Work-Conference on Bioinformatics and Biomedical Engineering, University of Granada, Gran Canaria, Spain, Jun. 2022</li>
+                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. J. Moreno, J. L. Redondo, P. M. Ortigosa, and E. M. Garzón, "Optimizing eud model parameters in radiotherapy planning," in The 7th Int'l Conf on Health Informatics and Medical Systems, American Council on Science and Education, Las Vegas, USA, Jul. 2021.</li>
+                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, H. Pérez-Sánchez, and P. M. Ortigosa, "Optimization of molecular descriptors using memetic algorithms," in 18th Workshop on Advances in Continuous Optimization, EurOpt2021, Ecole Nationale de l'Aviation Civile, Toulouse, France, Jul. 2021.</li>
+                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, H. Pérez-Sánchez, and P. M. Ortigosa, "Maximizing the electrostatic similarity in drug discovery through evolutionary algorithms," in 8th International Work-Conference on Bioinformatics and Biomedical Engineering, University of Granada, Granada, Spain, Sep. 2020.</li>
+                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, H. Pérez-Sánchez, and P. M. Ortigosa, "Virtual screening in electrostatic potential using an evolutionary algorithm," in Proceedings of META18: 7th International Conference on Metaheuristics and Nature Inspired Computing, Université de Lille, Marrakech, Morocco, Oct. 2018, pp. 207–209.</li>
+                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, H. Pérez-Sánchez, and P. M. Ortigosa, "Multi-objective evolutionary algorithm for evaluation of shape and electrostatic similarity," in Proceedings of LeGO 2018 - Int. Workshop on Global Optimization. AIP Conference Proceedings, Leiden University, vol. 1, Sep. 2018, pp. 1–4, isbn: 9780735417984. doi: 10.1063/1.5089986. [Online]. Available: <a href="http://aip.scitation.org/doi/abs/10.1063/1.5089986" class="text-blue-300 hover:underline">http://aip.scitation.org/doi/abs/10.1063/1.5089986</a></li>
+                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, H. Pérez-Sánchez, and P. M. Ortigosa, "Optimizing electrostatic similarity using a global evolutionary algorithm," in Proceedings of 6th EUROPT Workshop on Advances in Continuous Optimization, University of Almería, Almería, Spain, Jul. 2018.</li>
+                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, H. Pérez-Sánchez, and P. M. Ortigosa, "Virtual screening in molecular shape by using an evolutionary algorithm," in Proceedings OLA'2018 International Workshop on Optimization and Learning: Challenges and Applications, Université de Lille, Alicante, Spain, Feb. 2018, pp. 63–64.</li>
+                <li>M. R. Ferrández, <span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, B. Ivorra, R. A. M, and O. P. M, "High-performance computing for optimizing high-pressure thermal treatments in food processing," in Proceedings of the 17th International Conference on Computational and Mathematical Methods in Science and Engineering, CMMSE 2017, University of Cadiz, Alicante, Spain, Jul. 2017, pp. 862–869, isbn: 978-84-617-8694-7.</li>
+                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, M. R. Ferrández, J. L. Redondo, H. Pérez-Sánchez, and P. M. Ortigosa, "Enhancing molecular shape comparison by a parallel global evolutionary algorithm," in Proceedings of the 17th International Conference on Computational and Mathematical Methods in Science and Engineering, CMMSE 2017, University of Cadiz, Rota, Spain, Jul. 2017, pp. 1722–1728, isbn: 978-84-617-8694-7.</li>
+                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, H. den-Haan, J. L. Redondo, H. Pérez-Sánchez, and P. M. Ortigosa, "Enhancing molecular shape comparison by a global evolutionary algorithm," in 4th International Work-Conference on Bioinformatics and Biomedical Engineering, University of Granada, Granada, Spain, 2016.</li>
+                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, H. den-Haan, H. Pérez-Sánchez, and P. M. Ortigosa, "Multi-objective based scoring function for ligand based virtual screening," in Proceedings of the XIII Global Optimization Workshop, University of Minho, Braga, Portugal, 2016, isbn: 978-989-20-6764-3.</li>
+              </ol>
+              
+              <div class="mt-4">
+                <h6 class="font-semibold mb-2">Educational Conferences</h6>
+                <ol class="list-decimal list-inside space-y-2 ml-2">
+                  <li>J. J. Moreno, <span class="font-semibold text-white">S. Puertas-Martín</span>, F. Orts, N. C. Cruz, J. L. Redondo, E. Garzón, and O. P. M., "On simulating an arm processor for teaching computer structure," in 12th annual International Conference of Education, Research and Innovation (ICERI 2019), Seville, Spain, Dec. 2019.</li>
+                  <li>F. Orts, N. C. Cruz, <span class="font-semibold text-white">S. Puertas-Martín</span>, M. Ruiz-Ferrández, J. J. Moreno, C. Medina-López, P. M. Ortigosa, V. Ruíz, L. Casado, J. M. Salmerón, J. L. Redondo, G. E. Garzón, G. Ortega, and R. Villegas, "Learning quantum computation through simple examples," in 11th International Conference of Education, Research and Innovation (ICERI 2019), Seville, Spain, Dec. 2019.</li>
+                  <li>N. C. Cruz, M. R. Ferrández, E. M. Garzón, J. M. García Salmerón, L. González Casado, V. González Ruiz, C. Medina-López, J. J. Moreno, G. Ortega López, P. M. Ortigosa, F. J. Orts, <span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, J. F. Sanjuan Estrada, and T. Santamaría López, "Simulación de un procesador arm para la enseñanza de estructura de computadores. poster," in Jornadas de Innovación Docente y Experiencias Profesionales en la Universidad de Almería. Curso 2019-20, Vicerrectorado de Enseñanzas Oficiales y Formación Continua y por la Coordinación de Gobierno e Interacción con la Sociedad y las Empresas de la Universidad de Almería, Almería, Spain, Sep. 2019.</li>
+                  <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. J. Moreno, F. J. Orts, N. C. Cruz, J. L. Redondo, E. M. Garzón, and P. M. Ortigosa, "Simulación de un procesador arm para la enseñanza de estructura de computadores," in Actas de las Jornadas SARTECO 2019, Cáceres, Spain, Sep. 2019, pp. 235–240, isbn: 978-84-09-12127-4.</li>
+                  <li>V. González-Ruiz, G. Ortega, E. Garzón, N. Calvo-Cruz, R. J. L., J. Salmerón, L. Casado, P. M. Ortigosa, C. Medina-López, J. J. Moreno, M. R. Ferrández, F. Orts, <span class="font-semibold text-white">S. Puertas-Martín</span>, and T. Santamaría-López, "Project-based learning: An experience," in 11th International Conference on Education and New Learning Technologies (EDULEARN 2019), Palma, Spain, Jul. 2019.</li>
+                  <li>N. C. Cruz, M. R. Ferrández, E. M. Garzón, J. M. García Salmerón, L. González Casado, V. González Ruiz, C. Medina-López, J. J. Moreno, G. Ortega López, P. M. Ortigosa, F. J. Orts, <span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, J. F. Sanjuan Estrada, T. Santamaría López, and R. Villegas, "Recursos para el aprendizaje de computación cuántica en el grado de ingeniería informática. poster," in Jornadas de Innovación Docente y Experiencias Profesionales en la Universidad de Almería. Curso 2018-19, Vicerrectorado de Enseñanzas Oficiales y Formación Continua y por la Coordinación de Gobierno e Interacción con la Sociedad y las Empresas de la Universidad de Almería, Almería, Spain, Sep. 2018.</li>
+                </ol>
+              </div>
+
+              <div class="mt-4">
+                <h6 class="font-semibold mb-2">National Conferences</h6>
+                <ol class="list-decimal list-inside space-y-2 ml-2">
+                  <li>M. R. Ferrández, <span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, B. Ivorra, A. M. Ramos, and P. M. Ortigosa, "Computación de alto rendimiento para optimizar tratamientos térmicos de alta presión en la industria alimenticia," in Avances en arquitectura y tecnología de computadores. Actas de las Jornadas SARTECO 2017, Málaga, Spain, Sep. 2017, pp. 119–122, isbn: 978-84-697-4835-0.</li>
+                  <li><span class="font-semibold text-white">S. Puertas-Martín</span>, M. R. Ferrández, J. L. Redondo, H. Pérez-Sánchez, and P. M. Ortigosa, "Cribado virtual mediante un algoritmo evolutivo global paralelo," in Actas de las Jornadas SARTECO 2017, Cáceres, Spain, Sep. 2017, pp. 177–179, isbn: 978-84-697-4835-0.</li>
+                  <li><span class="font-semibold text-white">S. Puertas-Martín</span>, M. R. Ferrández, J. L. Redondo, H. Pérez-Sánchez, and P. M. Ortigosa, "Algoritmo evolutivo global como herramienta de cribado virtual utilizando la forma molecular," in III Jornadas Doctorales de la Universidad de Murcia, Murcia, Spain, May 2017, pp. 236–240, isbn: 978-84-608-9779-8.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- Patents -->
+          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3" data-accordion="card">
+            <button class="w-full flex items-center justify-between text-left" data-accordion="button">
+              <span class="font-medium flex items-center gap-2"><i class="fas fa-file-signature text-green-300"></i> Patents & Intellectual Properties</span>
+              <i class="fas fa-chevron-down text-gray-400 transition-transform" data-accordion="chevron"></i>
+            </button>
+            <div class="mt-3 text-xs text-gray-300 hidden" data-accordion="panel">
+              <div>
+                <h6 class="font-semibold">OPTIPHARM: an innovative evolutionary algorithm for virtual screening <span class="text-gray-400 font-normal">2018</span></h6>
+                <i class="text-gray-400">P. M. Ortigosa, J. L. Redondo, <span class="font-semibold text-white">S. Puertas-Martín</span> and H. Pérez-Sánchez.</i>
+                <ul class="mt-1 ml-4">
+                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>University of Almería and Universidad Católica San Antonio de Murcia.</li>
+                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Application Number: 201899900606752. Register number: RTA-94-18.</li>
+                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Registration Date: 16/02/2018. Concession date: 09/08/2018.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Research Stays -->
+          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3" data-accordion="card">
+            <button class="w-full flex items-center justify-between text-left" data-accordion="button">
+              <span class="font-medium flex items-center gap-2"><i class="fas fa-search-location text-red-300"></i> Research Stays</span>
+              <i class="fas fa-chevron-down text-gray-400 transition-transform" data-accordion="chevron"></i>
+            </button>
+            <div class="mt-3 text-xs text-gray-300 hidden" data-accordion="panel">
+              <div>
+                <h6 class="font-semibold">Current Stay: Post-doctoral Researcher <span class="text-gray-400 font-normal">01.02.2022-now</span></h6>
+                <i class="text-gray-400">Chemoinformatics research group. Information School. University of Sheffield, United Kingdom</i>
+              </div>
+              <div class="mt-3">
+                <h6 class="font-semibold">Predoctoral Stay <span class="text-gray-400 font-normal">10.09.2018-10.12.2018</span></h6>
+                <i class="text-gray-400">Centre for Logistics and Heuristic Optimization (CLHO), Kent Business School, University of Kent. Canterbury, CT2 7NZ, United Kingdom</i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Teaching -->
+          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3" data-accordion="card">
+            <button class="w-full flex items-center justify-between text-left" data-accordion="button">
+              <span class="font-medium flex items-center gap-2"><i class="fas fa-chalkboard-teacher text-green-300"></i> Teaching & Supervision</span>
+              <i class="fas fa-chevron-down text-gray-400 transition-transform" data-accordion="chevron"></i>
+            </button>
+            <div class="mt-3 text-xs text-gray-300 space-y-4 hidden" data-accordion="panel">
+              <div>
+                <h6 class="font-semibold mb-2">Teaching Experience</h6>
+                <div class="space-y-2">
+                  <div>
+                    <p class="font-semibold">Degree in Informatics <span class="text-gray-400 font-normal">2019-2020</span></p>
+                    <i class="text-gray-400">University of Almería, Spain</i>
+                    <ul class="mt-1 ml-4">
+                      <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Network access technologies. Third year. 41 hours.</li>
+                      <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Peripherals and interfaces. Third year. 19 hours.</li>
+                      <li><i class="far fa-star mr-2 text-yellow-300"></i>Quality Assurance System of the University of Almeria. Academic quality 4.72 out of 5.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="font-semibold">Degree in Informatics <span class="text-gray-400 font-normal">2018-2019</span></p>
+                    <i class="text-gray-400">University of Almería, Spain</i>
+                    <ul class="mt-1 ml-4">
+                      <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Structure and computer technology. First year. 38 hours</li>
+                      <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Network access technologies. Third year. 19 hours</li>
+                      <li><i class="far fa-star mr-2 text-yellow-300"></i>Quality Assurance System of the University of Almeria. Academic quality 4.65 out of 5.</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="font-semibold">Degree in Informatics <span class="text-gray-400 font-normal">2017-2018</span></p>
+                    <i class="text-gray-400">University of Almería, Spain</i>
+                    <ul class="mt-1 ml-4">
+                      <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Peripherals and interfaces. Third year. 19 hours.</li>
+                      <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Network access technologies. Third year. 19 hours.</li>
+                      <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Multi-processors. Third year. 18 hours.</li>
+                      <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Structure and computer technology. First year. 2 hours</li>
+                      <li><i class="far fa-star mr-2 text-yellow-300"></i>Quality Assurance System of the University of Almeria. Academic quality 4.82 out of 5.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h6 class="font-semibold mb-2">Final Project Supervision</h6>
+                <div class="space-y-2">
+                  <div>
+                    <p class="font-semibold">Degree in Informatics <span class="text-gray-400 font-normal">2020-2021</span></p>
+                    <i class="text-gray-400">University of Almería, Spain</i>
+                    <ul class="mt-1 ml-4">
+                      <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Co-supervisor in a Final Degree Project: Artificial vision-based fall recognition (Reconocimiento de caídas con Visión Artificial)</li>
+                      <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Co-supervisor in a Final Degree Project: Gesture control monitoring (Monitorización mediante control gestual)</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="font-semibold">Degree in Informatics <span class="text-gray-400 font-normal">2019-2020</span></p>
+                    <i class="text-gray-400">University of Almería, Spain</i>
+                    <ul class="mt-1 ml-4">
+                      <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Co-supervisor in a Final Degree Project: SMARTFRIDGE: Recognition of Actions in a Refrigerator and Decision Making in a Smart Environment. <span class="text-yellow-300">Award: Best Final degree project.</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills -->
+          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3" data-accordion="card">
+            <button class="w-full flex items-center justify-between text-left" data-accordion="button">
+              <span class="font-medium flex items-center gap-2"><i class="fas fa-users-cog text-gray-400"></i> Technical Skills</span>
+              <i class="fas fa-chevron-down text-gray-400 transition-transform" data-accordion="chevron"></i>
+            </button>
+            <div class="mt-3 text-xs text-gray-300 space-y-3 hidden" data-accordion="panel">
+              <div>
+                <h6 class="font-semibold">Programming Languages</h6>
+                <i class="text-gray-400">C, C++, JAVA, Python, LATEX</i>
+              </div>
+              <div>
+                <h6 class="font-semibold">Parallel Programming Paradigms</h6>
+                <i class="text-gray-400">MPI, PThreads</i>
+              </div>
+              <div>
+                <h6 class="font-semibold">Software applied to drug discovery</h6>
+                <i class="text-gray-400">OpenEye's Software (ROCS, EON, VIDA, OMEGA), OpenEye's Toolkit, Pymol, Reflex3D, WEGA, OptiPharm</i>
+              </div>
+            </div>
+          </div>
+
+        </main>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // Animated counter function
+    function animateCounters() {
+      const counters = document.querySelectorAll('.counter[data-count]');
+      counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-count'));
+        const duration = 2000;
+        const step = target / (duration / 16);
+        let current = 0;
+        
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            counter.textContent = target + (target > 10 ? '+' : '');
+            clearInterval(timer);
+          } else {
+            counter.textContent = Math.floor(current) + (target > 10 ? '+' : '');
+          }
+        }, 16);
+      });
+    }
+
+    // Start animations when page loads
+    window.addEventListener('load', () => {
+      setTimeout(animateCounters, 500);
+    });
+
+    // Add staggered animation delays
+    document.querySelectorAll('.animate-fade-in-up').forEach((el, index) => {
+      el.style.animationDelay = `${index * 0.1}s`;
+    });
+
+    // Simple accordion behavior - FIX: Complete the function
+    (function () {
+      const buttons = document.querySelectorAll('[data-accordion="button"]');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const card = btn.closest('[data-accordion="card"]') || btn.parentElement;
+          const panel = card.querySelector('[data-accordion="panel"]');
+          const chev = card.querySelector('[data-accordion="chevron"]');
+          panel.classList.toggle('hidden');
+          if (chev) chev.classList.toggle('rotate-180');
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
