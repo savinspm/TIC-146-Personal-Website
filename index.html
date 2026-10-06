@@ -1,759 +1,1074 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Savíns Puertas Martín - S-AL Research Group</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-    .font-serif { font-family: 'Merriweather', serif; }
-    .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-    .card-hover:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
-    .icon-bounce { transition: transform 0.3s ease; }
-    .icon-bounce:hover { transform: rotate(10deg) scale(1.1); }
-    .gradient-blue { background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%); }
-    .gradient-purple { background: linear-gradient(135deg, #6b21a8 0%, #1e1b4b 100%); }
-    .gradient-green { background: linear-gradient(135deg, #065f46 0%, #1f2937 100%); }
-    .gradient-orange { background: linear-gradient(135deg, #ea580c 0%, #7c2d12 100%); }
-    .bg-pattern { background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.1) 1px, transparent 0); background-size: 40px 40px; }
-    .counter { font-variant-numeric: tabular-nums; }
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    .animate-fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Savíns Puertas Martín — Researcher in HPC &amp; Drug Discovery</title>
+<meta name="description" content="Postdoctoral researcher at the University of Almería. High-performance computing, optimization and AI for virtual screening and radiotherapy planning.">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Savíns Puertas Martín — HPC &amp; Drug Discovery">
+<meta property="og:description" content="Accelerating drug discovery and radiotherapy planning with high-performance computing and AI.">
+<meta property="og:image" content="assets/images/profile-big.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/images/fav.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Savíns Puertas Martín",
+  "jobTitle": "Postdoctoral Researcher",
+  "affiliation": { "@type": "CollegeOrUniversity", "name": "University of Almería" },
+  "email": "mailto:savinspm@ual.es",
+  "url": "https://savins.es/en/",
+  "sameAs": [
+    "https://orcid.org/0000-0001-8956-1733",
+    "https://github.com/savinspm",
+    "https://www.researchgate.net/profile/Savins-Puertas-Martin"
+  ]
+}
+</script>
+<style>
+:root {
+  --bg: #0b1020; --bg2: #121a33; --card: rgba(255,255,255,.045); --card-b: rgba(255,255,255,.1);
+  --text: #e8ecf7; --muted: #a3adc8; --accent: #6ea8ff; --accent2: #b58cff; --good: #4fd1a5; --warn: #ffb454;
+  --sky: #38bdf8; --edu: #6ea8ff; --work: #b58cff; --award: #ffb454; --stay: #4fd1a5; --patent: #ff7a9c;
+  --shadow: 0 20px 50px -20px rgba(0,0,0,.6);
+}
+:root[data-theme="light"] {
+  --bg: #f6f7fb; --bg2: #ffffff; --card: rgba(15,25,60,.04); --card-b: rgba(15,25,60,.12);
+  --text: #131a33; --muted: #566082; --accent: #2457d6; --accent2: #7a45d6; --good: #0b8a63; --warn: #b36b00;
+  --sky: #0284c7; --edu: #2457d6; --work: #7a45d6; --award: #b36b00; --stay: #0b8a63; --patent: #c2335b;
+  --shadow: 0 20px 40px -24px rgba(20,30,70,.35);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 400 16px/1.6 Inter, system-ui, sans-serif; transition: background .4s, color .4s; }
+h1, h2, h3 { font-family: Fraunces, Georgia, serif; line-height: 1.15; margin: 0; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+button { font: inherit; color: inherit; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+section { padding: 72px 0 24px; }
+.eyebrow { font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 8px; }
+h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); margin-bottom: 8px; }
+.lead { color: var(--muted); max-width: 62ch; margin: 0 0 28px; }
+.card { background: var(--card); border: 1px solid var(--card-b); border-radius: 16px; padding: 18px; backdrop-filter: blur(6px); }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; border: 1px solid var(--card-b); background: var(--card); font-weight: 500; font-size: .92rem; transition: transform .2s, background .2s, border-color .2s; }
+.btn:hover { transform: translateY(-2px); border-color: var(--accent); text-decoration: none; }
+.btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent2)); border: 0; color: #fff; }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 999px; font-size: .82rem; border: 1px solid var(--card-b); background: var(--card); transition: all .2s; }
+button.chip:hover { border-color: var(--accent); }
+button.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+/* NAV */
+nav.top { position: fixed; inset: 0 0 auto 0; z-index: 50; backdrop-filter: blur(14px); background: color-mix(in srgb, var(--bg) 78%, transparent); border-bottom: 1px solid var(--card-b); }
+nav.top .wrap { display: flex; align-items: center; gap: 6px; height: 56px; }
+nav.top .brand { font-family: Fraunces, serif; font-weight: 700; margin-right: auto; color: var(--text); white-space: nowrap; }
+nav.top .links { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; }
+nav.top .links a { color: var(--muted); padding: 6px 12px; border-radius: 999px; font-size: .88rem; white-space: nowrap; }
+nav.top .links a:hover { text-decoration: none; color: var(--text); }
+nav.top .links a.active { color: var(--text); background: var(--card); box-shadow: inset 0 0 0 1px var(--card-b); }
+.icon-btn { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--card-b); background: var(--card); display: grid; place-items: center; flex: none; }
+.icon-btn:hover { border-color: var(--accent); }
+.progress { position: fixed; top: 0; left: 0; height: 3px; width: 0; z-index: 60; background: linear-gradient(90deg, var(--accent), var(--accent2)); }
+
+/* HERO */
+#hero { position: relative; min-height: 100svh; display: flex; align-items: center; padding: 96px 0 48px; overflow: hidden; }
+#net { position: absolute; inset: 0; width: 100%; height: 100%; }
+#hero .wrap { position: relative; display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: center; }
+#hero h1 { font-size: clamp(2.2rem, 6.5vw, 4.2rem); letter-spacing: -.02em; }
+#hero h1 em { font-style: normal; background: linear-gradient(120deg, var(--accent), var(--accent2) 60%, var(--good)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+#hero .role { color: var(--muted); font-size: 1.1rem; margin: 14px 0 6px; }
+#typed { color: var(--accent); font-weight: 600; border-right: 2px solid var(--accent); padding-right: 3px; animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { border-color: transparent; } }
+#hero .cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.portrait { justify-self: center; position: relative; width: min(280px, 70vw); aspect-ratio: 1; }
+.portrait img { width: 100%; height: 100%; object-fit: cover; border-radius: 28% 72% 62% 38% / 40% 40% 60% 60%; animation: morph 14s ease-in-out infinite; box-shadow: var(--shadow); border: 1px solid var(--card-b); }
+.portrait::before { content: ""; position: absolute; inset: -14px; border-radius: 50%; background: conic-gradient(from 0deg, var(--accent), var(--accent2), var(--good), var(--accent)); filter: blur(34px); opacity: .35; animation: spin 18s linear infinite; }
+.portrait img { position: relative; }
+@keyframes morph { 50% { border-radius: 62% 38% 30% 70% / 58% 32% 68% 42%; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+.hint { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: var(--muted); font-size: .8rem; display: flex; gap: 8px; align-items: center; }
+kbd { font: 500 .75rem ui-monospace, monospace; border: 1px solid var(--card-b); border-bottom-width: 2px; border-radius: 6px; padding: 1px 6px; background: var(--card); }
+
+/* STATS */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin-top: -8px; }
+.stat { text-align: center; }
+.stat b { display: block; font: 700 2.2rem/1 Fraunces, serif; font-variant-numeric: tabular-nums; background: linear-gradient(120deg, var(--accent), var(--accent2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.stat span { color: var(--muted); font-size: .85rem; }
+
+/* ABOUT */
+.about { display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; }
+.about p { margin: 0 0 12px; color: var(--muted); }
+.about p strong { color: var(--text); font-weight: 600; }
+.contact li { list-style: none; display: flex; gap: 10px; padding: 6px 0; font-size: .92rem; color: var(--muted); }
+.contact { padding: 0; margin: 0; }
+.socials { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+
+/* TIMELINE */
+.legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px; }
+.dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.timeline { position: relative; padding-left: 34px; }
+.timeline::before { content: ""; position: absolute; left: 11px; top: 0; bottom: 0; width: 2px; background: var(--card-b); }
+.timeline .fill { position: absolute; left: 11px; top: 0; width: 2px; height: 0; background: linear-gradient(var(--accent), var(--accent2)); box-shadow: 0 0 12px var(--accent); }
+.ev { position: relative; margin-bottom: 18px; opacity: 0; transform: translateX(-16px); transition: opacity .6s, transform .6s; }
+.ev.in { opacity: 1; transform: none; }
+.ev::before { content: ""; position: absolute; left: -31px; top: 22px; width: 12px; height: 12px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 4px var(--bg), 0 0 14px var(--c); }
+.ev .card { border-left: 3px solid var(--c); }
+.ev time { font: 600 .8rem ui-monospace, monospace; color: var(--c); }
+.ev h3 { font-size: 1.05rem; margin: 2px 0 2px; font-family: Inter, sans-serif; font-weight: 600; }
+.ev p { margin: 0; color: var(--muted); font-size: .9rem; }
+
+/* MAP */
+.map-box { position: relative; overflow: hidden; padding: 0; }
+#map { width: 100%; display: block; background: radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 70%); }
+#map .land { fill: color-mix(in srgb, var(--muted) 22%, transparent); stroke: color-mix(in srgb, var(--muted) 40%, transparent); stroke-width: .5; }
+#map .pin circle.core { fill: var(--c, var(--accent)); stroke: var(--bg); stroke-width: 1.5; }
+#map .pin circle.pulse { fill: none; stroke: var(--c, var(--accent)); stroke-width: 1.5; animation: pulse 2.6s ease-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes pulse { from { transform: scale(.6); opacity: .9; } to { transform: scale(2.6); opacity: 0; } }
+#map .pin { cursor: pointer; }
+#map .arc { fill: none; stroke: var(--stay); stroke-width: 1.4; stroke-dasharray: 5 5; opacity: .7; animation: dash 30s linear infinite; }
+@keyframes dash { to { stroke-dashoffset: -400; } }
+.tip { position: absolute; pointer-events: none; background: var(--bg2); border: 1px solid var(--card-b); border-radius: 10px; padding: 8px 12px; font-size: .82rem; box-shadow: var(--shadow); max-width: 260px; opacity: 0; transition: opacity .15s; z-index: 5; }
+.tip b { display: block; }
+.tip span { color: var(--muted); display: block; }
+.map-ctrl { position: absolute; top: 12px; right: 12px; display: flex; gap: 6px; z-index: 3; }
+.map-fallback { padding: 30px; color: var(--muted); text-align: center; }
+
+/* PUBLICATIONS */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 10px; }
+.filters .sep { width: 1px; height: 22px; background: var(--card-b); margin: 0 4px; }
+.search { flex: 1 1 200px; min-width: 180px; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--card-b); background: var(--card); color: var(--text); font: inherit; }
+.pub-grid { display: grid; gap: 12px; margin-top: 14px; }
+.pub { display: grid; grid-template-columns: 62px 1fr; gap: 14px; transition: transform .25s, border-color .25s, opacity .3s; }
+.pub:hover { transform: translateY(-3px); border-color: var(--accent); }
+.pub .yr { font: 700 1.3rem Fraunces, serif; color: var(--accent); }
+.pub .yr small { display: block; font: 600 .62rem Inter, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.pub h3 { font: 600 1rem/1.35 Inter, sans-serif; margin-bottom: 4px; }
+.pub .meta { color: var(--muted); font-size: .84rem; margin: 0; }
+.pub .meta b { color: var(--text); font-weight: 600; }
+.pub .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; align-items: center; }
+.tag { font-size: .7rem; padding: 2px 9px; border-radius: 999px; background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent); font-weight: 600; }
+.act { margin-left: auto; display: flex; gap: 6px; }
+.act a, .act button { font-size: .75rem; padding: 3px 10px; border-radius: 8px; border: 1px solid var(--card-b); background: var(--card); }
+.act a:hover, .act button:hover { border-color: var(--accent); text-decoration: none; }
+.count-line { color: var(--muted); font-size: .85rem; margin-top: 8px; }
+.empty { text-align: center; color: var(--muted); padding: 30px; }
+
+/* SKILLS */
+.skills { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: center; }
+#radar { width: 100%; max-width: 380px; margin: auto; display: block; }
+#radar .grid { fill: none; stroke: var(--card-b); }
+#radar .axis { stroke: var(--card-b); }
+#radar .shape { fill: color-mix(in srgb, var(--accent) 30%, transparent); stroke: var(--accent); stroke-width: 2; transition: all .6s; }
+#radar text { fill: var(--muted); font-size: 11px; font-family: Inter, sans-serif; text-anchor: middle; }
+#radar circle { fill: var(--accent); }
+.skill-group { margin-bottom: 14px; }
+.skill-cards { display: grid; gap: 12px; }
+.skill-cards .card { padding: 14px 16px; }
+.skill-cards h3 .ic { margin-right: 8px; }
+.topic-box { margin-top: 10px; }
+.topic-box h3 { font: 600 .8rem Inter, sans-serif; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
+.topic-box .row { display: flex; flex-wrap: wrap; gap: 6px; }
+.skill-group h3 { font: 600 .85rem Inter, sans-serif; color: var(--muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: .08em; }
+.skill-group .row { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* PROJECTS */
+.proj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+.proj { display: flex; flex-direction: column; gap: 8px; position: relative; overflow: hidden; transition: transform .25s, border-color .25s; }
+.proj:hover { transform: translateY(-4px); border-color: var(--accent); }
+.proj::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2)); }
+.proj .top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.proj .years { font: 600 .8rem ui-monospace, monospace; color: var(--accent); }
+.proj h3 { font: 600 1rem/1.35 Inter, sans-serif; }
+.proj .meta { color: var(--muted); font-size: .82rem; margin: 0; }
+.proj .foot { margin-top: auto; display: flex; justify-content: space-between; align-items: flex-end; padding-top: 8px; border-top: 1px dashed var(--card-b); }
+.proj .amt { font: 700 1.35rem Fraunces, serif; font-variant-numeric: tabular-nums; }
+.proj .n { color: var(--muted); font-size: .8rem; text-align: right; }
+.badge { font-size: .68rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 2px 9px; border-radius: 999px; background: color-mix(in srgb, var(--c, var(--accent)) 16%, transparent); color: var(--c, var(--accent)); border: 1px solid color-mix(in srgb, var(--c, var(--accent)) 40%, transparent); }
+.badge.live { --c: var(--good); }
+
+/* TEACHING */
+.teach { display: grid; grid-template-columns: 1.6fr 1fr; gap: 16px; margin-bottom: 40px; }
+.tstats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-content: start; }
+.tstats .card { text-align: center; padding: 14px 10px; }
+.tstats .card.wide { grid-column: span 2; text-align: left; font-size: .88rem; color: var(--muted); }
+.tstats .card.wide b { color: var(--text); }
+.tstats .big { display: block; font: 700 1.9rem/1 Fraunces, serif; background: linear-gradient(120deg, var(--accent), var(--accent2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.tstats .lab { color: var(--muted); font-size: .8rem; }
+.trow { display: grid; grid-template-columns: 74px 1fr 50px; gap: 12px; align-items: center; margin: 10px 0; }
+.trow .yr { font: 600 .85rem ui-monospace, monospace; color: var(--muted); }
+.trow .bar { display: flex; gap: 3px; height: 34px; }
+.trow .seg { background: var(--c); color: #fff; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: .72rem; font-weight: 700; min-width: 22px; transition: transform .2s, filter .2s; cursor: default; }
+.trow .seg:hover { transform: scaleY(1.12); filter: brightness(1.15); }
+.trow .tot { text-align: right; font-size: .8rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.tleg { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 14px; font-size: .8rem; color: var(--muted); }
+.tleg i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; background: var(--c); margin-right: 6px; }
+.subhead { font: 600 1.25rem Fraunces, serif; margin: 6px 0 6px; }
+
+/* THESES */
+.th-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px; margin-top: 14px; }
+.th { position: relative; display: flex; flex-direction: column; gap: 10px; border-top: 4px solid var(--c); transition: transform .25s, box-shadow .25s; }
+.th:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.th .row1 { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.th .topic { font-size: .8rem; font-weight: 700; color: var(--c); display: inline-flex; align-items: center; gap: 6px; }
+.th .topic i { font-style: normal; font-size: 1.1rem; }
+.th h4 { font: 600 1.02rem/1.35 Inter, sans-serif; margin: 0; }
+.th .orig { color: var(--muted); font-size: .8rem; margin: 0; font-style: italic; }
+.th .foot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: .82rem; }
+.grade { font-weight: 700; padding: 3px 11px; border-radius: 999px; background: color-mix(in srgb, var(--good) 16%, transparent); color: var(--good); }
+.grade.mh { background: color-mix(in srgb, var(--award) 20%, transparent); color: var(--award); }
+
+/* RECORD (tabs) */
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+.tab { padding: 8px 16px; border-radius: 999px; border: 1px solid var(--card-b); background: var(--card); font-weight: 500; font-size: .9rem; transition: all .2s; }
+.tab:hover { border-color: var(--accent); }
+.tab[aria-selected="true"] { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #fff; border-color: transparent; }
+.tabpanel { padding: 22px; animation: fadeIn .35s; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } }
+.tabpanel ul { list-style: none; margin: 0; padding: 0 0 0 4px; border-left: 2px solid var(--card-b); }
+.tabpanel li { position: relative; padding: 8px 0 8px 18px; color: var(--muted); font-size: .93rem; }
+.tabpanel li::before { content: ""; position: absolute; left: -6px; top: 17px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px var(--bg); }
+.tabpanel li b { color: var(--text); }
+
+footer { margin-top: 80px; padding: 30px 0 60px; border-top: 1px solid var(--card-b); color: var(--muted); font-size: .85rem; text-align: center; }
+
+/* PALETTE */
+#palette { position: fixed; inset: 0; z-index: 100; background: rgba(5,8,20,.6); backdrop-filter: blur(4px); display: none; align-items: flex-start; justify-content: center; padding-top: 14vh; }
+#palette.open { display: flex; }
+.pal-box { width: min(560px, 92vw); background: var(--bg2); border: 1px solid var(--card-b); border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; }
+.pal-box input { width: 100%; padding: 16px 18px; font: inherit; font-size: 1.05rem; background: transparent; border: 0; border-bottom: 1px solid var(--card-b); color: var(--text); outline: none; }
+.pal-box ul { list-style: none; margin: 0; padding: 6px; max-height: 50vh; overflow: auto; }
+.pal-box li { padding: 10px 12px; border-radius: 10px; cursor: pointer; display: flex; gap: 10px; align-items: center; }
+.pal-box li.sel { background: color-mix(in srgb, var(--accent) 18%, transparent); }
+.pal-box li small { margin-left: auto; color: var(--muted); }
+
+.rain { position: fixed; top: -40px; z-index: 200; pointer-events: none; font-size: 28px; animation: fall linear forwards; }
+@keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s, transform .7s; }
+.reveal.in { opacity: 1; transform: none; }
+
+@media (max-width: 800px) {
+  #hero .wrap, .about, .skills, .teach { grid-template-columns: 1fr; }
+  .trow { grid-template-columns: 58px 1fr 40px; }
+  .portrait { order: -1; width: 180px; }
+  nav.top .brand { display: none; }
+  .pub { grid-template-columns: 1fr; gap: 4px; }
+  .pub .yr small { display: inline; margin-left: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .reveal, .ev { opacity: 1; transform: none; }
+}
+@media print {
+  nav.top, .progress, #net, .hint, .map-ctrl, .filters, .portrait, #palette, .no-print, #mapSection { display: none !important; }
+  :root, :root[data-theme] { --bg: #fff; --bg2: #fff; --card: #fff; --card-b: #ccc; --text: #000; --muted: #333; --accent: #1a3fa0; --accent2: #1a3fa0; }
+  body { font-size: 11pt; }
+  section { padding: 14px 0 0; break-inside: avoid-page; }
+  #hero { min-height: 0; padding: 0; }
+  .reveal, .ev { opacity: 1 !important; transform: none !important; }
+  .tabs { display: none !important; }
+  .tabpanel[hidden] { display: block !important; }
+  .tabpanel { padding: 4px 0 10px; animation: none; }
+  .tabpanel::before { content: attr(data-title); display: block; font: 700 12pt Fraunces, serif; margin: 10px 0 4px; }
+  .card { backdrop-filter: none; break-inside: avoid; }
+  .stat b, #hero h1 em { -webkit-text-fill-color: #1a3fa0; color: #1a3fa0; background: none; }
+  .pub-grid .pub.more { display: grid !important; }
+}
+</style>
 </head>
-<body class="bg-gray-900 text-white bg-pattern min-h-screen">
-  <!-- Grid Section -->
-  <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-1 sm:gap-2 p-2 sm:p-3 md:p-4 min-h-screen">
+<body>
+<div class="progress" id="progress"></div>
 
-    <!-- Name & Title -->
-    <div class="col-span-2 row-span-2 gradient-blue rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-2xl card-hover animate-fade-in-up">
-      <img src="assets/images/profile2.jpg" alt="Savíns Puertas Martín" class="w-12 h-12 sm:w-16 sm:h-16 rounded-full mb-1 shadow-lg object-cover ring-2 ring-white/20">
-      <h1 class="text-sm sm:text-lg font-bold text-center font-serif mb-1">Savíns Puertas Martín</h1>
-      <p class="text-xs sm:text-sm text-center text-blue-100 font-medium">PhD in Informatics</p>
-      <p class="text-xs text-center text-blue-200 mt-1">savinspm@ual.es</p>
+<nav class="top" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#hero">S. Puertas-Martín</a>
+    <div class="links" id="links">
+      <a href="#about" data-i18n="nav_about">About</a>
+      <a href="#path" data-i18n="nav_path">Career</a>
+      <a href="#mapSection" data-i18n="nav_map">Map</a>
+      <a href="#pubs" data-i18n="nav_pubs">Publications</a>
+      <a href="#projects" data-i18n="nav_proj">Projects</a>
+      <a href="#teaching" data-i18n="nav_teach">Teaching</a>
+      <a href="#skills" data-i18n="nav_skills">Skills</a>
+      <a href="#more" data-i18n="nav_more">Record</a>
     </div>
+    <button class="icon-btn" id="palBtn" title="Ctrl/⌘ + K" aria-label="Command palette">⌘</button>
+    <button class="icon-btn" id="langBtn" aria-label="Language">ES</button>
+    <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">☾</button>
+  </div>
+</nav>
 
-    <!-- CV on Overleaf -->
-    <a href="https://www.overleaf.com/read/ppywsqrzmhyk#2efc7d" target="_blank" rel="noopener noreferrer" class="gradient-green rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover cursor-pointer animate-fade-in-up">
-      <i class="fas fa-leaf text-lg sm:text-xl mb-1 text-green-300 icon-bounce"></i>
-      <p class="text-xs font-medium text-center">View CV</p>
-      <p class="text-xs text-green-200 text-center">Overleaf</p>
-    </a>
-
-    <!-- Research Papers -->
-    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50 cursor-pointer" data-section="research-publications">
-      <i class="fas fa-file-alt text-lg sm:text-xl mb-1 text-blue-400 icon-bounce"></i>
-      <p class="text-base sm:text-lg font-bold counter" data-count="12">0</p>
-      <p class="text-xs text-gray-300 text-center">Papers</p>
-    </div>
-
-    <!-- Research Areas -->
-    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
-      <i class="fas fa-atom text-lg sm:text-xl mb-1 text-cyan-400 icon-bounce"></i>
-      <p class="text-xs font-medium text-center">HPC, Bioinfo</p>
-      <p class="text-xs text-gray-300 text-center">Optimization</p>
-    </div>
-
-    <!-- Conferences -->
-    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50 cursor-pointer" data-section="international-conferences">
-      <i class="fas fa-microphone text-lg sm:text-xl mb-1 text-yellow-400 icon-bounce"></i>
-      <p class="text-base sm:text-lg font-bold counter" data-count="23">0</p>
-      <p class="text-xs text-gray-300 text-center">Int'l Conferences</p>
-    </div>
-
-    <!-- Awards -->
-    <div class="gradient-orange rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up cursor-pointer" data-section="awards-achievements">
-      <i class="fas fa-trophy text-lg sm:text-xl mb-1 text-yellow-300 icon-bounce"></i>
-      <p class="text-base sm:text-lg font-bold counter" data-count="8">0</p>
-      <p class="text-xs text-orange-200 text-center">Awards (+7300€)</p>
-    </div>
-
-    <!-- Funding -->
-    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
-      <i class="fas fa-euro-sign text-lg sm:text-xl mb-1 text-green-400 icon-bounce"></i>
-      <p class="text-xs font-medium text-center">Funding</p>
-      <p class="text-xs text-gray-300 text-center">FPU Grant</p>
-    </div>
-
-    <!-- Research Stays -->
-    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
-      <i class="fas fa-plane text-lg sm:text-xl mb-1 text-blue-400 icon-bounce"></i>
-      <p class="text-xs font-medium text-center">2.3 years</p>
-      <p class="text-xs text-gray-300 text-center">Research Stays</p>
-    </div>
-
-    <!-- Professional Networks Grid -->
-    <div class="rounded-xl p-1 sm:p-2 shadow-xl card-hover col-span-1 row-span-1 grid grid-cols-2 grid-rows-2 gap-1 animate-fade-in-up">
-      <a href="https://linkedin.com/in/savinspm" target="_blank" rel="noopener noreferrer" class="bg-gray-700/80 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-blue-600 transition-all duration-300 h-full border border-gray-600/50">
-        <i class="fab fa-linkedin text-base sm:text-lg text-blue-400 icon-bounce"></i>
-      </a>
-      <a href="https://orcid.org/0000-0000-0000-0000" target="_blank" rel="noopener noreferrer" class="bg-gray-700/80 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-green-600 transition-all duration-300 h-full border border-gray-600/50">
-        <i class="fab fa-orcid text-base sm:text-lg text-green-400 icon-bounce"></i>
-      </a>
-      <a href="https://researchgate.net/profile/Savins-Puertas-Martin" target="_blank" rel="noopener noreferrer" class="bg-gray-700/80 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-cyan-600 transition-all duration-300 h-full border border-gray-600/50">
-        <i class="fab fa-researchgate text-base sm:text-lg text-cyan-400 icon-bounce"></i>
-      </a>
-      <a href="https://scholar.google.com/citations?user=USERID" target="_blank" rel="noopener noreferrer" class="bg-gray-700/80 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-yellow-600 transition-all duration-300 h-full border border-gray-600/50">
-        <i class="fab fa-google text-base sm:text-lg text-yellow-400 icon-bounce"></i>
-      </a>
-    </div>
-
-    <!-- PhD Thesis -->
-    <div class="col-span-2 gradient-purple rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-2xl card-hover animate-fade-in-up cursor-pointer" data-section="education">
-      <i class="fas fa-book-open text-lg sm:text-xl mb-1 text-purple-300 icon-bounce"></i>
-      <p class="text-sm sm:text-base font-bold text-center font-serif mb-1">PhD Thesis</p>
-      <p class="text-xs text-center text-purple-200 mb-1">"HPC for Optimization in Bioinformatics"</p>
-      <p class="text-xs text-center text-purple-300">Cum Laude, International Mention</p>
-    </div>
-
-    <!-- Master Education -->
-    <div class="col-span-2 bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50 cursor-pointer" data-section="education">
-      <i class="fas fa-graduation-cap text-lg sm:text-xl mb-1 text-blue-400 icon-bounce"></i>
-      <p class="text-sm sm:text-base font-bold text-center font-serif mb-1">Master in Informatics</p>
-      <p class="text-xs text-center text-gray-300">University of Almería • 2015-2017</p>
-      <p class="text-xs text-center text-blue-300 mt-1">Score: 9.79/10</p>
-    </div>
-
-    <!-- Degree Education -->
-    <div class="col-span-2 bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50 cursor-pointer" data-section="education">
-      <i class="fas fa-university text-lg sm:text-xl mb-1 text-purple-400 icon-bounce"></i>
-      <p class="text-sm sm:text-base font-bold text-center font-serif mb-1">Degree in Informatics</p>
-      <p class="text-xs text-center text-gray-300">University of Almería • 2011-2015</p>
-      <p class="text-xs text-center text-purple-300 mt-1">Score: 9.55/10</p>
-    </div>
-
-    <!-- PhD Supervisor -->
-    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
-      <i class="fas fa-user-graduate text-lg sm:text-xl mb-1 text-purple-400 icon-bounce"></i>
-      <p class="text-xs font-medium text-center">PhD</p>
-      <p class="text-xs text-gray-300 text-center">Supervising</p>
-    </div>
-
-    <!-- TFG/TFM Supervisor -->
-    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
-      <i class="fas fa-user-tie text-lg sm:text-xl mb-1 text-blue-400 icon-bounce"></i>
-      <p class="text-xs font-medium text-center">TFG/TFM</p>
-      <p class="text-xs text-gray-300 text-center">Supervising</p>
-    </div>
-
-    <!-- Teaching -->
-    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50 cursor-pointer" data-section="teaching-supervision">
-      <i class="fas fa-chalkboard-teacher text-lg sm:text-xl mb-1 text-green-400 icon-bounce"></i>
-      <p class="text-xs font-medium text-center">Teaching</p>
-    </div>
-
-    <!-- Patent -->
-    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50 cursor-pointer" data-section="patents-intellectual">
-      <i class="fas fa-medal text-lg sm:text-xl mb-1 text-yellow-400 icon-bounce"></i>
-      <p class="text-base sm:text-lg font-bold counter" data-count="1">0</p>
-      <p class="text-xs text-gray-300 text-center">Patent</p>
-    </div>
-
-    <!-- Educational Conferences -->
-    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
-      <i class="fas fa-bullseye text-lg sm:text-xl mb-1 text-green-400 icon-bounce"></i>
-      <p class="text-base sm:text-lg font-bold counter" data-count="6">0</p>
-      <p class="text-xs text-gray-300 text-center">Educational Conf</p>
-    </div>
-
-    <!-- Projects -->
-    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
-      <i class="fas fa-clipboard-list text-lg sm:text-xl mb-1 text-gray-400 icon-bounce"></i>
-      <p class="text-xs font-medium text-center">Projects</p>
-    </div>
-
-    <!-- Software/Tools -->
-    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
-      <i class="fas fa-tools text-lg sm:text-xl mb-1 text-amber-400 icon-bounce"></i>
-      <p class="text-xs font-medium text-center">Software</p>
-      <p class="text-xs text-gray-300 text-center">Tools dev</p>
-    </div>
-
-    <!-- Teaching Innovation Projects -->
-    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
-      <i class="fas fa-lightbulb text-lg sm:text-xl mb-1 text-yellow-400 icon-bounce"></i>
-      <p class="text-xs font-medium text-center">Teaching Innovation</p>
-      <p class="text-xs text-gray-300 text-center">Projects</p>
-    </div>
-
-    <!-- Skills -->
-    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50 cursor-pointer" data-section="technical-skills">
-      <i class="fas fa-cogs text-lg sm:text-xl mb-1 text-gray-400 icon-bounce"></i>
-      <p class="text-xs font-medium text-center">Skills</p>
-    </div>
-
-    <!-- GitHub -->
-    <a href="https://github.com/savinspm" target="_blank" rel="noopener noreferrer" class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover cursor-pointer border border-gray-700/50 animate-fade-in-up">
-      <i class="fab fa-github text-lg sm:text-xl mb-1 text-white icon-bounce"></i>
-      <p class="text-xs font-medium text-center">GitHub</p>
-      <p class="text-xs text-gray-300 text-center">@savinspm</p>
-    </a>
-
-    <!-- Contact -->
-    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
-      <i class="fas fa-map-marker-alt text-lg sm:text-xl mb-1 text-red-400 icon-bounce"></i>
-      <p class="text-xs font-medium text-center">Almería</p>
-    </div>
-
-    <!-- Spain -->
-    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
-      <i class="fas fa-flag text-lg sm:text-xl mb-1 text-red-400 icon-bounce"></i>
-      <p class="text-xs font-medium text-center">Spain</p>
-      <p class="text-xs text-center">🇪🇸</p>
-    </div>
-
-    <!-- Chess -->
-    <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center p-2 sm:p-3 shadow-xl card-hover animate-fade-in-up border border-gray-700/50">
-      <i class="fas fa-chess text-lg sm:text-xl mb-1 text-yellow-300 icon-bounce"></i>
-      <p class="text-base sm:text-lg font-bold counter" data-count="200">0</p>
-      <p class="text-xs text-gray-300 text-center">Chess Awards</p>
-    </div>
-
-    <!-- Social Media Grid -->
-    <div class="rounded-xl p-1 sm:p-2 shadow-xl card-hover col-span-1 row-span-1 grid grid-cols-2 grid-rows-2 gap-1 animate-fade-in-up">
-      <a href="https://twitter.com/savinspm" target="_blank" rel="noopener noreferrer" class="bg-gray-700/80 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-blue-500 transition-all duration-300 h-full border border-gray-600/50">
-        <i class="fab fa-twitter text-base sm:text-lg text-blue-400 icon-bounce"></i>
-      </a>
-      <a href="https://instagram.com/savinspm" target="_blank" rel="noopener noreferrer" class="bg-gray-700/80 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-pink-500 transition-all duration-300 h-full border border-gray-600/50">
-        <i class="fab fa-instagram text-base sm:text-lg text-pink-400 icon-bounce"></i>
-      </a>
-      <a href="https://facebook.com/savinspm" target="_blank" rel="noopener noreferrer" class="bg-gray-700/80 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-blue-600 transition-all duration-300 h-full border border-gray-600/50">
-        <i class="fab fa-facebook text-base sm:text-lg text-blue-500 icon-bounce"></i>
-      </a>
-      <a href="mailto:savinspm@ual.es" class="bg-gray-700/80 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-red-500 transition-all duration-300 h-full border border-gray-600/50">
-        <i class="fas fa-envelope text-base sm:text-lg text-red-400 icon-bounce"></i>
-      </a>
-    </div>
-
-  </div> <!-- cierre del grid principal -->
-
-  <!-- Detailed Profile Section -->
-  <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 mt-4 sm:mt-6 md:mt-8">
-    <section class="bg-gray-900/50 rounded-2xl p-3 sm:p-4 border border-gray-800/60">
-      <h2 class="text-base sm:text-lg font-semibold font-serif flex items-center gap-2 mb-3">
-        <i class="fas fa-id-card text-blue-300"></i>
-        Detailed Academic Profile
-      </h2>
-
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-4">
-        
-        <!-- Sidebar -->
-        <aside class="space-y-3">
-          <!-- Profile Card -->
-          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3">
-            <div class="flex items-center gap-3 mb-3">
-              <img src="assets/images/profile.jpg" alt="Profile" class="w-16 h-16 rounded-full object-cover ring-2 ring-white/10">
-              <div>
-                <p class="font-semibold font-serif">Savíns Puertas Martín</p>
-                <p class="text-xs text-gray-300">PhD in Informatics</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Contact -->
-          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3">
-            <h4 class="text-sm font-semibold mb-2 text-blue-300"><i class="fas fa-phone mr-2"></i>Contact</h4>
-            <div class="space-y-2 text-xs text-gray-300">
-              <p><i class="fas fa-envelope text-red-300 mr-2"></i>savinspm@ual.es</p>
-              <p><i class="fas fa-phone text-green-300 mr-2"></i>+34 950214394</p>
-              <p><i class="fas fa-map-marker-alt text-red-300 mr-2"></i>Building CITE III. Room 1.13.<br>Carr. Sacramento, s/n,<br>04120 La Cañada, Almería</p>
-              <a href="https://savins.es/en/" class="text-blue-300 hover:underline inline-flex items-center">
-                <i class="fas fa-globe-americas mr-2"></i>Personal website
-              </a>
-            </div>
-          </div>
-
-          <!-- Social Networks -->
-          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3">
-            <h4 class="text-sm font-semibold mb-2 text-blue-300">Social Networks</h4>
-            <ul class="text-xs space-y-1">
-              <li><a class="text-blue-300 hover:underline" href="https://orcid.org/0000-0001-8956-1733"><i class="far fa-hand-point-right mr-2"></i>ORCID</a></li>
-              <li><a class="text-blue-300 hover:underline" href="https://www.researchgate.net/profile/Savins-Puertas-Martin"><i class="far fa-hand-point-right mr-2"></i>ResearchGate</a></li>
-              <li><a class="text-blue-300 hover:underline" href="https://github.com/savinspm"><i class="far fa-hand-point-right mr-2"></i>GitHub</a></li>
-              <li><a class="text-blue-300 hover:underline" href="https://www.facebook.com/savinspuertasmartin/"><i class="far fa-hand-point-right mr-2"></i>Facebook</a></li>
-              <li><a class="text-blue-300 hover:underline" href="https://twitter.com/savinspm"><i class="far fa-hand-point-right mr-2"></i>Twitter</a></li>
-              <li><a class="text-blue-300 hover:underline" href="https://www.linkedin.com/in/sav%C3%ADns-puertas-mart%C3%ADn-6a8158174/"><i class="far fa-hand-point-right mr-2"></i>LinkedIn</a></li>
-            </ul>
-          </div>
-
-          <!-- Hobbies -->
-          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3">
-            <h4 class="text-sm font-semibold mb-2 text-blue-300">Hobbies</h4>
-            <div class="space-y-2 text-xs">
-              <div class="flex items-center gap-2">
-                <i class="fas fa-camera text-purple-300"></i>
-                <a href="https://www.instagram.com/pics_vins/" class="text-blue-300 hover:underline">Photography (2.8k followers)</a>
-              </div>
-              <div class="flex items-start gap-2">
-                <i class="fas fa-chess text-yellow-300 mt-0.5"></i>
-                <a href="https://ratings.fide.com/profile/2242338" class="text-blue-300 hover:underline">Chess (Candidate Master Title)<br>More than 200 trophies</a>
-              </div>
-            </div>
-          </div>
-        </aside>
-
-        <!-- Main Content (Accordions) -->
-        <main class="lg:col-span-2 space-y-3">
-          
-          <!-- Profile -->
-          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3" data-accordion="card">
-            <button class="w-full flex items-center justify-between text-left" data-accordion="button">
-              <span class="font-medium flex items-center gap-2"><i class="far fa-user text-purple-300"></i> Profile</span>
-              <i class="fas fa-chevron-down text-gray-400 transition-transform" data-accordion="chevron"></i>
-            </button>
-            <div class="mt-3 text-xs text-gray-300 hidden" data-accordion="panel">
-              <p class="leading-relaxed mb-3">Savíns Puertas Martín is currently a Post-doctoral Researcher at the Department of Informatics, University of Almería. He finished his degree in Computer Engineering at the University of Almeria in June 2015, receiving the prizes for the best record of the promotion and the best final project. In September of the same year, he started the Master's degree in Computer Engineering at the same university and obtained a Collaboration Scholarship in which he began working in the area of drug development. During his second year of Master, he started a PhD in Computer Science funded by a 4-year FPU grant from the Spanish Ministry, also in Almeria. In June 2017, he finished the Master's degree, obtaining the best record and the best Master's thesis. He finished his PhD in October 2020 with the highest qualification, cum laude, and international mention. His research has focused on the design and development of different drug development techniques. Specifically, a technique called Virtual Screening, which is normally used as one of the first stages in the drug development process, reducing the number of compounds to be analysed later, saving time and money. Among its developments is the OptiPharm software, for which he has registered its intellectual property (RTA-94-18). OptiPharm software has been used by several universities and companies in different countries. In addition to this line, Savins worked on a radiotherapy project focused on the improvement and automation of intensity-modulated radiotherapy (IMRT) planning. He carried out a two-year post-doctoral research stay (Feb. 2022 – Jan. 2024) at the Chemoinformatics Research Group, Information School, University of Sheffield, United Kingdom, working on virtual screening and molecular flexibility. He is now back at the University of Almería, applying artificial intelligence and predictive models to drug discovery. His teaching activity has been related to Computer Architecture and Technology, High-Performance Computing and Computer Networks.</p>
-              <div class="flex flex-wrap gap-2">
-                <a href="https://msng.link/o/?savinspm=tg" class="px-3 py-1 rounded bg-gray-700/70 text-blue-200 text-xs hover:bg-gray-600 transition-colors"><i class="fas fa-paper-plane mr-1"></i>Telegram Me</a>
-                <a href="documents/EN.pdf" class="px-3 py-1 rounded bg-gray-700/70 text-blue-200 text-xs hover:bg-gray-600 transition-colors"><i class="fas fa-cloud-download-alt mr-1"></i>Download CV English</a>
-                <a href="documents/CVN-ES.pdf" class="px-3 py-1 rounded bg-gray-700/70 text-blue-200 text-xs hover:bg-gray-600 transition-colors"><i class="fas fa-cloud-download-alt mr-1"></i>Download CVN Spanish</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Work Experience -->
-          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3" data-accordion="card" id="work-experience">
-            <button class="w-full flex items-center justify-between text-left" data-accordion="button">
-              <span class="font-medium flex items-center gap-2"><i class="fas fa-briefcase text-amber-300"></i> Work Experience</span>
-              <i class="fas fa-chevron-down text-gray-400 transition-transform" data-accordion="chevron"></i>
-            </button>
-            <div class="mt-3 text-xs text-gray-300 space-y-4 hidden" data-accordion="panel">
-              <div>
-                <h6 class="font-semibold">Post-doctoral Researcher <span class="text-gray-400 font-normal">01.05.2025–now</span></h6>
-                <i class="text-gray-400">Dept. of Informatics, University of Almería, Spain</i>
-                
-              </div>
-              <div>
-                <h6 class="font-semibold">Post-doctoral Researcher <span class="text-gray-400 font-normal">01.02.2024–31.12.2024</span></h6>
-                <i class="text-gray-400">Dept. of Informatics, University of Almería, Spain</i>
-                <ul class="mt-1 ml-4">
-                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Working on the project <em>Virtual Screening Applied to Flexible Ligands</em>.</li>
-                </ul>
-              </div>
-              <div>
-                <h6 class="font-semibold">Post-doctoral Researcher <span class="text-gray-400 font-normal">01.02.2022–31.01.2024</span></h6>
-                <i class="text-gray-400">Chemoinformatics Research Group. Information School. University of Sheffield, United Kingdom</i>
-                <ul class="mt-1 ml-4">
-                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Working on the project <em>Virtual Screening Applied to Flexible Ligands</em> — virtual screening and molecular flexibility.</li>
-                </ul>
-              </div>
-              <div>
-                <h6 class="font-semibold">Post-doctoral Researcher <span class="text-gray-400 font-normal">01.02.2021–31.01.2022</span></h6>
-                <i class="text-gray-400">Dept. of Informatics, University of Almería, Spain</i>
-                <ul class="mt-1 ml-4">
-                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Working on the project <em>High Performance Computing for Optimizing Intensity Modulated Radiation Therapy Schedules</em>.</li>
-                </ul>
-              </div>
-              <div>
-                <h6 class="font-semibold">Pre-doctoral Researcher. National Competitive Scholarship FPU (Formación de Profesorado Universitario (University Teacher Training)). <span class="text-gray-400 font-normal">01.10.2016-30.09.2020</span></h6>
-                <i class="text-gray-400">Supercomputing-Algorithm Research Group. Dept. of Informatics, University of Almería</i>
-              </div>
-              <div>
-                <h6 class="font-semibold">Research Labor Staff <span class="text-gray-400 font-normal">01.06.2016-30.09.2016</span></h6>
-                <i class="text-gray-400">Supercomputing-Algorithm Research Group. Dept. of Informatics, University of Almería</i>
-              </div>
-            </div>
-          </div>
-
-          <!-- Awards and Achievements -->
-          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3" data-accordion="card" id="awards-achievements">
-            <button class="w-full flex items-center justify-between text-left" data-accordion="button">
-              <span class="font-medium flex items-center gap-2"><i class="fas fa-trophy text-yellow-300"></i> Awards & Achievements</span>
-              <i class="fas fa-chevron-down text-gray-400 transition-transform" data-accordion="chevron"></i>
-            </button>
-            <div class="mt-3 text-xs text-gray-300 space-y-3 hidden" data-accordion="panel">
-              <div>
-                <h6 class="font-semibold">VII Research Awards Scientific Computer Society of Spain (SCIE) - BBVA Foundation 2022. <span class="text-gray-400 font-normal">2022</span></h6>
-                <i class="text-gray-400">22th November</i>
-                <ul class="mt-1 ml-4">
-                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Prize: 5.000 €</li>
-                </ul>
-              </div>
-              <div>
-                <h6 class="font-semibold">Third prize in Your PhD Thesis in Three Minutes competition. <span class="text-gray-400 font-normal">2021</span></h6>
-                <i class="text-gray-400">Jornadas Sarteco 22-24 September</i>
-                <ul class="mt-1 ml-4">
-                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i><a href="https://www.youtube.com/watch?v=ue9mnW8DX4k" class="text-blue-300 hover:underline">https://www.youtube.com/watch?v=ue9mnW8DX4k</a></li>
-                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Prize: 300 €</li>
-                </ul>
-              </div>
-              <div>
-                <h6 class="font-semibold">Official Accreditation. <span class="text-gray-400 font-normal">2021</span></h6>
-                <i class="text-gray-400">National Agency for Quality Assessment and Accreditation</i>
-                <ul class="mt-1 ml-4">
-                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Assistant Doctor Professor</li>
-                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Private University Professor</li>
-                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Hired Doctor Professor</li>
-                </ul>
-              </div>
-              <div>
-                <h6 class="font-semibold">FPU Scholarship <span class="text-gray-400 font-normal">2016-2020</span></h6>
-                <i class="text-gray-400">Spanish Ministry of Education, Culture and Sport</i>
-                <ul class="mt-1 ml-4">
-                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>The FPU scholarship provides financial support for awardees to complete an official PhD program and to carry out research and teaching activities, in any discipline, by signing a predoctoral contract.</li>
-                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Code: FPU15/02912.</li>
-                </ul>
-              </div>
-              <div>
-                <h6 class="font-semibold">Best Final project award in Informatics Master <span class="text-gray-400 font-normal">2018</span></h6>
-                <i class="text-gray-400">EPS-FCCEE - University of Almería</i>
-              </div>
-              <div>
-                <h6 class="font-semibold">Best academic record award in Informatics Master <span class="text-gray-400 font-normal">2018</span></h6>
-                <i class="text-gray-400">University of Almeria. Informatics Master.</i>
-              </div>
-              <div>
-                <h6 class="font-semibold">Collaboration grant with the Department of Informatics of the University of Almeria <span class="text-gray-400 font-normal">2016</span></h6>
-                <i class="text-gray-400">Spanish Ministry of Education, Culture and Sport</i>
-              </div>
-              <div>
-                <h6 class="font-semibold">Best final project award in Informatics Degree <span class="text-gray-400 font-normal">2015</span></h6>
-                <i class="text-gray-400">EPS-FCCEE - University of Almería</i>
-              </div>
-              <div>
-                <h6 class="font-semibold">Best academic record award in Informatics Degree <span class="text-gray-400 font-normal">2015</span></h6>
-                <i class="text-gray-400">University of Almeria. Informatics Degree.</i>
-              </div>
-            </div>
-          </div>
-
-          <!-- Education -->
-          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3" data-accordion="card" id="education">
-            <button class="w-full flex items-center justify-between text-left" data-accordion="button">
-              <span class="font-medium flex items-center gap-2"><i class="fas fa-graduation-cap text-blue-300"></i> Education</span>
-              <i class="fas fa-chevron-down text-gray-400 transition-transform" data-accordion="chevron"></i>
-            </button>
-            <div class="mt-3 text-xs text-gray-300 space-y-3 hidden" data-accordion="panel">
-              <div>
-                <h6 class="font-semibold">PhD in Informatics <span class="text-gray-400 font-normal">2016-2020</span></h6>
-                <i class="text-gray-400">University of Almería</i>
-                <ul class="mt-1 ml-4">
-                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Score: Cum laude (maximum score). International Mention.</li>
-                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Thesis title: High Performance Computing for Optimization Problem Solving in Bioinformatics.</li>
-                </ul>
-              </div>
-              <div>
-                <h6 class="font-semibold">Master in Informatics <span class="text-gray-400 font-normal">2015-2017</span></h6>
-                <i class="text-gray-400">University of Almería</i>
-                <ul class="mt-1 ml-4">
-                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Average score: 9.79 out 10.</li>
-                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Final master project title: Solving optimization problems in the pharmaceutical industry through evolutionary algorithms.</li>
-                </ul>
-              </div>
-              <div>
-                <h6 class="font-semibold">Degree in Informatics <span class="text-gray-400 font-normal">2011-2015</span></h6>
-                <i class="text-gray-400">University of Almería</i>
-                <ul class="mt-1 ml-4">
-                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Average score: 9.55 out 10.</li>
-                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Final degree project title: a voice interaction system for handling mashup interfaces.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Research Publications -->
-          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3" data-accordion="card" id="research-publications">
-            <button class="w-full flex items-center justify-between text-left" data-accordion="button">
-              <span class="font-medium flex items-center gap-2"><i class="fas fa-file-alt text-cyan-300"></i> Research Publications</span>
-              <i class="fas fa-chevron-down text-gray-400 transition-transform" data-accordion="chevron"></i>
-            </button>
-            <div class="mt-3 text-xs text-gray-300 space-y-4 hidden" data-accordion="panel">
-              <div>
-                <h6 class="font-semibold mb-2">Journal Articles</h6>
-                <ol class="list-decimal list-inside space-y-2 ml-2">
-                  <li>M. R. Ferrández, <span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, H. Pérez-Sánchez, and P. M. Ortigosa, "A two-layer mono-objective algorithm based on guided optimization to reduce the computational cost in virtual screening," Scientific Reports, vol. 12, no. 1, p. 12 769, Dec. 2022, issn: 2045-2322. doi: 10.1038/s41598-022-16913-w. [Online]. Available: <a href="https://doi.org/10.1038/s41598-022-16913-w" class="text-blue-300 hover:underline">https://doi.org/10.1038/s41598-022-16913-w</a></li>
-                  <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, M. R. Ferrández, H. Pérez-Sánchez, and P. M. Ortigosa, "MultiPharm-DT: A Multi-Objective Decision Tool for Ligand-Based Virtual Screening Problems," Informatica, pp. 1–26, Dec. 2021, issn: 0868-4952. doi: 10.15388/21-INFOR469. [Online]. Available: <a href="https://doi.org/10.15388/21-INFOR469" class="text-blue-300 hover:underline">https://doi.org/10.15388/21-INFOR469</a></li>
-                  <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, H. Pérez-Sánchez, and P. M. Ortigosa, "Optimizing Electrostatic Similarity for Virtual Screening: A New Methodology," Informatica, pp. 1–19, Jul. 2020, issn: 0868-4952. doi: 10.15388/20-INFOR424. [Online]. Available: <a href="https://doi.org/10.15388/20-INFOR424" class="text-blue-300 hover:underline">https://informatica.vu.lt/doi/10.15388/20INFOR424</a></li>
-                  <li><span class="font-semibold text-white">S. Puertas-Martín</span>, A. J. Banegas-Luna, M. Paredes-Ramos, J. L. Redondo, P. M. Ortigosa, O. O. Brovarets', and H. Pérez-Sánchez, "Is high performance computing a requirement for novel drug discovery and how will this impact academic efforts?" Expert Opinion on Drug Discovery, vol. 15, no. 9, pp. 981–986, 2020, issn: 1746045X. doi: 10.1080/17460441.2020.1758664.</li>
-                  <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, P. M. Ortigosa, and H. Pérez-Sánchez, "OptiPharm: An evolutionary algorithm to compare shape similarity," Scientific Reports, vol. 9, no. 1, p. 1398, Dec. 2019, issn: 2045-2322. doi: 10.1038/s41598-018-37908-6. [Online]. Available: <a href="http://www.nature.com/articles/s41598-018-37908-6" class="text-blue-300 hover:underline">http://www.nature.com/articles/s41598-018-37908-6</a></li>
-                  <li>A. J. Banegas-Luna, J. P. Cerón-Carrasco, <span class="font-semibold text-white">S. Puertas-Martín</span>, and H. Pérez-Sánchez, "BRUSELAS: HPC Generic and Customizable Software Architecture for 3D Ligand-Based Virtual Screening of Large Molecular Databases," Journal of Chemical Information and Modeling, vol. 59, no. 6, pp. 2805–2817, Jun. 2019, issn: 1549-9596. doi: 10.1021/acs.jcim.9b00279.</li>
-                  <li>M. R. Ferrández, <span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, B. Ivorra, A. M. Ramos, and P. M. Ortigosa, "High-performance computing for the optimization of high-pressure thermal treatments in food industry," The Journal of Supercomputing, vol. 75, no. 3, pp. 1187–1202, Mar. 2019, issn: 0920-8542. doi: 10.1007/s11227018-2351-4.</li>
-                  <li>J. S. García, <span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, J. J. Moreno, and P. M. Ortigosa, "Improving drug discovery through parallelism," The Journal of Supercomputing, Jan. 2023. doi: 10.1007/s11227-022-05014-0.</li>
-                  <li>N. C. Cruz, <span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, and P. M. Ortigosa, "An Effective Solution for Drug Discovery Based on the Tangram Meta-Heuristic and Compound Filtering," Informatica, vol. 34, no. 4, pp. 743–769, 2023, issn: 0868-4952. doi: 10.15388/23-INFOR535.</li>
-                  <li>J. J. Moreno, <span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, P. M. Ortigosa, A. Zawadzka, P. Kukołowicz, R. Szmurło, I. Kaliszewski, J. Miroforidis, and E. M. Garzón, "Bi-Level Optimization to Enhance Intensity Modulated Radiation Therapy Planning," Informatica, pp. 99–124, Jan. 2025, issn: 0868-4952. doi: 10.15388/24-INFOR560. [Online]. Available: <a href="https://informatica.vu.lt/doi/10.15388/24-INFOR560" class="text-blue-300 hover:underline">https://informatica.vu.lt/doi/10.15388/24-INFOR560</a></li>
-                  <li>J. J. Moreno, <span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, P. M. Ortigosa, and E. M. Garzón, "Where High-Performance Computing Meets Radiotherapy for Enhanced Intensity-Modulated Radiation Therapy Planning," Concurrency and Computation: Practice and Experience, vol. 37, no. 12–14, Jun. 2025, issn: 1532-0626. doi: 10.1002/cpe.70133.</li>
-                  <li>J. J. Moreno, <span class="font-semibold text-white">S. Puertas-Martín</span>, N. G. Roman, J. L. Redondo, and E. M. Garzón, "Fast automatic radiotherapy planning via algorithmic improvements and computational acceleration," Future Generation Computer Systems, vol. 176, p. 108168, Mar. 2026, issn: 0167739X. doi: 10.1016/j.future.2025.108168.</li>
-                </ol>
-              </div>
-            </div>
-          </div>
-
-          <!-- International Conferences -->
-          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3" data-accordion="card" id="international-conferences">
-            <button class="w-full flex items-center justify-between text-left" data-accordion="button">
-              <span class="font-medium flex items-center gap-2"><i class="fas fa-microphone text-yellow-300"></i> International Conferences</span>
-              <i class="fas fa-chevron-down text-gray-400 transition-transform" data-accordion="chevron"></i>
-            </button>
-            <div class="mt-3 text-xs text-gray-300 hidden" data-accordion="panel">
-              <p class="mb-2 text-gray-400">Complete list of 23 international conferences:</p>
-              <ol class="list-decimal list-inside space-y-2 ml-2">
-                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, H. Pérez-Sánchez, V. J. Gillet, and P. M. Ortigosa, "Optimization based on atom-pair properties in flexible ligands by optipharm," in XV. Workshop on Global Optimization, University of Szeged, Szeged, Hungary, Sep. 2022.</li>
-                <li>J. J. Moreno, <span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, L. G. Casado, P. M. Ortigosa, and E. M. Garzón, "A new hybrid optimization algorithm to combine physical and biological criteria to compute imrt planning," in 19th Workshop on Advances in Continuous Optimization, University Nova de Lisboa, Lisbon, Portugal, Jul. 2022.</li>
-                <li>J. J. Moreno, <span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, P. M. Ortigosa, and E. M. Garzón, "Acceleration of the tuning of eud model for imrt planning on multigpu clusters," in 22th International Conference Computational and Mathematical Methods in Science and Engineering, University of Cadiz, Rota, Spain, Jul. 2022.</li>
-                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, A. J. Banegas-Luna, E. M. Garzón, H. Pérez-Sánchez, V. J. Gillet, and P. M. Ortigosa, "Virtual screening based on electrostatic similarity and flexible ligands," in The 22nd International Conference on Computational Science and Its Applications, University of Malaga, Malaga, Spain, Jul. 2022.</li>
-                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, V. J. Gillet, H. Pérez-Sánchez, and P. M. Ortigosa, "Optimization method for maximizing the similarity in flexible molecules," in 19th Workshop on Advances in Continuous Optimization, University Nova de Lisboa, Lisbon, Portugal, Jul. 2022.</li>
-                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. J. Moreno, J. L. Redondo, P. M. Ortigosa, A. Zawadzka, J. Miroforidis, I. Kaliszewski, and E. M. Garzón, "New multiobjective strategies to optimize constrained eud radiotherapy models," in 26th International Conference on Multiple Criteria Decision Making, University of Portsmouth, Portsmouth, United Kingdom, Jun. 2022.</li>
-                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, E. M. Garzón, H. Pérez-Sánchez, and P. M. Ortigosa, "Increasing the accuracy of optipharm's virtual screening predictions by implementing molecular flexibility," 9th International Work-Conference on Bioinformatics and Biomedical Engineering, University of Granada, Gran Canaria, Spain, Jun. 2022</li>
-                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. J. Moreno, J. L. Redondo, P. M. Ortigosa, and E. M. Garzón, "Optimizing eud model parameters in radiotherapy planning," in The 7th Int'l Conf on Health Informatics and Medical Systems, American Council on Science and Education, Las Vegas, USA, Jul. 2021.</li>
-                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, H. Pérez-Sánchez, and P. M. Ortigosa, "Optimization of molecular descriptors using memetic algorithms," in 18th Workshop on Advances in Continuous Optimization, EurOpt2021, Ecole Nationale de l'Aviation Civile, Toulouse, France, Jul. 2021.</li>
-                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, H. Pérez-Sánchez, and P. M. Ortigosa, "Maximizing the electrostatic similarity in drug discovery through evolutionary algorithms," in 8th International Work-Conference on Bioinformatics and Biomedical Engineering, University of Granada, Granada, Spain, Sep. 2020.</li>
-                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, H. Pérez-Sánchez, and P. M. Ortigosa, "Virtual screening in electrostatic potential using an evolutionary algorithm," in Proceedings of META18: 7th International Conference on Metaheuristics and Nature Inspired Computing, Université de Lille, Marrakech, Morocco, Oct. 2018, pp. 207–209.</li>
-                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, H. Pérez-Sánchez, and P. M. Ortigosa, "Multi-objective evolutionary algorithm for evaluation of shape and electrostatic similarity," in Proceedings of LeGO 2018 - Int. Workshop on Global Optimization. AIP Conference Proceedings, Leiden University, vol. 1, Sep. 2018, pp. 1–4, isbn: 9780735417984. doi: 10.1063/1.5089986. [Online]. Available: <a href="http://aip.scitation.org/doi/abs/10.1063/1.5089986" class="text-blue-300 hover:underline">http://aip.scitation.org/doi/abs/10.1063/1.5089986</a></li>
-                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, H. Pérez-Sánchez, and P. M. Ortigosa, "Optimizing electrostatic similarity using a global evolutionary algorithm," in Proceedings of 6th EUROPT Workshop on Advances in Continuous Optimization, University of Almería, Almería, Spain, Jul. 2018.</li>
-                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, H. Pérez-Sánchez, and P. M. Ortigosa, "Virtual screening in molecular shape by using an evolutionary algorithm," in Proceedings OLA'2018 International Workshop on Optimization and Learning: Challenges and Applications, Université de Lille, Alicante, Spain, Feb. 2018, pp. 63–64.</li>
-                <li>M. R. Ferrández, <span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, B. Ivorra, R. A. M, and O. P. M, "High-performance computing for optimizing high-pressure thermal treatments in food processing," in Proceedings of the 17th International Conference on Computational and Mathematical Methods in Science and Engineering, CMMSE 2017, University of Cadiz, Alicante, Spain, Jul. 2017, pp. 862–869, isbn: 978-84-617-8694-7.</li>
-                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, M. R. Ferrández, J. L. Redondo, H. Pérez-Sánchez, and P. M. Ortigosa, "Enhancing molecular shape comparison by a parallel global evolutionary algorithm," in Proceedings of the 17th International Conference on Computational and Mathematical Methods in Science and Engineering, CMMSE 2017, University of Cadiz, Rota, Spain, Jul. 2017, pp. 1722–1728, isbn: 978-84-617-8694-7.</li>
-                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, H. den-Haan, J. L. Redondo, H. Pérez-Sánchez, and P. M. Ortigosa, "Enhancing molecular shape comparison by a global evolutionary algorithm," in 4th International Work-Conference on Bioinformatics and Biomedical Engineering, University of Granada, Granada, Spain, 2016.</li>
-                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, H. den-Haan, H. Pérez-Sánchez, and P. M. Ortigosa, "Multi-objective based scoring function for ligand based virtual screening," in Proceedings of the XIII Global Optimization Workshop, University of Minho, Braga, Portugal, 2016, isbn: 978-989-20-6764-3.</li>
-                <li><span class="font-semibold text-white">S. Puertas-Martín</span> and V. J. Gillet, "Partial Matching Shape and Coloured-based Applied to Ligand-Based Virtual Screening," in Ninth Joint Sheffield Conference on Chemoinformatics, University of Sheffield, Sheffield, United Kingdom, Jun. 2023.</li>
-                <li>N. C. Cruz, <span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, and P. M. Ortigosa, "Preliminary Results of Using the Tangram Meta-Heuristic for Virtual Screening in Drug Discovery," in Proceedings of the International Conference on Bioinformatics and Biomedical Engineering, University of Granada, Gran Canaria, Spain, Jul. 2023.</li>
-                <li>J. J. Moreno, <span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, P. M. Ortigosa, and E. M. Garzón, "Exploiting Multicore Servers to Optimize IMRT Radiotherapy Planning," in 1st Workshop about High-Performance e-Science, University Carlos III de Madrid, Madrid, Spain, Aug. 2024.</li>
-                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. J. Moreno, J. L. Redondo, P. M. Ortigosa, and E. M. Garzón, "Efficient Load Scheduling of IMRT Planning in Heterogeneous Multicore Clusters," in 15th International Conference on Parallel Processing &amp; Applied Mathematics, Technical University of Ostrava, Ostrava, Czech Republic, Sep. 2024.</li>
-                <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, P. M. Ortigosa, and V. J. Gillet, "Improving Partial Matching Accuracy Precision with Evolutionary Algorithm in Shape Ligand Based Virtual Screening," in 24th European Symposium on Quantitative Structure-Activity Relationship, University of Girona, Barcelona, Spain, Sep. 2024.</li>
-              </ol>
-              
-              <div class="mt-4">
-                <h6 class="font-semibold mb-2">Educational Conferences</h6>
-                <ol class="list-decimal list-inside space-y-2 ml-2">
-                  <li>J. J. Moreno, <span class="font-semibold text-white">S. Puertas-Martín</span>, F. Orts, N. C. Cruz, J. L. Redondo, E. Garzón, and O. P. M., "On simulating an arm processor for teaching computer structure," in 12th annual International Conference of Education, Research and Innovation (ICERI 2019), Seville, Spain, Dec. 2019.</li>
-                  <li>F. Orts, N. C. Cruz, <span class="font-semibold text-white">S. Puertas-Martín</span>, M. Ruiz-Ferrández, J. J. Moreno, C. Medina-López, P. M. Ortigosa, V. Ruíz, L. Casado, J. M. Salmerón, J. L. Redondo, G. E. Garzón, G. Ortega, and R. Villegas, "Learning quantum computation through simple examples," in 11th International Conference of Education, Research and Innovation (ICERI 2019), Seville, Spain, Dec. 2019.</li>
-                  <li>N. C. Cruz, M. R. Ferrández, E. M. Garzón, J. M. García Salmerón, L. González Casado, V. González Ruiz, C. Medina-López, J. J. Moreno, G. Ortega López, P. M. Ortigosa, F. J. Orts, <span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, J. F. Sanjuan Estrada, and T. Santamaría López, "Simulación de un procesador arm para la enseñanza de estructura de computadores. poster," in Jornadas de Innovación Docente y Experiencias Profesionales en la Universidad de Almería. Curso 2019-20, Vicerrectorado de Enseñanzas Oficiales y Formación Continua y por la Coordinación de Gobierno e Interacción con la Sociedad y las Empresas de la Universidad de Almería, Almería, Spain, Sep. 2019.</li>
-                  <li><span class="font-semibold text-white">S. Puertas-Martín</span>, J. J. Moreno, F. J. Orts, N. C. Cruz, J. L. Redondo, E. M. Garzón, and P. M. Ortigosa, "Simulación de un procesador arm para la enseñanza de estructura de computadores," in Actas de las Jornadas SARTECO 2019, Cáceres, Spain, Sep. 2019, pp. 235–240, isbn: 978-84-09-12127-4.</li>
-                  <li>V. González-Ruiz, G. Ortega, E. Garzón, N. Calvo-Cruz, R. J. L., J. Salmerón, L. Casado, P. M. Ortigosa, C. Medina-López, J. J. Moreno, M. R. Ferrández, F. Orts, <span class="font-semibold text-white">S. Puertas-Martín</span>, and T. Santamaría-López, "Project-based learning: An experience," in 11th International Conference on Education and New Learning Technologies (EDULEARN 2019), Palma, Spain, Jul. 2019.</li>
-                  <li>N. C. Cruz, M. R. Ferrández, E. M. Garzón, J. M. García Salmerón, L. González Casado, V. González Ruiz, C. Medina-López, J. J. Moreno, G. Ortega López, P. M. Ortigosa, F. J. Orts, <span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, J. F. Sanjuan Estrada, T. Santamaría López, and R. Villegas, "Recursos para el aprendizaje de computación cuántica en el grado de ingeniería informática. poster," in Jornadas de Innovación Docente y Experiencias Profesionales en la Universidad de Almería. Curso 2018-19, Vicerrectorado de Enseñanzas Oficiales y Formación Continua y por la Coordinación de Gobierno e Interacción con la Sociedad y las Empresas de la Universidad de Almería, Almería, Spain, Sep. 2018.</li>
-                </ol>
-              </div>
-
-              <div class="mt-4">
-                <h6 class="font-semibold mb-2">National Conferences</h6>
-                <ol class="list-decimal list-inside space-y-2 ml-2">
-                  <li>M. R. Ferrández, <span class="font-semibold text-white">S. Puertas-Martín</span>, J. L. Redondo, B. Ivorra, A. M. Ramos, and P. M. Ortigosa, "Computación de alto rendimiento para optimizar tratamientos térmicos de alta presión en la industria alimenticia," in Avances en arquitectura y tecnología de computadores. Actas de las Jornadas SARTECO 2017, Málaga, Spain, Sep. 2017, pp. 119–122, isbn: 978-84-697-4835-0.</li>
-                  <li><span class="font-semibold text-white">S. Puertas-Martín</span>, M. R. Ferrández, J. L. Redondo, H. Pérez-Sánchez, and P. M. Ortigosa, "Cribado virtual mediante un algoritmo evolutivo global paralelo," in Actas de las Jornadas SARTECO 2017, Cáceres, Spain, Sep. 2017, pp. 177–179, isbn: 978-84-697-4835-0.</li>
-                  <li><span class="font-semibold text-white">S. Puertas-Martín</span>, M. R. Ferrández, J. L. Redondo, H. Pérez-Sánchez, and P. M. Ortigosa, "Algoritmo evolutivo global como herramienta de cribado virtual utilizando la forma molecular," in III Jornadas Doctorales de la Universidad de Murcia, Murcia, Spain, May 2017, pp. 236–240, isbn: 978-84-608-9779-8.</li>
-                  <li>J. J. Moreno, <span class="font-semibold text-white">S. Puertas-Martín</span>, M. Padilla, J. L. Redondo, P. M. Ortigosa, and E. M. Garzón, "Aceleración del Ajuste Automático y Personalizado de Modelos gEUD para Planificación en IMRT," in Avances en arquitectura y tecnología de computadores. Actas de las Jornadas SARTECO 2024 (CEDI), A Coruña, Spain, Jun. 2024, pp. 51–58, isbn: 978-84-09-61749-4.</li>
-                </ol>
-              </div>
-            </div>
-          </div>
-
-          <!-- Patents -->
-          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3" data-accordion="card" id="patents-intellectual">
-            <button class="w-full flex items-center justify-between text-left" data-accordion="button">
-              <span class="font-medium flex items-center gap-2"><i class="fas fa-file-signature text-green-300"></i> Patents & Intellectual Properties</span>
-              <i class="fas fa-chevron-down text-gray-400 transition-transform" data-accordion="chevron"></i>
-            </button>
-            <div class="mt-3 text-xs text-gray-300 hidden" data-accordion="panel">
-              <div>
-                <h6 class="font-semibold">OPTIPHARM: an innovative evolutionary algorithm for virtual screening <span class="text-gray-400 font-normal">2018</span></h6>
-                <i class="text-gray-400">P. M. Ortigosa, J. L. Redondo, <span class="font-semibold text-white">S. Puertas-Martín</span> and H. Pérez-Sánchez.</i>
-                <ul class="mt-1 ml-4">
-                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>University of Almería and Universidad Católica San Antonio de Murcia.</li>
-                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Application Number: 201899900606752. Register number: RTA-94-18.</li>
-                  <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Registration Date: 16/02/2018. Concession date: 09/08/2018.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Research Stays -->
-          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3" data-accordion="card" id="research-stays">
-            <button class="w-full flex items-center justify-between text-left" data-accordion="button">
-              <span class="font-medium flex items-center gap-2"><i class="fas fa-search-location text-red-300"></i> Research Stays</span>
-              <i class="fas fa-chevron-down text-gray-400 transition-transform" data-accordion="chevron"></i>
-            </button>
-            <div class="mt-3 text-xs text-gray-300 hidden" data-accordion="panel">
-              <div>
-                <h6 class="font-semibold">Postdoctoral Stay <span class="text-gray-400 font-normal">Feb. 2022–Jan. 2024</span></h6>
-                <i class="text-gray-400">Chemoinformatics Research Group. Information School. University of Sheffield. Sheffield, S1 4DP, United Kingdom</i>
-              </div>
-              <div class="mt-3">
-                <h6 class="font-semibold">Predoctoral Stay <span class="text-gray-400 font-normal">Sep. 2018–Dec. 2018</span></h6>
-                <i class="text-gray-400">Centre for Logistics and Heuristic Optimization (CLHO), Kent Business School, University of Kent. Canterbury, CT2 7NZ, United Kingdom</i>
-              </div>
-            </div>
-          </div>
-
-          <!-- Teaching -->
-          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3" data-accordion="card" id="teaching-supervision">
-            <button class="w-full flex items-center justify-between text-left" data-accordion="button">
-              <span class="font-medium flex items-center gap-2"><i class="fas fa-chalkboard-teacher text-green-300"></i> Teaching & Supervision</span>
-              <i class="fas fa-chevron-down text-gray-400 transition-transform" data-accordion="chevron"></i>
-            </button>
-            <div class="mt-3 text-xs text-gray-300 space-y-4 hidden" data-accordion="panel">
-              <div>
-                <h6 class="font-semibold mb-2">Teaching Experience</h6>
-                <div class="space-y-2">
-                  <div>
-                    <p class="font-semibold">Degree in Informatics <span class="text-gray-400 font-normal">2019-2020</span></p>
-                    <i class="text-gray-400">University of Almería, Spain</i>
-                    <ul class="mt-1 ml-4">
-                      <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Network access technologies. Third year. 41 hours.</li>
-                      <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Peripherals and interfaces. Third year. 19 hours.</li>
-                      <li><i class="far fa-star mr-2 text-yellow-300"></i>Quality Assurance System of the University of Almeria. Academic quality 4.72 out of 5.</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <p class="font-semibold">Degree in Informatics <span class="text-gray-400 font-normal">2018-2019</span></p>
-                    <i class="text-gray-400">University of Almería, Spain</i>
-                    <ul class="mt-1 ml-4">
-                      <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Structure and computer technology. First year. 38 hours</li>
-                      <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Network access technologies. Third year. 19 hours</li>
-                      <li><i class="far fa-star mr-2 text-yellow-300"></i>Quality Assurance System of the University of Almeria. Academic quality 4.65 out of 5.</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <p class="font-semibold">Degree in Informatics <span class="text-gray-400 font-normal">2017-2018</span></p>
-                    <i class="text-gray-400">University of Almería, Spain</i>
-                    <ul class="mt-1 ml-4">
-                      <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Peripherals and interfaces. Third year. 19 hours.</li>
-                      <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Network access technologies. Third year. 19 hours.</li>
-                      <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Multi-processors. Third year. 18 hours.</li>
-                      <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Structure and computer technology. First year. 2 hours</li>
-                      <li><i class="far fa-star mr-2 text-yellow-300"></i>Quality Assurance System of the University of Almeria. Academic quality 4.82 out of 5.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <h6 class="font-semibold mb-2">Final Project Supervision</h6>
-                <div class="space-y-2">
-                  <div>
-                    <p class="font-semibold">Master of Data Science <span class="text-gray-400 font-normal">2022-2023</span></p>
-                    <i class="text-gray-400">University of Sheffield, United Kingdom</i>
-                    <ul class="mt-1 ml-4">
-                      <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Co-supervisor in a Final Master Project: A model with the optimal voxel size (VS) to create 3D point cloud for molecules in similarity searching by using machine learning.</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <p class="font-semibold">Degree in Informatics <span class="text-gray-400 font-normal">2020-2021</span></p>
-                    <i class="text-gray-400">University of Almería, Spain</i>
-                    <ul class="mt-1 ml-4">
-                      <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Co-supervisor in a Final Degree Project: Artificial vision-based fall recognition (Reconocimiento de caídas con Visión Artificial)</li>
-                      <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Co-supervisor in a Final Degree Project: Gesture control monitoring (Monitorización mediante control gestual)</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <p class="font-semibold">Degree in Informatics <span class="text-gray-400 font-normal">2019-2020</span></p>
-                    <i class="text-gray-400">University of Almería, Spain</i>
-                    <ul class="mt-1 ml-4">
-                      <li><i class="far fa-hand-point-right mr-2 text-blue-300"></i>Co-supervisor in a Final Degree Project: SMARTFRIDGE: Recognition of Actions in a Refrigerator and Decision Making in a Smart Environment. <span class="text-yellow-300">Award: Best Final degree project.</span></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Skills -->
-          <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-700/50 p-3" data-accordion="card" id="technical-skills">
-            <button class="w-full flex items-center justify-between text-left" data-accordion="button">
-              <span class="font-medium flex items-center gap-2"><i class="fas fa-users-cog text-gray-400"></i> Technical Skills</span>
-              <i class="fas fa-chevron-down text-gray-400 transition-transform" data-accordion="chevron"></i>
-            </button>
-            <div class="mt-3 text-xs text-gray-300 space-y-3 hidden" data-accordion="panel">
-              <div>
-                <h6 class="font-semibold">Programming Languages</h6>
-                <i class="text-gray-400">C, C++, JAVA, Python, LATEX</i>
-              </div>
-              <div>
-                <h6 class="font-semibold">Parallel Programming Paradigms</h6>
-                <i class="text-gray-400">MPI, PThreads</i>
-              </div>
-              <div>
-                <h6 class="font-semibold">Software applied to drug discovery</h6>
-                <i class="text-gray-400">OpenEye's Software (ROCS, EON, VIDA, OMEGA), OpenEye's Toolkit, Pymol, Reflex3D, WEGA, OptiPharm</i>
-              </div>
-            </div>
-          </div>
-
-        </main>
+<header id="hero">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" data-i18n="hero_eyebrow">Postdoctoral researcher · University of Almería</div>
+      <h1>Savíns<br><em>Puertas Martín</em></h1>
+      <p class="role"><span data-i18n="hero_pre">I make</span> <span id="typed"></span></p>
+      <div class="cta">
+        <a class="btn primary" href="#pubs" data-i18n="cta_pubs">Explore publications</a>
+        <a class="btn" href="documents/EN.pdf" download>⬇ <span data-i18n="cta_cv">Download CV (PDF)</span></a>
+        <button class="btn no-print" id="printBtn">🖨 <span data-i18n="cta_print">Print / Save PDF</span></button>
+        <a class="btn" href="mailto:savinspm@ual.es">✉ <span data-i18n="cta_contact">Contact</span></a>
       </div>
-    </section>
+    </div>
+    <div class="portrait"><img src="assets/images/profile.jpg" alt="Savíns Puertas Martín"></div>
+  </div>
+  <div class="hint no-print"><kbd>Ctrl</kbd>+<kbd>K</kbd> <span data-i18n="hint">to jump anywhere</span></div>
+</header>
+
+<main class="wrap">
+  <div class="stats" id="stats" style="margin-top:0">
+    <div class="card stat"><b data-count="0" id="s-journal">0</b><span data-i18n="st_journal">Journal papers</span></div>
+    <div class="card stat"><b data-count="0" id="s-conf">0</b><span data-i18n="st_conf">International conferences</span></div>
+    <div class="card stat"><b data-count="5300" data-suffix="€">0</b><span data-i18n="st_awards">In awards</span></div>
+    <div class="card stat"><b data-count="1" id="s-patent">0</b><span data-i18n="st_patent">Registered software (OptiPharm)</span></div>
+    <div class="card stat"><b data-count="8">0</b><span data-i18n="st_proj">Research projects</span></div>
+    <div class="card stat"><b data-count="12" id="s-theses">0</b><span data-i18n="st_theses">Final projects supervised</span></div>
+    <div class="card stat"><b data-count="2.3" data-dec="1">0</b><span data-i18n="st_stays">Years of research stays abroad</span></div>
+    <div class="card stat"><b data-count="200" data-suffix="+">0</b><span data-i18n="st_chess">Chess trophies ♞</span></div>
   </div>
 
-  <script>
-    // Animated counter function
-    function animateCounters() {
-      const counters = document.querySelectorAll('.counter[data-count]');
-      counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-count'));
-        const duration = 2000;
-        const step = target / (duration / 16);
-        let current = 0;
-        
-        const timer = setInterval(() => {
-          current += step;
-          if (current >= target) {
-            counter.textContent = target + (target > 10 ? '+' : '');
-            clearInterval(timer);
-          } else {
-            counter.textContent = Math.floor(current) + (target > 10 ? '+' : '');
-          }
-        }, 16);
-      });
+  <section id="about" class="reveal">
+    <div class="eyebrow" data-i18n="nav_about">About</div>
+    <h2 data-i18n="about_h">About me</h2>
+    <div class="about">
+      <div class="card">
+        <h3 style="font-size:1.1rem;margin-bottom:12px" data-i18n="profile">Profile</h3>
+        <p data-i18n="prof1"></p>
+        <p data-i18n="prof2"></p>
+        <p data-i18n="prof3"></p>
+      </div>
+      <div class="card">
+        <ul class="contact">
+          <li>✉ <a href="mailto:savinspm@ual.es">savinspm@ual.es</a></li>
+          <li>☎ +34 950 214 394</li>
+          <li>📍 CITE III, 1.13 · La Cañada, Almería</li>
+          <li>♞ <a href="https://ratings.fide.com/profile/2242338">FIDE Candidate Master</a></li>
+          <li>📷 <a href="https://www.instagram.com/pics_vins/">Photography</a></li>
+        </ul>
+        <div class="socials">
+          <a class="chip" href="https://orcid.org/0000-0001-8956-1733">ORCID</a>
+          <a class="chip" href="https://github.com/savinspm">GitHub</a>
+          <a class="chip" href="https://www.researchgate.net/profile/Savins-Puertas-Martin">ResearchGate</a>
+          <a class="chip" href="https://www.linkedin.com/in/sav%C3%ADns-puertas-mart%C3%ADn-6a8158174/">LinkedIn</a>
+          <a class="chip" href="https://savins.es/en/">Web</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="path" class="reveal">
+    <div class="eyebrow" data-i18n="nav_path">Career</div>
+    <h2 data-i18n="path_h">A decade in one line</h2>
+    <p class="lead" data-i18n="path_lead">Education, positions, awards and stays, in order. The line draws itself as you scroll.</p>
+    <div class="legend" id="legend"></div>
+    <div class="timeline" id="timeline"><div class="fill" id="tlFill"></div></div>
+  </section>
+
+  <section id="mapSection" class="reveal">
+    <div class="eyebrow" data-i18n="nav_map">Map</div>
+    <h2 data-i18n="map_h">Where the research has travelled</h2>
+    <p class="lead" data-i18n="map_lead">Conferences, workshops and research stays. Hover (or tap) a pin.</p>
+    <div class="card map-box">
+      <div class="map-ctrl">
+        <button class="chip" id="vEu" aria-pressed="true">Europe</button>
+        <button class="chip" id="vWorld" aria-pressed="false">World</button>
+      </div>
+      <svg id="map" viewBox="0 0 960 560" role="img" aria-label="Map of conferences and research stays"></svg>
+      <div class="tip" id="tip"></div>
+    </div>
+  </section>
+
+  <section id="pubs" class="reveal">
+    <div class="eyebrow" data-i18n="nav_pubs">Publications</div>
+    <h2 data-i18n="pubs_h">Research output</h2>
+    <p class="lead" data-i18n="pubs_lead">Filter by type or topic, search, and grab the DOI or BibTeX in one click.</p>
+    <div class="filters" id="typeF" role="group" aria-label="Type"></div>
+    <div class="filters" id="topicF" role="group" aria-label="Topic"></div>
+    <div class="filters"><input class="search" id="q" type="search" placeholder="Search title, venue, year…" aria-label="Search publications"></div>
+    <div class="count-line" id="count"></div>
+    <div class="pub-grid" id="pubList"></div>
+    <div style="text-align:center;margin-top:16px" class="no-print"><button class="btn" id="moreBtn"></button></div>
+  </section>
+
+  <section id="projects" class="reveal">
+    <div class="eyebrow" data-i18n="nav_proj">Projects</div>
+    <h2 data-i18n="proj_h">Research projects</h2>
+    <p class="lead" data-i18n="proj_lead">Funded projects I have taken part in, most recent first.</p>
+    <div class="proj-grid" id="projGrid"></div>
+  </section>
+
+  <section id="teaching" class="reveal">
+    <div class="eyebrow" data-i18n="nav_teach">Teaching</div>
+    <h2 data-i18n="teach_h">Teaching &amp; supervision</h2>
+    <p class="lead" data-i18n="teach_lead">Hours taught per academic year at the University of Almería (official certificate), and the final projects I have supervised.</p>
+    <div class="teach">
+      <div class="card"><div id="tChart"></div><div class="tleg" id="tLeg"></div></div>
+      <div class="tstats" id="tStats"></div>
+    </div>
+    <h3 class="subhead" data-i18n="th_h">Final projects supervised</h3>
+    <p class="lead" style="margin-bottom:0" data-i18n="th_lead">Every bachelor’s and master’s thesis I have co-supervised, grouped by topic.</p>
+    <div class="filters" style="margin-top:14px" id="thF" role="group" aria-label="Thesis topic"></div>
+    <div class="th-grid" id="thGrid"></div>
+  </section>
+
+  <section id="skills" class="reveal">
+    <div class="eyebrow" data-i18n="nav_skills">Skills</div>
+    <h2 data-i18n="skills_h">What I work with</h2>
+    <p class="lead" data-i18n="skills_lead">The radar is computed from the publication list. Click a research topic to filter the papers above.</p>
+    <div class="skills">
+      <div class="card"><svg id="radar" viewBox="-200 -150 400 310" role="img" aria-label="Radar of research topics"></svg>
+        <div class="topic-box"><h3 data-i18n="sk_topics">Research topics</h3><div class="row" id="topicChips"></div></div></div>
+      <div class="skill-cards">
+        <div class="card skill-group"><h3><span class="ic">⌨</span><span data-i18n="sk_lang">Languages</span></h3><div class="row"><span class="chip">C</span><span class="chip">C++</span><span class="chip">Java</span><span class="chip">Python</span><span class="chip">LaTeX</span></div></div>
+        <div class="card skill-group"><h3><span class="ic">⚙</span><span data-i18n="sk_par">Parallel programming</span></h3><div class="row"><span class="chip">MPI</span><span class="chip">PThreads</span></div></div>
+        <div class="card skill-group"><h3><span class="ic">⚗</span><span data-i18n="sk_soft">Drug discovery software</span></h3><div class="row"><span class="chip">OpenEye ROCS</span><span class="chip">EON</span><span class="chip">OMEGA</span><span class="chip">VIDA</span><span class="chip">OpenEye Toolkit</span><span class="chip">PyMOL</span><span class="chip">Reflex3D</span><span class="chip">WEGA</span><span class="chip">OptiPharm</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="more" class="reveal">
+    <div class="eyebrow" data-i18n="nav_more">Record</div>
+    <h2 data-i18n="more_h">The full record</h2>
+    <p class="lead" data-i18n="more_lead">Awards, education, employment, transfer and stays.</p>
+    <div class="tabs" id="tabs" role="tablist"></div>
+    <div id="tabPanels"></div>
+  </section>
+</main>
+
+<footer><div class="wrap">© 2026 Savíns Puertas Martín · S-AL Research Group · University of Almería<br><small data-i18n="foot">Psst… try the Konami code. ♞</small></div></footer>
+
+<div id="palette" role="dialog" aria-modal="true" aria-label="Command palette">
+  <div class="pal-box"><input id="palIn" placeholder="Type a command…" autocomplete="off"><ul id="palList"></ul></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script>
+/* ============ helpers ============ */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const store = {
+  get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+  set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+};
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+/* ============ i18n ============ */
+const I18N = {
+  en: {
+    nav_about: 'About', nav_path: 'Career', nav_map: 'Map', nav_pubs: 'Publications', nav_skills: 'Skills', nav_more: 'Record', nav_proj: 'Projects', nav_teach: 'Teaching',
+    hero_eyebrow: 'Postdoctoral researcher · University of Almería', hero_pre: 'I make',
+    cta_pubs: 'Explore publications', cta_cv: 'Download CV (PDF)', cta_print: 'Print / Save PDF', cta_contact: 'Contact', hint: 'to jump anywhere',
+    st_journal: 'Journal papers', st_conf: 'International conferences', st_awards: 'In awards', st_proj: 'Research projects', st_theses: 'Final projects supervised', st_patent: 'Registered software (OptiPharm)', st_stays: 'Years of research stays abroad', st_chess: 'Chess trophies ♞',
+    about_h: 'About me',
+    profile: 'Profile', prof1: "Savíns Puertas Martín is currently a Post-doctoral Researcher at the Department of Informatics, University of Almería. He finished his degree in Computer Engineering at the University of Almeria in June 2015, receiving the prizes for the best record of the promotion and the best final project. In September of the same year, he started the Master's degree in Computer Engineering at the same university and obtained a Collaboration Scholarship in which he began working in the area of drug development. During his second year of Master, he started a PhD in Computer Science funded by a 4-year FPU grant from the Spanish Ministry, also in Almeria. In June 2017, he finished the Master's degree, obtaining the best record and the best Master's thesis. He finished his PhD in October 2020 with the highest qualification, cum laude, and international mention.", prof2: 'His research has focused on the design and development of different drug development techniques. Specifically, a technique called Virtual Screening, which is normally used as one of the first stages in the drug development process, reducing the number of compounds to be analysed later, saving time and money. Among its developments is the OptiPharm software, for which he has registered its intellectual property (RTA-94-18). OptiPharm software has been used by several universities and companies in different countries.', prof3: 'In addition to this line, Savins worked on a radiotherapy project focused on the improvement and automation of intensity-modulated radiotherapy (IMRT) planning. He carried out a two-year post-doctoral research stay (Feb. 2022 – Jan. 2024) at the Chemoinformatics Research Group, Information School, University of Sheffield, United Kingdom, working on virtual screening and molecular flexibility. He is now back at the University of Almería, applying artificial intelligence and predictive models to drug discovery. His teaching activity has been related to Computer Architecture and Technology, High-Performance Computing and Computer Networks.',
+    path_h: 'A decade in one line', path_lead: 'Education, positions, awards and stays, in order. The line draws itself as you scroll.',
+    map_h: 'Where the research has travelled', map_lead: 'Conferences, workshops and research stays. Hover (or tap) a pin.',
+    pubs_h: 'Research output', pubs_lead: 'Filter by type or topic, search, and grab the DOI or BibTeX in one click.',
+    skills_h: 'What I work with', skills_lead: 'The radar is computed from the publication list. Click a research topic to filter the papers above.',
+    sk_topics: 'Research topics', sk_lang: 'Languages', sk_par: 'Parallel programming', sk_soft: 'Drug discovery software',
+    more_h: 'The full record', more_lead: 'Awards, education, employment, transfer and stays.',
+    proj_h: 'Research projects', proj_lead: 'Funded projects I have taken part in, most recent first.', live: 'Active', researchers: 'researchers', funded_by: 'Funding',
+    teach_h: 'Teaching & supervision', teach_lead: 'Hours taught per academic year at the University of Almería, and the final projects I have co-supervised.',
+    th_h: 'Final projects supervised', th_lead: 'Every bachelor’s and master’s thesis I have co-supervised, grouped by topic.',
+    tt_hours: 'hours taught', tt_years: 'academic years', tt_inn: 'Teaching innovation', tt_inn_t: 'Development of Resources to motivate the study of Computer Engineering — University of Almería, 2018 and 2019 (800 € each).', tt_en: 'Course taught in English (2023–24)', yr_l: 'Year',
+    bsc: 'BSc', msc: 'MSc', bsc_l: 'BSc in', msc_l: 'MSc in', cosup: 'Co-supervisor', sup: 'Supervisor', all_t: 'All topics',
+    th_topics: { NET: 'Networks & infrastructure', RT: 'Radiotherapy', DD: 'Drug discovery', VIS: 'AI & vision', SW: 'Health software', BIO: 'Biotech modelling' },
+    grades: { Notable: 'Very good', Sobresaliente: 'Outstanding', Distinction: 'Distinction', MH: 'Honors (Matrícula)' },
+    subj: { mp: 'Multiprocessors', mm: 'Multimedia technologies', pi: 'Peripherals and interfaces', st: 'Structure and computer technology', na: 'Network access technologies', ac: 'Computer architecture', tfg: 'Final degree project' },
+    rec_tabs: ['Awards', 'Education', 'Employment', 'Transfer & IP', 'Stays'],
+    foot: 'Psst… try the Konami code. ♞',
+    all: 'All', t_journal: 'Journal', t_conf: 'Int. conference', t_edu: 'Educational', t_national: 'National',
+    shown: (a, b) => `Showing ${a} of ${b}`, more: 'Show more', less: 'Show fewer', copied: 'Copied!', none: 'No results. Try clearing a filter.',
+    topics: { VS: 'Virtual screening', HPC: 'HPC', OPT: 'Optimization', RT: 'Radiotherapy', SYS: 'Systems & networks', EDU: 'Education' },
+    typed: ['drug discovery faster', 'algorithms run on GPUs', 'radiotherapy smarter', 'molecules find their match'],
+    cmd_theme: 'Toggle light / dark theme', cmd_auto: 'Theme by time of day', cmd_lang: 'Switch language', cmd_print: 'Print / save as PDF', cmd_cv: 'Download CV', cmd_mail: 'Send an email', cmd_gh: 'Open GitHub', cmd_top: 'Go to top', cmd_go: 'Go to',
+    pal_ph: 'Type a command…'
+  },
+  es: {
+    nav_about: 'Sobre mí', nav_path: 'Trayectoria', nav_map: 'Mapa', nav_pubs: 'Publicaciones', nav_skills: 'Skills', nav_more: 'Historial', nav_proj: 'Proyectos', nav_teach: 'Docencia',
+    hero_eyebrow: 'Investigador posdoctoral · Universidad de Almería', hero_pre: 'Hago que',
+    cta_pubs: 'Ver publicaciones', cta_cv: 'Descargar CV (PDF)', cta_print: 'Imprimir / Guardar PDF', cta_contact: 'Contacto', hint: 'para ir a cualquier sitio',
+    st_journal: 'Artículos en revistas', st_conf: 'Congresos internacionales', st_awards: 'En premios', st_proj: 'Proyectos de investigación', st_theses: 'TFG/TFM dirigidos', st_patent: 'Software registrado (OptiPharm)', st_stays: 'Años de estancias en el extranjero', st_chess: 'Trofeos de ajedrez ♞',
+    about_h: 'Sobre mí',
+    profile: 'Perfil', prof1: 'Savíns Puertas Martín es actualmente investigador posdoctoral en el Departamento de Informática de la Universidad de Almería. Terminó el Grado en Ingeniería Informática en la Universidad de Almería en junio de 2015, con los premios al mejor expediente de la promoción y al mejor proyecto fin de carrera. En septiembre de ese mismo año comenzó el Máster en Ingeniería Informática en la misma universidad y obtuvo una Beca de Colaboración con la que empezó a trabajar en el área del desarrollo de fármacos. Durante su segundo año de Máster inició un doctorado en Informática financiado por una beca FPU de 4 años del Ministerio, también en Almería. En junio de 2017 terminó el Máster, con el mejor expediente y el mejor trabajo fin de máster. Terminó el doctorado en octubre de 2020 con la máxima calificación, cum laude, y mención internacional.', prof2: 'Su investigación se ha centrado en el diseño y desarrollo de distintas técnicas de desarrollo de fármacos. En concreto, una técnica llamada cribado virtual, que normalmente se usa como una de las primeras etapas del desarrollo de fármacos y reduce el número de compuestos a analizar después, ahorrando tiempo y dinero. Entre sus desarrollos está el software OptiPharm, del que ha registrado la propiedad intelectual (RTA-94-18). OptiPharm ha sido utilizado por varias universidades y empresas de distintos países.', prof3: 'Además de esta línea, Savíns trabajó en un proyecto de radioterapia centrado en la mejora y automatización de la planificación de radioterapia de intensidad modulada (IMRT). Realizó una estancia posdoctoral de dos años (feb. 2022 – ene. 2024) en el Chemoinformatics Research Group, Information School, University of Sheffield (Reino Unido), trabajando en cribado virtual y flexibilidad molecular. Ahora ha vuelto a la Universidad de Almería, donde aplica inteligencia artificial y modelos predictivos al descubrimiento de fármacos. Su actividad docente ha estado relacionada con Arquitectura y Tecnología de Computadores, Computación de Altas Prestaciones y Redes de Computadores.',
+    path_h: 'Una década en una línea', path_lead: 'Formación, puestos, premios y estancias, en orden. La línea se dibuja al hacer scroll.',
+    map_h: 'Por dónde ha viajado la investigación', map_lead: 'Congresos, workshops y estancias. Pasa el ratón (o toca) un pin.',
+    pubs_h: 'Producción científica', pubs_lead: 'Filtra por tipo o tema, busca, y copia el DOI o el BibTeX con un clic.',
+    skills_h: 'Con qué trabajo', skills_lead: 'El radar se calcula a partir de la lista de publicaciones. Pulsa un tema para filtrar los artículos de arriba.',
+    sk_topics: 'Líneas de investigación', sk_lang: 'Lenguajes', sk_par: 'Programación paralela', sk_soft: 'Software de descubrimiento de fármacos',
+    more_h: 'El historial completo', more_lead: 'Premios, formación, empleo, transferencia y estancias.',
+    proj_h: 'Proyectos de investigación', proj_lead: 'Proyectos financiados en los que he participado, del más reciente al más antiguo.', live: 'En curso', researchers: 'investigadores', funded_by: 'Financiación',
+    teach_h: 'Docencia y dirección', teach_lead: 'Horas impartidas por curso en la Universidad de Almería (certificado oficial) y los trabajos fin de estudios que he dirigido.',
+    th_h: 'Trabajos fin de estudios dirigidos', th_lead: 'Todos los TFG y TFM que he codirigido, agrupados por temática.',
+    tt_hours: 'horas impartidas', tt_years: 'cursos académicos', tt_inn: 'Innovación docente', tt_inn_t: 'Desarrollo de Recursos para motivar el estudio de la Ingeniería de Computadores — Universidad de Almería, 2018 y 2019 (800 € cada año).', tt_en: 'Asignatura impartida en inglés (2023–24)', yr_l: 'Curso',
+    bsc: 'TFG', msc: 'TFM', bsc_l: 'Grado en', msc_l: 'Máster en', cosup: 'Codirector', sup: 'Director', all_t: 'Todas las temáticas',
+    th_topics: { NET: 'Redes e infraestructura', RT: 'Radioterapia', DD: 'Descubrimiento de fármacos', VIS: 'IA y visión', SW: 'Software sanitario', BIO: 'Modelado biotecnológico' },
+    grades: { Notable: 'Notable', Sobresaliente: 'Sobresaliente', Distinction: 'Distinction', MH: 'Matrícula de Honor' },
+    subj: { mp: 'Multiprocesadores', mm: 'Tecnologías multimedia', pi: 'Periféricos e interfaces', st: 'Estructura y tecnología de computadores', na: 'Tecnologías de acceso a red', ac: 'Arquitectura de computadores', tfg: 'Trabajo fin de grado' },
+    rec_tabs: ['Premios', 'Formación', 'Empleo', 'Transferencia y PI', 'Estancias'],
+    foot: 'Psst… prueba el código Konami. ♞',
+    all: 'Todo', t_journal: 'Revista', t_conf: 'Congreso int.', t_edu: 'Docente', t_national: 'Nacional',
+    shown: (a, b) => `Mostrando ${a} de ${b}`, more: 'Ver más', less: 'Ver menos', copied: '¡Copiado!', none: 'Sin resultados. Prueba a quitar un filtro.',
+    topics: { VS: 'Cribado virtual', HPC: 'HPC', OPT: 'Optimización', RT: 'Radioterapia', SYS: 'Sistemas y redes', EDU: 'Docencia' },
+    typed: ['el descubrimiento de fármacos más rápido', 'los algoritmos corran en GPUs', 'la radioterapia más inteligente', 'las moléculas encuentren su pareja'],
+    cmd_theme: 'Cambiar tema claro / oscuro', cmd_auto: 'Tema según la hora', cmd_lang: 'Cambiar idioma', cmd_print: 'Imprimir / guardar PDF', cmd_cv: 'Descargar CV', cmd_mail: 'Enviar un correo', cmd_gh: 'Abrir GitHub', cmd_top: 'Ir arriba', cmd_go: 'Ir a',
+    pal_ph: 'Escribe un comando…'
+  }
+};
+let lang = store.get('lang') || ((navigator.language || '').startsWith('es') ? 'es' : 'en');
+const T = k => I18N[lang][k];
+
+/* ============ data ============ */
+const CITY = {
+  Szeged: [46.25, 20.15, 'Hungary'], Lisbon: [38.72, -9.14, 'Portugal'], Rota: [36.62, -6.35, 'Spain'], 'Málaga': [36.72, -4.42, 'Spain'],
+  Portsmouth: [50.8, -1.09, 'UK'], 'Gran Canaria': [28.1, -15.4, 'Spain'], 'Las Vegas': [36.17, -115.14, 'USA'], Toulouse: [43.6, 1.44, 'France'],
+  Granada: [37.18, -3.6, 'Spain'], Marrakech: [31.63, -8.0, 'Morocco'], Leiden: [52.16, 4.49, 'Netherlands'], 'Almería': [36.84, -2.46, 'Spain'],
+  Alicante: [38.35, -0.48, 'Spain'], Braga: [41.55, -8.42, 'Portugal'], Sheffield: [53.38, -1.47, 'UK'], Madrid: [40.42, -3.7, 'Spain'],
+  Ostrava: [49.83, 18.28, 'Czechia'], Barcelona: [41.39, 2.17, 'Spain'], Canterbury: [51.28, 1.08, 'UK'], Seville: [37.39, -5.98, 'Spain'],
+  Palma: [39.57, 2.65, 'Spain'], 'Cáceres': [39.47, -6.37, 'Spain'], Murcia: [37.98, -1.13, 'Spain'], 'A Coruña': [43.36, -8.41, 'Spain'], 'Málaga ': [36.72, -4.42, 'Spain']
+};
+// [type, year, title, authors, venue, city, topics, doi]
+const A = 'Puertas-Martín';
+const RAW = [
+  ['journal', 2026, 'Fast automatic radiotherapy planning via algorithmic improvements and computational acceleration', `Moreno, ${A}, Roman, Redondo, Garzón`, 'Future Generation Computer Systems', null, ['RT', 'HPC'], '10.1016/j.future.2025.107768'],
+  ['journal', 2025, 'Where high-performance computing meets radiotherapy for enhanced intensity-modulated radiation therapy planning', `Moreno, ${A}, Redondo, Ortigosa, Garzón`, 'Concurrency and Computation: Practice and Experience', null, ['RT', 'HPC'], '10.1002/cpe.8399'],
+  ['journal', 2024, 'Bi-level optimization to enhance intensity modulated radiation therapy planning', `Moreno, ${A}, Redondo, Ortigosa, Zawadzka, Kukołowicz, Szmurło, Kaliszewski, Miroforidis, Garzón`, 'Informatica', null, ['RT', 'OPT'], '10.15388/24-INFOR560'],
+  ['journal', 2023, 'An effective solution for drug discovery based on the Tangram meta-heuristic and compound filtering', `Cruz, ${A}, Redondo, Ortigosa`, 'Informatica 34(4)', null, ['VS', 'OPT'], '10.15388/23-INFOR535'],
+  ['journal', 2023, 'Improving drug discovery through parallelism', `García, ${A}, Redondo, Moreno, Ortigosa`, 'The Journal of Supercomputing', null, ['VS', 'HPC'], '10.1007/s11227-022-04950-3'],
+  ['journal', 2022, 'A two-layer mono-objective algorithm based on guided optimization to reduce the computational cost in virtual screening', `Ferrández, ${A}, Redondo, Pérez-Sánchez, Ortigosa`, 'Scientific Reports 12(1)', null, ['VS', 'OPT'], '10.1038/s41598-022-16913-w'],
+  ['journal', 2021, 'MultiPharm-DT: a multi-objective decision tool for ligand-based virtual screening problems', `${A}, Redondo, Ferrández, Pérez-Sánchez, Ortigosa`, 'Informatica 33(1)', null, ['VS', 'OPT'], '10.15388/21-INFOR469'],
+  ['journal', 2020, 'Optimizing electrostatic similarity for virtual screening: a new methodology', `${A}, Redondo, Pérez-Sánchez, Ortigosa`, 'Informatica', null, ['VS', 'OPT'], '10.15388/20-INFOR424'],
+  ['journal', 2020, 'Is high performance computing a requirement for novel drug discovery and how will this impact academic efforts?', `${A}, Banegas-Luna, Paredes-Ramos, Redondo, Ortigosa, Brovarets, Pérez-Sánchez`, 'Expert Opinion on Drug Discovery 15(9)', null, ['VS', 'HPC'], '10.1080/17460441.2020.1758664'],
+  ['journal', 2019, 'OptiPharm: an evolutionary algorithm to compare shape similarity', `${A}, Redondo, Ortigosa, Pérez-Sánchez`, 'Scientific Reports 9(1)', null, ['VS', 'OPT'], '10.1038/s41598-018-37908-6'],
+  ['journal', 2019, 'BRUSELAS: HPC generic and customizable software architecture for 3D ligand-based virtual screening of large molecular databases', `Banegas-Luna, Cerón-Carrasco, ${A}, Pérez-Sánchez`, 'Journal of Chemical Information and Modeling 59(6)', null, ['VS', 'HPC'], '10.1021/acs.jcim.9b00279'],
+  ['journal', 2019, 'High-performance computing for the optimization of high-pressure thermal treatments in food industry', `Ferrández, ${A}, Redondo, Ivorra, Ramos, Ortigosa`, 'The Journal of Supercomputing 75(3)', null, ['HPC', 'OPT'], '10.1007/s11227-018-2351-4'],
+
+  ['conf', 2024, 'Efficient load scheduling of IMRT planning in heterogeneous multicore clusters', `${A}, Moreno, Redondo, Ortigosa, Garzón`, 'PPAM — Parallel Processing & Applied Mathematics', 'Ostrava', ['RT', 'HPC']],
+  ['conf', 2024, 'Improving partial matching accuracy precision with evolutionary algorithm in shape ligand-based virtual screening', `${A}, Redondo, Ortigosa, Gillet`, 'EuroQSAR 2024', 'Barcelona', ['VS', 'OPT']],
+  ['conf', 2024, 'Exploiting multicore servers to optimize IMRT radiotherapy planning', `Moreno, ${A}, Redondo, Ortigosa, Garzón`, '1st Workshop on High-Performance e-Science', 'Madrid', ['RT', 'HPC']],
+  ['conf', 2023, 'IMRT planning based on the gEUD model and evolutionary optimization on multicore systems', `Moreno, ${A}, Ortigosa, Redondo, Garzón`, 'CMMSE 2023', 'Rota', ['RT', 'HPC', 'OPT']],
+  ['conf', 2023, 'Partial matching shape and coloured-based applied to ligand-based virtual screening', `${A}, Gillet`, '9th Joint Sheffield Conference on Chemoinformatics', 'Sheffield', ['VS']],
+  ['conf', 2023, 'Preliminary results of using the Tangram meta-heuristic for virtual screening in drug discovery', `Cruz, ${A}, Redondo, Ortigosa`, 'IWBBIO', 'Gran Canaria', ['VS', 'OPT']],
+  ['conf', 2022, 'Optimization based on atom-pair properties in flexible ligands by OptiPharm', `${A}, Redondo, Pérez-Sánchez, Gillet, Ortigosa`, 'XV Workshop on Global Optimization', 'Szeged', ['VS', 'OPT']],
+  ['conf', 2022, 'Optipharm-parallel: enhancing the virtual screening process via parallelism', `García, ${A}, Redondo, Pérez-Sánchez, Ortigosa`, 'CMMSE 2022', 'Rota', ['VS', 'HPC']],
+  ['conf', 2022, 'A new hybrid optimization algorithm to combine physical and biological criteria to compute IMRT planning', `Moreno, ${A}, Redondo, Casado, Ortigosa, Garzón`, '19th Workshop on Advances in Continuous Optimization', 'Lisbon', ['RT', 'OPT']],
+  ['conf', 2022, 'Optimization method for maximizing the similarity in flexible molecules', `${A}, Redondo, Gillet, Pérez-Sánchez, Ortigosa`, '19th Workshop on Advances in Continuous Optimization', 'Lisbon', ['VS', 'OPT']],
+  ['conf', 2022, 'Acceleration of the tuning of EUD model for IMRT planning on multi-GPU clusters', `Moreno, ${A}, Redondo, Ortigosa, Garzón`, 'CMMSE 2022', 'Rota', ['RT', 'HPC']],
+  ['conf', 2022, 'Virtual screening based on electrostatic similarity and flexible ligands', `${A}, Redondo, Banegas-Luna, Garzón, Pérez-Sánchez, Gillet, Ortigosa`, 'ICCSA 2022', 'Málaga', ['VS']],
+  ['conf', 2022, 'New multiobjective strategies to optimize constrained EUD radiotherapy models', `${A}, Moreno, Redondo, Ortigosa, Zawadzka, Miroforidis, Kaliszewski, Garzón`, '26th Int. Conf. on Multiple Criteria Decision Making', 'Portsmouth', ['RT', 'OPT']],
+  ['conf', 2022, "Increasing the accuracy of OptiPharm's virtual screening predictions by implementing molecular flexibility", `${A}, Redondo, Garzón, Pérez-Sánchez, Ortigosa`, 'IWBBIO 2022', 'Gran Canaria', ['VS']],
+  ['conf', 2021, 'Optimizing EUD model parameters in radiotherapy planning', `${A}, Moreno, Redondo, Ortigosa, Garzón`, 'HIMS — Health Informatics and Medical Systems', 'Las Vegas', ['RT', 'OPT']],
+  ['conf', 2021, 'Optimization of molecular descriptors using memetic algorithms', `${A}, Redondo, Pérez-Sánchez, Ortigosa`, 'EUROPT 2021', 'Toulouse', ['VS', 'OPT']],
+  ['conf', 2020, 'Maximizing the electrostatic similarity in drug discovery through evolutionary algorithms', `${A}, Redondo, Pérez-Sánchez, Ortigosa`, 'IWBBIO 2020', 'Granada', ['VS', 'OPT']],
+  ['conf', 2018, 'Virtual screening in electrostatic potential using an evolutionary algorithm', `${A}, Redondo, Pérez-Sánchez, Ortigosa`, 'META18', 'Marrakech', ['VS', 'OPT']],
+  ['conf', 2018, 'Multi-objective evolutionary algorithm for evaluation of shape and electrostatic similarity', `${A}, Redondo, Pérez-Sánchez, Ortigosa`, 'LeGO 2018 — Int. Workshop on Global Optimization', 'Leiden', ['VS', 'OPT'], '10.1063/1.5089986'],
+  ['conf', 2018, 'Optimizing electrostatic similarity using a global evolutionary algorithm', `${A}, Redondo, Pérez-Sánchez, Ortigosa`, '6th EUROPT Workshop on Advances in Continuous Optimization', 'Almería', ['VS', 'OPT']],
+  ['conf', 2018, 'Virtual screening in molecular shape by using an evolutionary algorithm', `${A}, Redondo, Pérez-Sánchez, Ortigosa`, "OLA'2018", 'Alicante', ['VS', 'OPT']],
+  ['conf', 2017, 'High-performance computing for optimizing high-pressure thermal treatments in food processing', `Ferrández, ${A}, Redondo, Ivorra, Ramos, Ortigosa`, 'CMMSE 2017', 'Alicante', ['HPC', 'OPT']],
+  ['conf', 2017, 'Enhancing molecular shape comparison by a parallel global evolutionary algorithm', `${A}, Ferrández, Redondo, Pérez-Sánchez, Ortigosa`, 'CMMSE 2017', 'Rota', ['VS', 'HPC', 'OPT']],
+  ['conf', 2016, 'Enhancing molecular shape comparison by a global evolutionary algorithm', `${A}, den-Haan, Redondo, Pérez-Sánchez, Ortigosa`, 'IWBBIO 2016', 'Granada', ['VS', 'OPT']],
+  ['conf', 2016, 'Multi-objective based scoring function for ligand based virtual screening', `${A}, Redondo, den-Haan, Pérez-Sánchez, Ortigosa`, 'XIII Global Optimization Workshop', 'Braga', ['VS', 'OPT']],
+
+  ['edu', 2019, 'On simulating an ARM processor for teaching computer structure', `Moreno, ${A}, Orts, Cruz, Redondo, Garzón, Ortigosa`, 'ICERI 2019', 'Seville', ['EDU']],
+  ['edu', 2019, 'Learning quantum computation through simple examples', `Orts, Cruz, ${A}, et al.`, 'ICERI 2019', 'Seville', ['EDU']],
+  ['edu', 2019, 'Project-based learning: an experience', `González-Ruiz, Ortega, Garzón, et al., ${A}`, 'EDULEARN 2019', 'Palma', ['EDU']],
+  ['edu', 2019, 'Simulación de un procesador ARM para la enseñanza de estructura de computadores', `${A}, Moreno, Orts, Cruz, Redondo, Garzón, Ortigosa`, 'Jornadas SARTECO 2019', 'Cáceres', ['EDU']],
+  ['edu', 2019, 'Simulación de un procesador ARM para la enseñanza de estructura de computadores (póster)', `Cruz, Ferrández, Garzón, et al., ${A}`, 'Jornadas de Innovación Docente, Universidad de Almería', 'Almería', ['EDU']],
+  ['edu', 2018, 'Recursos para el aprendizaje de computación cuántica en el grado de ingeniería informática (póster)', `Cruz, Ferrández, Garzón, et al., ${A}`, 'Jornadas de Innovación Docente, Universidad de Almería', 'Almería', ['EDU']],
+
+  ['national', 2026, 'Un intercomunicador de audio de baja latencia con compresión perceptual basada en paquetes wavelet para la docencia de tecnologías multimedia', `${A}, Moreno Riado, González-Ruiz`, 'Actas de las XXXVI Jornadas SARTECO 2026', 'Madrid', ['EDU', 'SYS']],
+  ['national', 2026, 'Infraestructura p2p agnóstica para streaming multimedia seguro en entornos clínicos: soberanía del dato mediante virtualización IA on-premise', `Sánchez-Olmedo, ${A}, de Torres Sánchez, Mezquita-Raya, Redondo`, 'Actas de las XXXVI Jornadas SARTECO 2026', 'Madrid', ['SYS']],
+  ['national', 2025, 'Clústeres heterogéneos para acelerar la planificación automática en radioterapia', `Moreno Riado, ${A}, Redondo, Ortigosa, Garzón`, 'Actas de las XXXV Jornadas SARTECO 2025', 'Seville', ['RT', 'HPC']],
+  ['national', 2024, 'Aceleración del ajuste automático y personalizado de modelos gEUD para planificación en IMRT', `Moreno, ${A}, Padilla, Redondo, Ortigosa, Garzón`, 'Actas de las Jornadas SARTECO CEDI 2024', 'A Coruña', ['RT', 'HPC']],
+  ['national', 2017, 'Computación de alto rendimiento para optimizar tratamientos térmicos de alta presión en la industria alimenticia', `Ferrández, ${A}, Redondo, Ivorra, Ramos, Ortigosa`, 'Jornadas SARTECO 2017', 'Málaga', ['HPC', 'OPT']],
+  ['national', 2017, 'Cribado virtual mediante un algoritmo evolutivo global paralelo', `${A}, Ferrández, Redondo, Pérez-Sánchez, Ortigosa`, 'Jornadas SARTECO 2017', 'Cáceres', ['VS', 'HPC', 'OPT']],
+  ['national', 2017, 'Algoritmo evolutivo global como herramienta de cribado virtual utilizando la forma molecular', `${A}, Ferrández, Redondo, Pérez-Sánchez, Ortigosa`, 'III Jornadas Doctorales, Universidad de Murcia', 'Murcia', ['VS', 'OPT']]
+];
+const PUBS = RAW.map(([type, year, title, auth, venue, city, topics, doi], i) => ({ id: i, type, year, title, auth, venue, city, topics, doi }));
+PUBS.sort((a, b) => b.year - a.year || a.id - b.id);
+
+// timeline events
+const EV = [
+  { y: '2011', c: 'edu', en: ['Degree in Informatics', 'University of Almería · average 9.55/10 · final project graded 10 with Honors'], es: ['Grado en Informática', 'Universidad de Almería · media 9,55/10 · TFG con 10 y Matrícula de Honor'] },
+  { y: '2015', c: 'award', en: ['Best academic record & best final project', 'Informatics Degree · EPS-FCCEE, University of Almería'], es: ['Mejor expediente y mejor proyecto fin de grado', 'Grado en Informática · EPS-FCCEE, Universidad de Almería'] },
+  { y: '2016', c: 'work', en: ['Collaboration grant & research staff', 'Optimization of protein folding using HPC techniques · Supercomputing-Algorithm Research Group (Jun–Sep 2016)'], es: ['Beca de colaboración y personal investigador', 'Optimización del plegamiento de proteínas con técnicas HPC · Grupo Supercomputación-Algoritmos (jun–sep 2016)'] },
+  { y: '2016', c: 'patent', en: ['Technology transfer · HPC infrastructure evaluation', 'Contract with BULL España, S.A. (Apr–Jun 2016) · 14 researchers · 6,109.83 €'], es: ['Transferencia · evaluación de infraestructuras HPC', 'Contrato con BULL España, S.A. (abr–jun 2016) · 14 investigadores · 6.109,83 €'] },
+  { y: '2016', c: 'work', en: ['FPU grant · PhD begins', 'Pre-doctoral researcher, Dept. of Informatics (Oct 2016 – Sep 2020) · Spanish Ministry'], es: ['Beca FPU · empieza el doctorado', 'Investigador predoctoral, Dpto. de Informática (oct 2016 – sep 2020) · Ministerio'] },
+  { y: '2017', c: 'edu', en: ['Master in Informatics', 'Average 9.79/10 · thesis on evolutionary algorithms for the pharmaceutical industry (10 with Honors)'], es: ['Máster en Informática', 'Media 9,79/10 · TFM sobre algoritmos evolutivos para la industria farmacéutica (10 con Matrícula)'] },
+  { y: '2018', c: 'patent', en: ['OptiPharm registered (RTA-94-18)', 'Intellectual property with UAL and UCAM · registered 16/02/2018, granted 09/08/2018'], es: ['OptiPharm registrado (RTA-94-18)', 'Propiedad intelectual con UAL y UCAM · registrado 16/02/2018, concedido 09/08/2018'] },
+  { y: '2018', c: 'award', en: ['Best final project & best academic record', 'Informatics Master · University of Almería'], es: ['Mejor TFM y mejor expediente', 'Máster en Informática · Universidad de Almería'] },
+  { y: '2018', c: 'stay', en: ['Predoctoral stay · University of Kent', 'Sep–Dec 2018 · Centre for Logistics and Heuristic Optimization, Canterbury'], es: ['Estancia predoctoral · University of Kent', 'Sep–Dic 2018 · Centre for Logistics and Heuristic Optimization, Canterbury'] },
+  { y: '2020', c: 'edu', en: ['PhD in Informatics — cum laude', 'International mention · “HPC for optimization problem solving in bioinformatics”'], es: ['Doctorado en Informática — cum laude', 'Mención internacional · “HPC para problemas de optimización en bioinformática”'] },
+  { y: '2021', c: 'work', en: ['Postdoc · radiotherapy with HPC', 'University of Almería (Feb 2021 – Jan 2022) · IMRT schedule optimization'], es: ['Posdoc · radioterapia con HPC', 'Universidad de Almería (feb 2021 – ene 2022) · optimización de planes IMRT'] },
+  { y: '2021', c: 'award', en: ['Margarita Salas Grant · 3 years', 'Recualificación del sistema universitario español · EU NextGenerationEU (2021–2024)'], es: ['Ayuda Margarita Salas · 3 años', 'Recualificación del sistema universitario español · UE NextGenerationEU (2021–2024)'] },
+  { y: '2021', c: 'award', en: ['3rd prize · “Tu Tesis en 3 minutos”', 'Asociación SARTECO · diploma and 300 €'], es: ['3.er premio · “Tu Tesis en 3 minutos”', 'Asociación SARTECO · diploma y 300 €'] },
+  { y: '2022', c: 'stay', en: ['Postdoc · University of Sheffield', 'Feb 2022 – Jan 2024 · Chemoinformatics Research Group, Margarita Salas funding'], es: ['Posdoc · University of Sheffield', 'Feb 2022 – Ene 2024 · Chemoinformatics Research Group, financiado por Margarita Salas'] },
+  { y: '2022', c: 'award', en: ['Premio Jóvenes Investigadores Informáticos', 'VI edition, SCIE – Fundación BBVA · diploma and 5,000 €'], es: ['Premio Jóvenes Investigadores Informáticos', 'VI edición, SCIE – Fundación BBVA · diploma y 5.000 €'] },
+  { y: '2024', c: 'work', en: ['Back to Almería', 'Postdoc, Feb–Dec 2024 (11 months) · University of Almería'], es: ['De vuelta en Almería', 'Posdoc, feb–dic 2024 (11 meses) · Universidad de Almería'] },
+  { y: '2025', c: 'work', en: ['Postdoc · funded by Junta de Andalucía', 'University of Almería · from 1 May 2025'], es: ['Posdoc · financiado por la Junta de Andalucía', 'Universidad de Almería · desde el 1 de mayo de 2025'] }
+];
+const KINDS = { edu: 'Education', work: 'Position', award: 'Award', stay: 'Stay abroad', patent: 'Transfer / IP' };
+const KINDS_ES = { edu: 'Formación', work: 'Puesto', award: 'Premio', stay: 'Estancia', patent: 'Transferencia / PI' };
+
+// accordion content
+const ACC = {
+  en: [
+    ['🏆 Awards & achievements', `<ul><li><b>2021–2024</b> — Margarita Salas Grant (Recualificación del sistema universitario español), EU NextGenerationEU · 3 years</li><li><b>2022</b> — Premio Jóvenes Investigadores Informáticos (VI edition), SCIE – Fundación BBVA · diploma and 5,000 €</li><li><b>2021</b> — 3rd prize, “Tu Tesis en 3 minutos”, Asociación SARTECO · diploma and 300 €</li><li><b>2016–2020</b> — FPU Scholarship, Spanish Ministry of Education, Culture and Sport (FPU15/02912)</li><li><b>2018</b> — Best final project &amp; best academic record, Informatics Master</li><li><b>2016</b> — Collaboration grant, Dept. of Informatics · <i>Optimization of protein folding using HPC techniques</i></li><li><b>2015</b> — Best final project &amp; best academic record, Informatics Degree</li></ul>`],
+    ['🎓 Education', `<ul><li><b>PhD in Informatics</b> (2016–2020) · cum laude (maximum score), international mention. Thesis: <i>High Performance Computing for Optimization Problem Solving in Bioinformatics</i></li><li><b>Master in Informatics</b> (2015–2017) · average 9.79/10. Final project: <i>Solving optimization problems in the pharmaceutical industry through evolutionary algorithms</i> (10 with Honors)</li><li><b>Degree in Informatics</b> (2011–2015) · average 9.55/10. Final project: <i>a voice interaction system for handling mashup interfaces</i> (10 with Honors)</li></ul>`],
+    ['💼 Employment history', `<ul><li><b>01.05.2025 – now</b> — Post-doctoral Researcher, funded by the Junta de Andalucía. Dept. of Informatics, University of Almería</li><li><b>01.02.2022 – 31.12.2024</b> — Post-doctoral Researcher (Margarita Salas / Recualificación grant, EU NextGenerationEU): 2-year research stay at the University of Sheffield, followed by 11 months at the University of Almería</li><li><b>01.02.2021 – 31.01.2022</b> — Post-doctoral Researcher on <i>High Performance Computing for Optimizing Intensity Modulated Radiation Therapy Schedules</i>. University of Almería</li><li><b>01.10.2016 – 30.09.2020</b> — Pre-doctoral Researcher, FPU scholarship. University of Almería</li><li><b>01.06.2016 – 30.09.2016</b> — Research Labor Staff, Supercomputing-Algorithm Research Group</li></ul>`],
+    ['🧪 Research projects', `<ul><li><b>2025–2028</b> — Soluciones Computacionales en el Campo de la Salud (Comp4Health-II) · national · 32 researchers · 363,250 €</li><li><b>2022–2025</b> — Diseño de métodos computacionales con aplicación en salud (Comp4Health) · national · 32 researchers · 227,177 €</li><li><b>2022–2024</b> — Pulsera inteligente para la predicción, detección y notificación de ataques epilépticos (EPILSERA) · Ministerio de Ciencia e Innovación · 21 researchers · 143,750 €</li><li><b>2020–2023</b> — Desarrollo de librerías cuánticas eficientes (DELICE) · 12 researchers · 29,914 €</li><li><b>2020–2022</b> — Inteligencia Computacional en descubrimiento de fármacos (IC-DRUGS) · national, RTI2018-095993-B-I00 · 31 researchers · 186,461 €</li><li><b>2019–2021</b> — HPC to Optimize Intensity Modulated Radiation Therapy Planning · regional, UAL18-TIC-A020-B, Junta de Andalucía / FEDER · 14 researchers · 76,800 €</li><li><b>2019</b> — Discovery and optimization of bioactive compounds through advanced computational chemistry techniques · 20988/PI/18, Fundación Séneca · 12 researchers · 62,000 €</li><li><b>2016–2019</b> — Computational methodologies for societal challenges · national, TIN2015-66680-C2-1-R · 21 researchers · 147,620 €</li></ul>`],
+    ['📜 Technology transfer, patents & IP', `<ul><li><b>2018 — OptiPharm</b>: an innovative evolutionary algorithm for virtual screening. Application no. 201899900606752, register no. RTA-94-18; registered 16/02/2018, granted 09/08/2018. University of Almería &amp; Universidad Católica San Antonio de Murcia.</li><li><b>Apr–Jun 2016 — Evaluation of high-performance computing infrastructures</b>. Contract with BULL España, S.A. · 14 researchers · 6,109.83 €</li></ul>`],
+    ['🛰 Research stays', `<ul><li><b>Feb 2022 – Jan 2024</b> — Postdoctoral stay, Chemoinformatics Research Group, Information School, University of Sheffield (UK)</li><li><b>Sep – Dec 2018</b> — Predoctoral stay, Centre for Logistics and Heuristic Optimization (CLHO), Kent Business School, University of Kent, Canterbury (UK)</li></ul>`],
+    ['👨‍🏫 Teaching', `<ul><li><b>2024–25</b> — Multiprocessors (3rd year, 41 h) · Multimedia technologies (3rd year, 19 h)</li><li><b>2023–24</b> — Peripherals and interfaces (3rd year, 57 h, in English)</li><li><b>2019–20</b> — Structure and computer technology (1st year, 48 h) · Peripherals and interfaces (3rd year, 19 h)</li><li><b>2018–19</b> — Network access technologies (3rd year, 50 h) · Structure and computer technology (1st year, 2 h)</li><li><b>2017–18</b> — Peripherals and interfaces (38 h) · Network access technologies (19 h) · Multi-processors (18 h)</li><li><b>Teaching innovation (2018 &amp; 2019)</b> — <i>Development of Resources to motivate the study of Computer Engineering</i>, University of Almería · 800 € each year</li></ul>`],
+    ['🧑‍🎓 Final project supervision', `<ul><li><b>2024</b> — BSc Informatics (co-supervisor): large-network monitoring and management with an SDN controller (Notable) · evolutionary optimization and advanced computing to improve radiotherapy planning (Sobresaliente)</li><li><b>2023</b> — MSc Computer Engineering, University of Sheffield (co-supervisor): a model with the optimal voxel size to create 3D point clouds for molecules in similarity searching using machine learning (Distinction)</li><li><b>2021</b> — BSc Informatics (co-supervisor): gesture-control monitoring (Notable) · fall recognition with artificial vision (Sobresaliente)</li><li><b>2019–20</b> — BSc Informatics (co-supervisor): SMARTFRIDGE, recognition of actions in a refrigerator and decision making in a smart environment (Matrícula de Honor)</li></ul>`]
+  ],
+  es: [
+    ['🏆 Premios y logros', `<ul><li><b>2021–2024</b> — Ayuda Margarita Salas (Recualificación del sistema universitario español), UE NextGenerationEU · 3 años</li><li><b>2022</b> — Premio Jóvenes Investigadores Informáticos (VI edición), SCIE – Fundación BBVA · diploma y 5.000 €</li><li><b>2021</b> — 3.er premio, “Tu Tesis en 3 minutos”, Asociación SARTECO · diploma y 300 €</li><li><b>2016–2020</b> — Beca FPU, Ministerio de Educación, Cultura y Deporte (FPU15/02912)</li><li><b>2018</b> — Mejor TFM y mejor expediente, Máster en Informática</li><li><b>2016</b> — Beca de colaboración, Dpto. de Informática · <i>Optimización del plegamiento de proteínas con técnicas HPC</i></li><li><b>2015</b> — Mejor TFG y mejor expediente, Grado en Informática</li></ul>`],
+    ['🎓 Formación', `<ul><li><b>Doctorado en Informática</b> (2016–2020) · cum laude (máxima calificación), mención internacional. Tesis: <i>High Performance Computing for Optimization Problem Solving in Bioinformatics</i></li><li><b>Máster en Informática</b> (2015–2017) · media 9,79/10. TFM: <i>Solving optimization problems in the pharmaceutical industry through evolutionary algorithms</i> (10 con Matrícula)</li><li><b>Grado en Informática</b> (2011–2015) · media 9,55/10. TFG: <i>a voice interaction system for handling mashup interfaces</i> (10 con Matrícula)</li></ul>`],
+    ['💼 Trayectoria laboral', `<ul><li><b>01.05.2025 – actualidad</b> — Investigador posdoctoral financiado por la Junta de Andalucía. Dpto. de Informática, Universidad de Almería</li><li><b>01.02.2022 – 31.12.2024</b> — Investigador posdoctoral (ayuda Margarita Salas / Recualificación, UE NextGenerationEU): estancia de 2 años en la Universidad de Sheffield, seguida de 11 meses en la Universidad de Almería</li><li><b>01.02.2021 – 31.01.2022</b> — Investigador posdoctoral en <i>High Performance Computing for Optimizing Intensity Modulated Radiation Therapy Schedules</i>. Universidad de Almería</li><li><b>01.10.2016 – 30.09.2020</b> — Investigador predoctoral, beca FPU. Universidad de Almería</li><li><b>01.06.2016 – 30.09.2016</b> — Personal laboral de investigación, Grupo Supercomputación-Algoritmos</li></ul>`],
+    ['🧪 Proyectos de investigación', `<ul><li><b>2025–2028</b> — Soluciones Computacionales en el Campo de la Salud (Comp4Health-II) · nacional · 32 investigadores · 363.250 €</li><li><b>2022–2025</b> — Diseño de métodos computacionales con aplicación en salud (Comp4Health) · nacional · 32 investigadores · 227.177 €</li><li><b>2022–2024</b> — Pulsera inteligente para la predicción, detección y notificación de ataques epilépticos (EPILSERA) · Ministerio de Ciencia e Innovación · 21 investigadores · 143.750 €</li><li><b>2020–2023</b> — Desarrollo de librerías cuánticas eficientes (DELICE) · 12 investigadores · 29.914 €</li><li><b>2020–2022</b> — Inteligencia Computacional en descubrimiento de fármacos (IC-DRUGS) · nacional, RTI2018-095993-B-I00 · 31 investigadores · 186.461 €</li><li><b>2019–2021</b> — Computación de Altas Prestaciones para Optimizar Planificaciones de Radioterapia de Intensidad Modulada · regional, UAL18-TIC-A020-B, Junta de Andalucía / FEDER · 14 investigadores · 76.800 €</li><li><b>2019</b> — Descubrimiento y optimización de compuestos bioactivos mediante técnicas avanzadas de química computacional · 20988/PI/18, Fundación Séneca · 12 investigadores · 62.000 €</li><li><b>2016–2019</b> — Metodologías computacionales para desafíos de la sociedad · nacional, TIN2015-66680-C2-1-R · 21 investigadores · 147.620 €</li></ul>`],
+    ['📜 Transferencia, patentes y propiedad intelectual', `<ul><li><b>2018 — OptiPharm</b>: algoritmo evolutivo innovador para cribado virtual. Solicitud n.º 201899900606752, registro n.º RTA-94-18; registrado 16/02/2018, concedido 09/08/2018. Universidad de Almería y Universidad Católica San Antonio de Murcia.</li><li><b>Abr–Jun 2016 — Evaluación de infraestructuras de computación de altas prestaciones</b>. Contrato con BULL España, S.A. · 14 investigadores · 6.109,83 €</li></ul>`],
+    ['🛰 Estancias de investigación', `<ul><li><b>Feb 2022 – Ene 2024</b> — Estancia posdoctoral, Chemoinformatics Research Group, Information School, University of Sheffield (Reino Unido)</li><li><b>Sep – Dic 2018</b> — Estancia predoctoral, Centre for Logistics and Heuristic Optimization (CLHO), Kent Business School, University of Kent, Canterbury (Reino Unido)</li></ul>`],
+    ['👨‍🏫 Docencia', `<ul><li><b>2024–25</b> — Multiprocesadores (3.º, 41 h) · Tecnologías multimedia (3.º, 19 h)</li><li><b>2023–24</b> — Periféricos e interfaces (3.º, 57 h, en inglés)</li><li><b>2019–20</b> — Estructura y tecnología de computadores (1.º, 48 h) · Periféricos e interfaces (3.º, 19 h)</li><li><b>2018–19</b> — Tecnologías de acceso a red (3.º, 50 h) · Estructura y tecnología de computadores (1.º, 2 h)</li><li><b>2017–18</b> — Periféricos e interfaces (38 h) · Tecnologías de acceso a red (19 h) · Multiprocesadores (18 h)</li><li><b>Innovación docente (2018 y 2019)</b> — <i>Desarrollo de Recursos para motivar el estudio de la Ingeniería de Computadores</i>, Universidad de Almería · 800 € cada año</li></ul>`],
+    ['🧑‍🎓 Dirección de trabajos fin de estudios', `<ul><li><b>2024</b> — Grado en Informática (codirector): monitorización y gestión de una red de gran tamaño con un controlador SDN (Notable) · optimización evolutiva y computación avanzada para mejorar la planificación de tratamientos de radioterapia (Sobresaliente)</li><li><b>2023</b> — Máster en Ingeniería Informática, University of Sheffield (codirector): modelo con el tamaño de vóxel óptimo para crear nubes de puntos 3D de moléculas en búsqueda por similitud con machine learning (Distinction)</li><li><b>2021</b> — Grado en Informática (codirector): monitorización mediante control gestual (Notable) · reconocimiento de caídas con visión artificial (Sobresaliente)</li><li><b>2019–20</b> — Grado en Informática (codirector): SMARTFRIDGE, reconocimiento de acciones en un frigorífico y toma de decisiones en un entorno inteligente (Matrícula de Honor)</li></ul>`]
+  ]
+};
+
+/* ============ i18n apply ============ */
+function applyLang() {
+  document.documentElement.lang = lang;
+  $$('[data-i18n]').forEach(el => {
+    const v = T(el.dataset.i18n);
+    if (typeof v !== 'string') return;
+    el.hasAttribute('data-html') ? (el.innerHTML = v) : (el.textContent = v);
+  });
+  $('#langBtn').textContent = lang === 'en' ? 'ES' : 'EN';
+  $('#q').placeholder = lang === 'en' ? 'Search title, venue, year…' : 'Buscar título, congreso, año…';
+  $('#palIn').placeholder = T('pal_ph');
+  renderTimeline(); renderPubFilters(); renderPubs(); renderProjects(); renderTeaching(); renderTheses(); renderRecord(); renderChips(); restartTyped();
+}
+$('#langBtn').onclick = () => { lang = lang === 'en' ? 'es' : 'en'; store.set('lang', lang); applyLang(); };
+
+/* ============ theme ============ */
+function setTheme(t, auto) {
+  document.documentElement.dataset.theme = t;
+  $('#themeBtn').textContent = t === 'dark' ? '☾' : '☀';
+  store.set('theme', auto ? 'auto' : t);
+}
+function themeByTime() { const h = new Date().getHours(); return (h >= 20 || h < 7) ? 'dark' : 'light'; }
+(function () {
+  const s = store.get('theme');
+  if (s === 'auto') setTheme(themeByTime(), true);
+  else if (s) setTheme(s);
+  else setTheme(matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+})();
+$('#themeBtn').onclick = () => setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+$('#printBtn').onclick = () => print();
+
+/* ============ typed tagline ============ */
+let typedTimer;
+function restartTyped() {
+  clearTimeout(typedTimer);
+  const el = $('#typed'), words = T('typed');
+  if (reduced) { el.textContent = words[0]; return; }
+  let w = 0, i = 0, del = false;
+  (function tick() {
+    const word = words[w % words.length];
+    el.textContent = word.slice(0, i);
+    if (!del && i === word.length) { del = true; typedTimer = setTimeout(tick, 1600); return; }
+    if (del && i === 0) { del = false; w++; }
+    i += del ? -1 : 1;
+    typedTimer = setTimeout(tick, del ? 30 : 65);
+  })();
+}
+
+/* ============ hero network canvas ============ */
+(function () {
+  const cv = $('#net'), ctx = cv.getContext('2d');
+  let W, H, nodes = [], mouse = { x: -999, y: -999 };
+  const col = () => getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
+  function size() {
+    const r = cv.getBoundingClientRect(), d = Math.min(devicePixelRatio || 1, 2);
+    W = r.width; H = r.height; cv.width = W * d; cv.height = H * d; ctx.setTransform(d, 0, 0, d, 0, 0);
+    const n = Math.round(Math.min(90, W * H / 14000));
+    nodes = Array.from({ length: n }, () => ({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35 }));
+  }
+  function frame() {
+    ctx.clearRect(0, 0, W, H);
+    const c = col();
+    ctx.fillStyle = c; ctx.strokeStyle = c;
+    for (const n of nodes) {
+      if (!reduced) { n.x += n.vx; n.y += n.vy; if (n.x < 0 || n.x > W) n.vx *= -1; if (n.y < 0 || n.y > H) n.vy *= -1; }
+      const dx = n.x - mouse.x, dy = n.y - mouse.y, d = Math.hypot(dx, dy);
+      if (d < 140 && !reduced) { n.x += dx / d * 1.2; n.y += dy / d * 1.2; }
     }
+    for (let i = 0; i < nodes.length; i++) {
+      const a = nodes[i];
+      ctx.globalAlpha = .55; ctx.beginPath(); ctx.arc(a.x, a.y, 2, 0, 7); ctx.fill();
+      for (let j = i + 1; j < nodes.length; j++) {
+        const b = nodes[j], d = Math.hypot(a.x - b.x, a.y - b.y);
+        if (d < 120) { ctx.globalAlpha = (1 - d / 120) * .35; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
+      }
+      const dm = Math.hypot(a.x - mouse.x, a.y - mouse.y);
+      if (dm < 180) { ctx.globalAlpha = (1 - dm / 180) * .8; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke(); }
+    }
+    ctx.globalAlpha = 1;
+    if (!reduced) requestAnimationFrame(frame);
+  }
+  addEventListener('resize', size);
+  $('#hero').addEventListener('pointermove', e => { const r = cv.getBoundingClientRect(); mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; });
+  $('#hero').addEventListener('pointerleave', () => { mouse.x = mouse.y = -999; });
+  size(); frame();
+})();
 
-    // Start animations when page loads
-    window.addEventListener('load', () => {
-      setTimeout(animateCounters, 500);
-    });
+/* ============ timeline ============ */
+function renderTimeline() {
+  const L = lang === 'en' ? KINDS : KINDS_ES;
+  $('#legend').innerHTML = Object.keys(L).map(k => `<span class="chip"><i class="dot" style="background:var(--${k})"></i>${L[k]}</span>`).join('');
+  const tl = $('#timeline');
+  $$('.ev', tl).forEach(e => e.remove());
+  EV.forEach(e => {
+    const d = document.createElement('div');
+    d.className = 'ev'; d.style.setProperty('--c', `var(--${e.c})`);
+    const [h, p] = e[lang];
+    d.innerHTML = `<div class="card"><time>${e.y}</time><h3>${esc(h)}</h3><p>${esc(p)}</p></div>`;
+    tl.appendChild(d);
+    io.observe(d);
+  });
+}
 
-    // Add staggered animation delays
-    document.querySelectorAll('.animate-fade-in-up').forEach((el, index) => {
-      el.style.animationDelay = `${index * 0.1}s`;
-    });
+/* ============ map ============ */
+const mapState = { view: 'eu', world: null };
+function placeStats() {
+  const g = {};
+  PUBS.forEach(p => { if (p.city) (g[p.city] = g[p.city] || { city: p.city, items: [], stay: false }).items.push(p); });
+  g.Sheffield = g.Sheffield || { city: 'Sheffield', items: [] }; g.Sheffield.stay = true;
+  g.Canterbury = { city: 'Canterbury', items: [], stay: true };
+  return Object.values(g);
+}
+function drawMap() {
+  const svg = d3.select('#map'); svg.selectAll('*').remove();
+  const W = 960, H = 560;
+  const proj = d3.geoMercator();
+  if (mapState.view === 'eu') proj.center([2, 40]).scale(W * 1.0).translate([W / 2, H / 2]);
+  else proj.center([-40, 35]).scale(W * .26).translate([W / 2, H / 2]);
+  const path = d3.geoPath(proj);
+  svg.append('g').selectAll('path').data(mapState.world.features).join('path').attr('class', 'land').attr('d', path);
+  const places = placeStats();
+  const home = proj([CITY['Almería'][1], CITY['Almería'][0]]);
+  const g = svg.append('g');
+  places.filter(p => p.stay).forEach(p => {
+    const q = proj([CITY[p.city][1], CITY[p.city][0]]), mx = (home[0] + q[0]) / 2, my = Math.min(home[1], q[1]) - 60;
+    g.append('path').attr('class', 'arc').attr('d', `M${home} Q${mx},${my} ${q}`);
+  });
+  const tip = $('#tip');
+  const pins = g.selectAll('g.pin').data(places).join('g').attr('class', 'pin').attr('tabindex', 0)
+    .attr('transform', d => `translate(${proj([CITY[d.city][1], CITY[d.city][0]])})`)
+    .style('--c', d => d.stay ? 'var(--stay)' : 'var(--accent)');
+  const r = d => 5 + Math.min(8, d.items.length * 1.1);
+  pins.append('circle').attr('class', 'pulse').attr('r', r);
+  pins.append('circle').attr('class', 'core').attr('r', r);
+  const show = (e, d) => {
+    const co = CITY[d.city];
+    const stay = d.city === 'Sheffield' ? 'Postdoc 2022–24' : d.city === 'Canterbury' ? 'Predoc stay 2018' : '';
+    tip.innerHTML = `<b>${esc(d.city.trim())}, ${co[2]}</b>` + (stay ? `<span>★ ${stay}</span>` : '') +
+      d.items.slice(0, 4).map(p => `<span>${p.year} · ${esc(p.venue)}</span>`).join('') + (d.items.length > 4 ? `<span>+${d.items.length - 4}…</span>` : '');
+    const box = $('.map-box').getBoundingClientRect(), t = e.currentTarget.getBoundingClientRect();
+    tip.style.left = Math.min(box.width - 270, Math.max(8, t.left - box.left + 14)) + 'px';
+    tip.style.top = Math.max(8, t.top - box.top - 10 - tip.offsetHeight) + 'px';
+    tip.style.opacity = 1;
+  };
+  pins.on('mouseenter focus click', show).on('mouseleave blur', () => { tip.style.opacity = 0; });
+  $('#vEu').setAttribute('aria-pressed', mapState.view === 'eu');
+  $('#vWorld').setAttribute('aria-pressed', mapState.view === 'world');
+}
+$('#vEu').onclick = () => { mapState.view = 'eu'; mapState.world && drawMap(); };
+$('#vWorld').onclick = () => { mapState.view = 'world'; mapState.world && drawMap(); };
+(async function initMap() {
+  try {
+    const r = await fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json');
+    const topo = await r.json();
+    mapState.world = topojson.feature(topo, topo.objects.countries);
+    drawMap();
+  } catch (e) {
+    $('#map').outerHTML = '<div class="map-fallback">' + [...new Set(PUBS.map(p => p.city).filter(Boolean))].join(' · ') + '</div>';
+    $('.map-ctrl').remove();
+  }
+})();
 
-    // Grid item click handlers to open corresponding sections
-    document.querySelectorAll('[data-section]').forEach(gridItem => {
-      gridItem.addEventListener('click', () => {
-        const sectionId = gridItem.getAttribute('data-section');
-        const targetSection = document.getElementById(sectionId);
-        
-        if (targetSection) {
-          // Open the accordion if it's closed
-          const panel = targetSection.querySelector('[data-accordion="panel"]');
-          const chevron = targetSection.querySelector('[data-accordion="chevron"]');
-          
-          if (panel && panel.classList.contains('hidden')) {
-            panel.classList.remove('hidden');
-            if (chevron) chevron.classList.add('rotate-180');
-          }
-          
-          // Smooth scroll to the section
-          targetSection.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-          
-          // Add a subtle highlight effect
-          targetSection.style.transition = 'all 0.3s ease';
-          targetSection.style.boxShadow = '0 0 20px rgba(59, 130, 246, 0.5)';
-          setTimeout(() => {
-            targetSection.style.boxShadow = '';
-          }, 2000);
-        }
-      });
-    });
+/* ============ publications ============ */
+const F = { type: 'all', topic: 'all', q: '', limit: 10 };
+function renderPubFilters() {
+  const types = ['all', 'journal', 'conf', 'edu', 'national'];
+  const tName = k => k === 'all' ? T('all') : T('t_' + k);
+  $('#typeF').innerHTML = types.map(k => {
+    const n = k === 'all' ? PUBS.length : PUBS.filter(p => p.type === k).length;
+    return `<button class="chip" data-type="${k}" aria-pressed="${F.type === k}">${tName(k)} <small>${n}</small></button>`;
+  }).join('');
+  $('#topicF').innerHTML = ['all', ...Object.keys(T('topics'))].map(k =>
+    `<button class="chip" data-topic="${k}" aria-pressed="${F.topic === k}">${k === 'all' ? T('all') : T('topics')[k]}</button>`).join('');
+}
+$('#typeF').onclick = e => { const b = e.target.closest('[data-type]'); if (!b) return; F.type = b.dataset.type; F.limit = 10; renderPubFilters(); renderPubs(); };
+$('#topicF').onclick = e => { const b = e.target.closest('[data-topic]'); if (!b) return; F.topic = b.dataset.topic; F.limit = 10; renderPubFilters(); renderPubs(); renderChips(); };
+$('#q').oninput = e => { F.q = e.target.value.toLowerCase(); F.limit = 10; renderPubs(); };
+$('#moreBtn').onclick = () => { F.limit = F.limit >= 999 ? 10 : 999; renderPubs(); };
 
-    // Enhanced accordion behavior
-    (function () {
-      const buttons = document.querySelectorAll('[data-accordion="button"]');
-      buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const card = btn.closest('[data-accordion="card"]') || btn.parentElement;
-          const panel = card.querySelector('[data-accordion="panel"]');
-          const chev = card.querySelector('[data-accordion="chevron"]');
-          panel.classList.toggle('hidden');
-          if (chev) chev.classList.toggle('rotate-180');
-        });
-      });
-    })();
-  </script>
+function bibtex(p) {
+  const key = (p.auth.split(',')[0].replace(/[^A-Za-zÀ-ÿ]/g, '') + p.year + p.title.split(' ')[0]).replace(/[^A-Za-z0-9]/g, '');
+  const kind = p.type === 'journal' ? 'article' : 'inproceedings', venueKey = p.type === 'journal' ? 'journal' : 'booktitle';
+  return `@${kind}{${key},\n  author = {${p.auth.replace(/, /g, ' and ')}},\n  title = {${p.title}},\n  ${venueKey} = {${p.venue}},\n  year = {${p.year}}${p.doi ? `,\n  doi = {${p.doi}}` : ''}\n}`;
+}
+function renderPubs() {
+  const list = PUBS.filter(p =>
+    (F.type === 'all' || p.type === F.type) && (F.topic === 'all' || p.topics.includes(F.topic)) &&
+    (!F.q || (p.title + p.venue + p.year + p.auth).toLowerCase().includes(F.q)));
+  const vis = list.slice(0, F.limit), TN = T('topics');
+  $('#pubList').innerHTML = vis.length ? vis.map(p => `
+    <article class="card pub">
+      <div class="yr">${p.year}<small>${T('t_' + p.type)}</small></div>
+      <div>
+        <h3>${esc(p.title)}</h3>
+        <p class="meta"><b>${esc(p.venue)}</b>${p.city ? ' · ' + esc(p.city) : ''}</p>
+        <p class="meta">${esc(p.auth.replace(A, 'S. ' + A).replace(/(^|, )S\. S\./, '$1S.'))}</p>
+        <div class="tags">${p.topics.map(t => `<span class="tag">${TN[t]}</span>`).join('')}
+          <span class="act">${p.doi ? `<a href="https://doi.org/${p.doi}" target="_blank" rel="noopener">DOI</a>` : ''}<button data-bib="${p.id}">BibTeX</button></span></div>
+      </div>
+    </article>`).join('') : `<div class="empty">${T('none')}</div>`;
+  $('#count').textContent = T('shown')(vis.length, list.length);
+  const mb = $('#moreBtn');
+  mb.style.display = list.length > 10 ? '' : 'none';
+  mb.textContent = F.limit >= 999 ? T('less') : T('more') + ` (${list.length - vis.length})`;
+}
+$('#pubList').onclick = e => {
+  const b = e.target.closest('[data-bib]'); if (!b) return;
+  navigator.clipboard.writeText(bibtex(PUBS.find(p => p.id == b.dataset.bib))).then(() => { const o = b.textContent; b.textContent = T('copied'); setTimeout(() => b.textContent = o, 1400); });
+};
 
+/* ============ counters ============ */
+$('#s-journal').dataset.count = PUBS.filter(p => p.type === 'journal').length;
+$('#s-conf').dataset.count = PUBS.filter(p => p.type === 'conf').length;
+function countUp(el) {
+  const to = +el.dataset.count, dec = +(el.dataset.dec || 0), suf = el.dataset.suffix || '';
+  if (reduced) { el.textContent = to.toFixed(dec) + suf; return; }
+  const t0 = performance.now();
+  (function step(t) {
+    const k = Math.min(1, (t - t0) / 1400), e = 1 - Math.pow(1 - k, 3);
+    el.textContent = (to * e).toFixed(dec).replace(/\B(?=(\d{3})+(?!\d))/g, dec ? '' : '.') + suf;
+    if (k < 1) requestAnimationFrame(step);
+  })(t0);
+}
+
+/* ============ radar + topic chips ============ */
+function renderChips() {
+  const TN = T('topics'), keys = Object.keys(TN);
+  $('#topicChips').innerHTML = keys.map(k => {
+    const n = PUBS.filter(p => p.topics.includes(k)).length;
+    return `<button class="chip" data-topic="${k}" aria-pressed="${F.topic === k}">${TN[k]} <small>${n}</small></button>`;
+  }).join('');
+  const cnt = keys.map(k => PUBS.filter(p => p.topics.includes(k)).length), max = Math.max(...cnt), R = 110;
+  const pt = (i, v) => { const a = -Math.PI / 2 + i * 2 * Math.PI / keys.length; return [Math.cos(a) * v, Math.sin(a) * v]; };
+  let s = [.25, .5, .75, 1].map(f => `<polygon class="grid" points="${keys.map((_, i) => pt(i, R * f).join(',')).join(' ')}"/>`).join('');
+  s += keys.map((_, i) => `<line class="axis" x1="0" y1="0" x2="${pt(i, R)[0]}" y2="${pt(i, R)[1]}"/>`).join('');
+  s += `<polygon class="shape" points="${keys.map((_, i) => pt(i, R * cnt[i] / max).join(',')).join(' ')}"/>`;
+  s += keys.map((k, i) => { const [x, y] = pt(i, R * cnt[i] / max), [lx, ly] = pt(i, R + 20); return `<circle cx="${x}" cy="${y}" r="3.5"/><text x="${lx}" y="${ly + 4}">${TN[k]} (${cnt[i]})</text>`; }).join('');
+  $('#radar').innerHTML = s;
+}
+$('#topicChips').onclick = e => {
+  const b = e.target.closest('[data-topic]'); if (!b) return;
+  F.topic = F.topic === b.dataset.topic ? 'all' : b.dataset.topic; F.limit = 10;
+  renderPubFilters(); renderPubs(); renderChips();
+  if (F.topic !== 'all') $('#pubs').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' });
+};
+
+/* ============ projects ============ */
+const PROJ = [
+  { y: '2025–2028', end: 2028, en: 'Computational Solutions in the Field of Health (Comp4Health-II)', es: 'Soluciones Computacionales en el Campo de la Salud (Comp4Health-II)', scope: ['National', 'Nacional'], pi: 'J. López Redondo & G. E. Martín Garzón', n: 32, amt: 363250 },
+  { y: '2022–2025', end: 2025, en: 'Design of computational methods with applications in health (Comp4Health)', es: 'Diseño de métodos computacionales con aplicación en salud (Comp4Health)', scope: ['National', 'Nacional'], pi: 'G. E. Martín Garzón & J. López Redondo', n: 32, amt: 227177 },
+  { y: '2022–2024', end: 2024, en: 'Smart bracelet for epileptic seizure prediction, detection and notification (EPILSERA)', es: 'Pulsera inteligente para la predicción, detección y notificación de ataques epilépticos (EPILSERA)', funder: 'Ministerio de Ciencia e Innovación', pi: 'P. Martínez Ortigosa & G. E. Martín Garzón', n: 21, amt: 143750 },
+  { y: '2020–2023', end: 2023, en: 'Development of efficient quantum libraries (DELICE)', es: 'Desarrollo de librerías cuánticas eficientes (DELICE)', pi: 'G. Ortega & J. F. Sanjuan', n: 12, amt: 29914 },
+  { y: '2020–2022', end: 2022, en: 'Computational Intelligence in drug discovery (IC-DRUGS)', es: 'Inteligencia Computacional en descubrimiento de fármacos (IC-DRUGS)', scope: ['National', 'Nacional'], code: 'RTI2018-095993-B-I00', funder: 'Spanish Ministry of Science and Innovation', pi: 'P. Martínez Ortigosa & G. E. Martín Garzón', n: 31, amt: 186461 },
+  { y: '2019–2021', end: 2021, en: 'High Performance Computing to Optimize Intensity Modulated Radiation Therapy Planning', es: 'Computación de Altas Prestaciones para Optimizar Planificaciones de Radioterapia de Intensidad Modulada', scope: ['Regional', 'Regional'], code: 'UAL18-TIC-A020-B', funder: 'Junta de Andalucía · FEDER UAL', pi: 'E. Martín Garzón & J. López Redondo', n: 14, amt: 76800 },
+  { y: '2019', end: 2019, en: 'Discovery and optimization of bioactive compounds through advanced computational chemistry techniques', es: 'Descubrimiento y optimización de compuestos bioactivos mediante técnicas avanzadas de química computacional', code: '20988/PI/18', funder: 'Fundación Séneca', pi: 'H. E. Pérez Sánchez', n: 12, amt: 62000 },
+  { y: '2016–2019', end: 2019, en: 'Computational methodologies for societal challenges', es: 'Metodologías computacionales para desafíos de la sociedad', scope: ['National', 'Nacional'], code: 'TIN2015-66680-C2-1-R', funder: 'Spanish Ministry of Economy and Competitiveness', pi: 'L. González Casado & P. Martínez Ortigosa', n: 21, amt: 147620 }
+];
+const fmtEur = n => n.toLocaleString(lang === 'es' ? 'es-ES' : 'en-GB') + ' €';
+function renderProjects() {
+  const i = lang === 'en' ? 0 : 1;
+  $('#projGrid').innerHTML = PROJ.map(p => `
+    <article class="card proj">
+      <div class="top"><span class="years">${p.y}</span>${p.end >= 2026 ? `<span class="badge live">${T('live')}</span>` : ''}${p.scope ? `<span class="badge">${p.scope[i]}</span>` : ''}</div>
+      <h3>${esc(p[lang])}</h3>
+      <p class="meta">PI: ${esc(p.pi)}</p>
+      ${p.funder ? `<p class="meta">${T('funded_by')}: ${esc(p.funder)}</p>` : ''}
+      ${p.code ? `<p class="meta">${esc(p.code)}</p>` : ''}
+      <div class="foot"><span class="amt">${fmtEur(p.amt)}</span><span class="n">${p.n} ${T('researchers')}</span></div>
+    </article>`).join('');
+}
+
+/* ============ teaching (stacked bars) ============ */
+const SUBJ_COLOR = { mp: 'var(--edu)', mm: 'var(--work)', pi: 'var(--award)', st: 'var(--stay)', na: 'var(--patent)', ac: 'var(--sky)', tfg: 'var(--muted)' };
+// [subject, year of the degree, hours, taught in English?] — source: UAL teaching certificate (06/10/2026)
+const TEACH = [
+  ['2025–26', [['ac', 2, 43], ['mm', 4, 57]]],
+  ['2024–25', [['mp', 3, 41], ['mm', 4, 19], ['tfg', 4, 8]]],
+  ['2023–24', [['pi', 3, 57, true]]],
+  ['2019–20', [['pi', 3, 19], ['na', 3, 41], ['tfg', 4, 4]]],
+  ['2018–19', [['st', 1, 38], ['na', 3, 19]]],
+  ['2017–18', [['st', 1, 2], ['mp', 3, 18], ['pi', 3, 19], ['na', 3, 19]]]
+];
+function renderTeaching() {
+  const S = T('subj'), max = 100;
+  $('#tChart').innerHTML = TEACH.map(([y, segs]) => {
+    const tot = segs.reduce((a, x) => a + x[2], 0);
+    return `<div class="trow"><span class="yr">${y}</span><div class="bar" style="width:${tot / max * 100}%">${segs.map(([k, c, h, en]) =>
+      `<div class="seg" style="--c:${SUBJ_COLOR[k]};flex:${h}" title="${esc(S[k])} · ${T('yr_l')} ${c} · ${h} h${en ? ' (EN)' : ''}">${h}${en ? ' EN' : ''}</div>`).join('')}</div><span class="tot">${tot} h</span></div>`;
+  }).join('');
+  $('#tLeg').innerHTML = Object.keys(S).map(k => `<span><i style="--c:${SUBJ_COLOR[k]}"></i>${S[k]}</span>`).join('');
+  const total = TEACH.reduce((a, [, s]) => a + s.reduce((b, x) => b + x[2], 0), 0);
+  $('#tStats').innerHTML = `
+    <div class="card"><span class="big">${total}</span><span class="lab">${T('tt_hours')}</span></div>
+    <div class="card"><span class="big">${TEACH.length}</span><span class="lab">${T('tt_years')}</span></div>
+    <div class="card wide"><b>${T('tt_inn')}</b><br>${T('tt_inn_t')}</div>
+    <div class="card wide">🇬🇧 ${T('tt_en')}</div>`;
+}
+
+/* ============ supervised theses ============ */
+const TH_META = { NET: ['🌐', 'var(--stay)'], RT: ['☢', 'var(--patent)'], DD: ['⚗', 'var(--accent)'], VIS: ['👁', 'var(--work)'], SW: ['🏥', 'var(--award)'], BIO: ['🧬', 'var(--good)'] };
+const UAL = 'University of Almería';
+const INF = ['Informatics', 'Informática'], BIOT = ['Biotechnology', 'Biotecnología'];
+// d = defence date; role: 'sup' = first listed supervisor, 'cosup' = co-supervisor
+const THESES = [
+  { d: '2026-07-22', lvl: 'bsc', deg: BIOT, uni: UAL, topic: 'BIO', grade: 'Sobresaliente', role: 'cosup', es: 'Adaptación del modelo dinámico in silico de digestión de proteínas en salmón del Atlántico (Salmo salar)', en: 'Adaptation of the in silico dynamic model of protein digestion in Atlantic salmon (Salmo salar)' },
+  { d: '2026-07-21', lvl: 'bsc', deg: INF, uni: UAL, topic: 'DD', grade: 'Sobresaliente', role: 'sup', es: 'Evaluación y benchmarking de algoritmos de ligand-based virtual screening', en: 'Evaluation and benchmarking of ligand-based virtual screening algorithms' },
+  { d: '2026-07-20', lvl: 'bsc', deg: INF, uni: UAL, topic: 'SW', grade: 'Sobresaliente', role: 'sup', es: 'HealthShift: sistema integral para la planificación, gestión e incidencias de turnos en centros de salud', en: 'HealthShift: an integrated system for shift planning, management and incident handling in health centres' },
+  { d: '2026-07-08', lvl: 'msc', deg: INF, uni: UAL, topic: 'NET', grade: 'Sobresaliente', role: 'cosup', es: 'Infraestructura middleware segura para monitorización de pacientes crónicos', en: 'Secure middleware infrastructure for chronic patient monitoring' },
+  { d: '2025-07-24', lvl: 'bsc', deg: INF, uni: UAL, topic: 'VIS', grade: 'Sobresaliente', role: 'cosup', es: 'Reconocimiento de emociones faciales en vídeo ajustando un modelo Vision Transformer preentrenado', en: 'Facial emotion recognition in video by fine-tuning a pre-trained Vision Transformer model' },
+  { d: '2025-07-01', lvl: 'bsc', deg: INF, uni: UAL, topic: 'NET', grade: 'Sobresaliente', role: 'cosup', es: 'Implementación de una topología empresarial SD-WAN', en: 'Implementation of an enterprise SD-WAN topology' },
+  { d: '2024-07-19', lvl: 'bsc', deg: INF, uni: UAL, topic: 'NET', grade: 'Notable', role: 'cosup', es: 'Monitorización y gestión de una red de gran tamaño con un controlador SDN', en: 'Monitoring and management of a large-scale network with an SDN controller' },
+  { d: '2024-07-18', lvl: 'bsc', deg: INF, uni: UAL, topic: 'RT', grade: 'Sobresaliente', role: 'cosup', es: 'Optimización evolutiva y computación avanzada para mejorar la planificación de tratamientos de radioterapia', en: 'Evolutionary optimization and advanced computing to improve radiotherapy treatment planning' },
+  { d: '2023', lvl: 'msc', deg: ['Computer Engineering', 'Ingeniería Informática'], uni: 'University of Sheffield (UK)', topic: 'DD', grade: 'Distinction', role: 'cosup', es: 'A Model with the Optimal Voxel Size to Create 3D Point Cloud for Molecules in Similarity Searching by Using Machine Learning', en: 'A Model with the Optimal Voxel Size to Create 3D Point Cloud for Molecules in Similarity Searching by Using Machine Learning' },
+  { d: '2021-07-19', lvl: 'bsc', deg: INF, uni: UAL, topic: 'VIS', grade: 'Notable', role: 'cosup', es: 'Monitorización mediante control gestual', en: 'Monitoring through gesture control' },
+  { d: '2021-06-04', lvl: 'bsc', deg: INF, uni: UAL, topic: 'VIS', grade: 'Sobresaliente', role: 'cosup', es: 'Reconocimiento de caídas con visión artificial', en: 'Fall recognition with artificial vision' },
+  { d: '2020-07-02', lvl: 'bsc', deg: INF, uni: UAL, topic: 'VIS', grade: 'MH', role: 'cosup', es: 'SMARTFRIDGE: reconocimiento de acciones en un frigorífico y toma de decisiones en un ambiente inteligente', en: 'SMARTFRIDGE: recognition of actions in a refrigerator and decision making in a smart environment' }
+];
+const thDate = d => d.length === 4 ? d : new Date(d + 'T12:00:00').toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-GB', { month: 'short', year: 'numeric' });
+let thTopic = 'all';
+function renderTheses() {
+  const TN = T('th_topics');
+  $('#thF').innerHTML = ['all', ...Object.keys(TN)].map(k => {
+    const n = k === 'all' ? THESES.length : THESES.filter(t => t.topic === k).length;
+    return `<button class="chip" data-th="${k}" aria-pressed="${thTopic === k}">${k === 'all' ? T('all_t') : TH_META[k][0] + ' ' + TN[k]} <small>${n}</small></button>`;
+  }).join('');
+  const list = THESES.filter(t => thTopic === 'all' || t.topic === thTopic);
+  $('#thGrid').innerHTML = list.map(t => `
+    <article class="card th" style="--c:${TH_META[t.topic][1]}">
+      <div class="row1"><span class="topic"><i>${TH_META[t.topic][0]}</i>${TN[t.topic]}</span><span class="badge" style="--c:var(--muted)">${T(t.lvl)}</span><span class="badge" style="--c:var(--muted)">${thDate(t.d)}</span></div>
+      <h4>${esc(t[lang])}</h4>
+      ${t.es !== t.en && lang === 'en' ? `<p class="orig">${esc(t.es)}</p>` : ''}
+      <p class="orig" style="font-style:normal">${T(t.lvl) === T('msc') ? T('msc_l') : T('bsc_l')} ${esc(t.deg[lang === 'en' ? 0 : 1])}</p>
+      <div class="foot"><span>${T(t.role)} · ${esc(t.uni)}</span><span class="grade ${t.grade === 'MH' ? 'mh' : ''}">${T('grades')[t.grade]}</span></div>
+    </article>`).join('');
+}
+$('#thF').onclick = e => { const b = e.target.closest('[data-th]'); if (!b) return; thTopic = b.dataset.th; renderTheses(); };
+
+/* ============ record (tabs) ============ */
+let recTab = 0;
+function renderRecord() {
+  const REC = ACC[lang].filter((_, i) => ![3, 6, 7].includes(i)), names = T('rec_tabs');
+  $('#tabs').innerHTML = REC.map(([h], i) => `<button class="tab" role="tab" id="tab${i}" aria-selected="${i === recTab}" aria-controls="tp${i}" data-tab="${i}">${h.split(' ')[0]} ${names[i]}</button>`).join('');
+  $('#tabPanels').innerHTML = REC.map(([h, body], i) => `<div class="card tabpanel" role="tabpanel" id="tp${i}" aria-labelledby="tab${i}" data-title="${esc(names[i])}" ${i === recTab ? '' : 'hidden'}>${body}</div>`).join('');
+}
+$('#tabs').onclick = e => { const b = e.target.closest('[data-tab]'); if (!b) return; recTab = +b.dataset.tab; renderRecord(); };
+
+/* ============ scroll: progress, scrollspy, reveal, timeline fill ============ */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .15 });
+$$('.reveal').forEach(el => io.observe(el));
+const cio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { countUp(e.target); cio.unobserve(e.target); } }), { threshold: .6 });
+$$('[data-count]').forEach(el => cio.observe(el));
+
+const secs = $$('main section'), navLinks = $$('#links a');
+function onScroll() {
+  const h = document.documentElement, y = h.scrollTop;
+  $('#progress').style.width = (y / (h.scrollHeight - innerHeight) * 100) + '%';
+  let cur = '';
+  secs.forEach(s => { if (s.getBoundingClientRect().top < innerHeight * .4) cur = s.id; });
+  navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+  const tl = $('#timeline').getBoundingClientRect();
+  const f = Math.max(0, Math.min(tl.height, innerHeight * .55 - tl.top));
+  $('#tlFill').style.height = f + 'px';
+}
+addEventListener('scroll', onScroll, { passive: true });
+
+/* ============ command palette ============ */
+const go = id => () => document.getElementById(id).scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' });
+function commands() {
+  const c = [
+    [T('cmd_theme'), '☾', () => $('#themeBtn').click()],
+    [T('cmd_auto'), '🕒', () => setTheme(themeByTime(), true)],
+    [T('cmd_lang'), '🌐', () => $('#langBtn').click()],
+    [T('cmd_print'), '🖨', () => print()],
+    [T('cmd_cv'), '⬇', () => { location.href = 'documents/EN.pdf'; }],
+    [T('cmd_mail'), '✉', () => { location.href = 'mailto:savinspm@ual.es'; }],
+    [T('cmd_gh'), '⌥', () => open('https://github.com/savinspm', '_blank')],
+    [T('cmd_top'), '↑', go('hero')]
+  ];
+  $$('#links a').forEach(a => c.push([`${T('cmd_go')} ${a.textContent}`, '→', go(a.getAttribute('href').slice(1))]));
+  return c;
+}
+let palSel = 0, palItems = [];
+function palRender() {
+  const q = $('#palIn').value.toLowerCase();
+  palItems = commands().filter(c => c[0].toLowerCase().includes(q));
+  palSel = Math.min(palSel, Math.max(0, palItems.length - 1));
+  $('#palList').innerHTML = palItems.map((c, i) => `<li data-i="${i}" class="${i === palSel ? 'sel' : ''}"><span>${c[1]}</span>${esc(c[0])}</li>`).join('');
+}
+function palOpen(o) { $('#palette').classList.toggle('open', o); if (o) { $('#palIn').value = ''; palSel = 0; palRender(); $('#palIn').focus(); } }
+$('#palBtn').onclick = () => palOpen(true);
+$('#palette').onclick = e => { if (e.target.id === 'palette') palOpen(false); const li = e.target.closest('li'); if (li) { palOpen(false); palItems[li.dataset.i][2](); } };
+$('#palIn').oninput = () => { palSel = 0; palRender(); };
+
+/* ============ keyboard + easter egg ============ */
+const KONAMI = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+let kpos = 0;
+function chessRain() {
+  const pieces = ['♞', '♜', '♝', '♛', '♚', '♟'];
+  for (let i = 0; i < 40; i++) {
+    const s = document.createElement('span');
+    s.className = 'rain'; s.textContent = pieces[i % 6];
+    s.style.left = Math.random() * 100 + 'vw'; s.style.animationDuration = 2.5 + Math.random() * 2.5 + 's'; s.style.animationDelay = Math.random() * 1.2 + 's';
+    s.style.color = 'var(--accent)'; document.body.appendChild(s);
+    setTimeout(() => s.remove(), 7000);
+  }
+}
+addEventListener('keydown', e => {
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); palOpen(!$('#palette').classList.contains('open')); return; }
+  if ($('#palette').classList.contains('open')) {
+    if (e.key === 'Escape') palOpen(false);
+    else if (e.key === 'ArrowDown') { e.preventDefault(); palSel = Math.min(palItems.length - 1, palSel + 1); palRender(); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); palSel = Math.max(0, palSel - 1); palRender(); }
+    else if (e.key === 'Enter' && palItems[palSel]) { palOpen(false); palItems[palSel][2](); }
+    return;
+  }
+  if (/input|textarea/i.test(document.activeElement.tagName)) return;
+  const k = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+  kpos = (k === KONAMI[kpos]) ? kpos + 1 : (k === KONAMI[0] ? 1 : 0);
+  if (kpos === KONAMI.length) { kpos = 0; chessRain(); }
+});
+
+/* ============ init ============ */
+$('#s-theses').dataset.count = THESES.length;
+applyLang();
+onScroll();
+</script>
 </body>
 </html>
